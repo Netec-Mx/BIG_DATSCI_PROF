@@ -190,17 +190,5 @@ El url de la imágen puede ser de la siguiente forma:
 
 # Alertas
 
-> [!NOTE]
-> útil para agregar alguna nota extra
-
-> [!TIP]
-> útil para dar algún tip
-
-> [!IMPORTANT]
-> útil para algún recordatorio
-
-> [!WARNING]
-> útil para alertar a los alumnos
-
-> [!CAUTION]
-> útil para sugerencias y precauciones.
+> **¡NOTA!**<br>
+> Texto a **añadir**.
