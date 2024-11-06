@@ -819,6 +819,8 @@ SELECT * FROM ventas_alto_ingreso LIMIT 10;
 
 Has completado los procesos demostrativos del uso de Apache Hadoop y Apache Hive en un entorno ETL.
 
+**LABORATORIO FINALIZADO!**
+
 ### Resultado esperado
 
 El resultado final esperado es visualizar las tablas creadas en Apache Hive. Teniendo esas tablas, podemos interpretar que todo lo anterior funcionó correctamente.
