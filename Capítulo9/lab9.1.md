@@ -16,7 +16,9 @@ Al finalizar la práctica, serás capaz de:
 
 En esta tarea, se desplegará un clúster de Amazon EMR utilizando la consola de AWS, configurado para ejecutar análisis de Big Data.
 
-Paso 1. Ingresa a tu cuenta de AWS. Los datos que ingresarás se te asignaron al comienzo de este laboratorio.
+Paso 1. Da clic [Aquí AWS](https://us-east-2.signin.aws.amazon.com/oauth?client_id=arn%3Aaws%3Asignin%3A%3A%3Aconsole%2Fcanvas&code_challenge=gfh1_SQ5n7dnq6ETh0C-PoCw4VuI-HLYRfC06evdqHw&code_challenge_method=SHA-256&response_type=code&redirect_uri=https%3A%2F%2Fconsole.aws.amazon.com%2Fconsole%2Fhome%3FhashArgs%3D%2523%26isauthcode%3Dtrue%26state%3DhashArgsFromTB_us-east-2_10ffbbe8d449d843) para ingresar a tu cuenta de AWS. Los datos que ingresaras se te asignaron al comienzo de esta laboratorio.
+
+![awsauth](../images/c91/img1.png)
 
 Paso 2. Coloca los datos de autenticación y da clic en el botón **Iniciar sesión**.
 

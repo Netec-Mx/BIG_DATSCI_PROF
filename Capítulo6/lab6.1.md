@@ -762,6 +762,8 @@ Aprende como si fueras a vivir toda la vida, y vive como si fueras a morir maña
 
 Has completado la tarea donde Flink consumio los mensajes desde Kafka y los imprimio en la consola en tiempo real.
 
+**LABORATORIO FINALIZADO!**
+
 ### Resultado esperado
 
 El resultado final de la práctica es la ejecución completa de todos los pasos en la tarea y como comprobación la siguiente imagen.

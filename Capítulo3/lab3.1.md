@@ -3,6 +3,7 @@
 ## Objetivo de la práctica:
 
 Al finalizar la práctica, serás capaz de:
+
 - Configurar el entorno PySpark.
 - Ingestar y procesar datos.
 - Realizar un análisis exploratorio de datos (EDA) con PySpark.

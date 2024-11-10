@@ -3,6 +3,7 @@
 ## Objetivo de la práctica:
 
 Al finalizar la práctica, serás capaz de:
+
 - Configurar un clúster Hadoop local con Hadoop Distributed File System (HDFS).
 - Realizar una tarea de ETL con un dataset en formato CSV.
 - Ejecutar consultas con Hive sobre los datos procesados.
