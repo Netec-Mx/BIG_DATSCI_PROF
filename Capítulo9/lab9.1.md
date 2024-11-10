@@ -10,6 +10,12 @@ Al finalizar la práctica, serás capaz de:
 ## Duración aproximada:
 - 40 minutos.
 
+---
+
+**[⬅️ Atrás](/Capítulo8/lab8.1.md)** | **[Lista General](README.md)** | **[Siguiente ➡️](/Capítulo9/lab9.2.md)**
+
+---
+
 ## Instrucciones 
 
 ### Tarea 1. Crear un clúster EMR básico.
@@ -265,3 +271,9 @@ Has completado la interacción del clúster Amazon EMR realizando la creación d
 El resultado esperado es que se hayan creado correctamente todas las tareas y la consulta final como se muestra en la imagen.
 
 ![emr1](../images/c91/img27.png)
+
+---
+
+**[⬅️ Atrás](/Capítulo8/lab8.1.md)** | **[Lista General](README.md)** | **[Siguiente ➡️](/Capítulo9/lab9.2.md)**
+
+---

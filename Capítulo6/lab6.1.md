@@ -10,6 +10,12 @@ Al finalizar la práctica, serás capaz de:
 ## Duración aproximada:
 - 90 minutos.
 
+---
+
+**[⬅️ Atrás](/Capítulo5/lab5.1.md)** | **[Lista General](README.md)** | **[Siguiente ➡️](/Capítulo6/lab6.1.md)**
+
+---
+
 ## Instrucciones 
 
 ### Tarea 1. Instalación de Apache Kafka.
@@ -770,3 +776,9 @@ El resultado final de la práctica es la ejecución completa de todos los pasos 
 
 ![kafka](../images/c6/img20.png)
 ![kafka](../images/c6/img30.png)
+
+---
+
+**[⬅️ Atrás](/Capítulo5/lab5.1.md)** | **[Lista General](README.md)** | **[Siguiente ➡️](/Capítulo6/lab6.1.md)**
+
+---

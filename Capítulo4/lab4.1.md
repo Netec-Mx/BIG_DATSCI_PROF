@@ -11,6 +11,12 @@ Al finalizar la práctica, serás capaz de:
 ## Duración aproximada:
 - 90 minutos.
 
+---
+
+**[⬅️ Atrás](/Capítulo3/lab3.1.md)** | **[Lista General](README.md)** | **[Siguiente ➡️](/Capítulo5/lab5.1.md)**
+
+---
+
 ## Instrucciones 
 
 ### Tarea 1. Configuración del entorno Databricks.
@@ -684,3 +690,9 @@ Has completado el particionamiento y compresión de los datos en la capa Gold de
 El resultado final esperado es la ejecución de todas las celdas de la práctica y la comparación de los tiempos de lectura antes y después de la optimización de los datos.
 
 ![dbricks3](../images/c4/img63.png)
+
+---
+
+**[⬅️ Atrás](/Capítulo3/lab3.1.md)** | **[Lista General](README.md)** | **[Siguiente ➡️](/Capítulo5/lab5.1.md)**
+
+---

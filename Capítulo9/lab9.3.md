@@ -10,6 +10,12 @@ Al finalizar la práctica, serás capaz de:
 ## Duración aproximada:
 - 40 minutos.
 
+---
+
+**[⬅️ Atrás](/Capítulo9/lab9.2.md)** | **[Lista General](README.md)** | **[Siguiente ➡️](/Capítulo2/lab2.1.md)**
+
+---
+
 ## Instrucciones 
 
 ### Tarea 1. Crear un proyecto en Google Cloud Platform.

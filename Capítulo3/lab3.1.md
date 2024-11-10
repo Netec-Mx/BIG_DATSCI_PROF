@@ -12,6 +12,12 @@ Al finalizar la práctica, serás capaz de:
 ## Duración aproximada:
 - 110 minutos.
 
+---
+
+**[⬅️ Atrás](/Capítulo2/lab2.1.md)** | **[Lista General](README.md)** | **[Siguiente ➡️](/Capítulo4/lab4.1.md)**
+
+---
+
 ## Instrucciones 
 
 ### Tarea 1. Instalación de PySpark
@@ -785,3 +791,9 @@ Haz completado el entrenamiento de un modelo con el algoritmo de Regresión Log�
 El resultado final esperado es la ejecución de todos los scripts de Spark correctamente y tener el resultado del modelo de entrenamiento como lo muestra la imagen.
 
 ![imagen resultado](../images/c3/img35.png)
+
+---
+
+**[⬅️ Atrás](/Capítulo2/lab2.1.md)** | **[Lista General](README.md)** | **[Siguiente ➡️](/Capítulo4/lab4.1.md)**
+
+---

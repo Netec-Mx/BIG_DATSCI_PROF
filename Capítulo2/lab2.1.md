@@ -11,6 +11,12 @@ Al finalizar la práctica, serás capaz de:
 ## Duración aproximada:
 - 120 minutos.
 
+---
+
+**[⬅️ Atrás](/Capítulo9/lab9.3.md)** | **[Lista General](README.md)** | **[Siguiente ➡️](/Capítulo3/lab3.1.md)**
+
+---
+
 ## Instrucciones 
 
 ### Tarea 1. Instalación de Hadoop (Single Node Cluster)
@@ -827,3 +833,9 @@ Has completado los procesos demostrativos del uso de Apache Hadoop y Apache Hive
 El resultado final esperado es visualizar las tablas creadas en Apache Hive. Teniendo esas tablas, podemos interpretar que todo lo anterior funcionó correctamente.
 
 ![imagen resultado](../images/c2/img45.png)
+
+---
+
+**[⬅️ Atrás](/Capítulo9/lab9.3.md)** | **[Lista General](README.md)** | **[Siguiente ➡️](/Capítulo3/lab3.1.md)**
+
+---

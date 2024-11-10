@@ -11,6 +11,12 @@ Al finalizar la práctica, serás capaz de:
 ## Duración aproximada:
 - 50 minutos.
 
+---
+
+**[⬅️ Atrás](/Capítulo7/lab7.1.md)** | **[Lista General](README.md)** | **[Siguiente ➡️](/Capítulo9/lab9.1.md)**
+
+---
+
 ## Instrucciones 
 
 ### Tarea 1. Configuración del ambiente para NLP.
@@ -432,3 +438,9 @@ Has completado el guardado de la tokenización de palabras.
 El resultado final es poder realizar las tareas exitosamente sin errores y ver el archivo CSV generado.
 
 ![NPL](../images/c8/img20.png)
+
+---
+
+**[⬅️ Atrás](/Capítulo7/lab7.1.md)** | **[Lista General](README.md)** | **[Siguiente ➡️](/Capítulo9/lab9.1.md)**
+
+---

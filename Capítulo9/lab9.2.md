@@ -11,6 +11,12 @@ Al finalizar la práctica, serás capaz de:
 ## Duración aproximada:
 - 40 minutos.
 
+---
+
+**[⬅️ Atrás](/Capítulo9/lab9.1.md)** | **[Lista General](README.md)** | **[Siguiente ➡️](/Capítulo9/lab9.3.md)**
+
+---
+
 ## Instrucciones 
 
 ### Tarea 1. Creación del Clúster de HDInsight en Azure.
@@ -255,3 +261,9 @@ El resultado final esperado es la ejecución correcta de todos los pasos en las 
 
 ![azportal](../images/c92/img26.png)
 ![azportal](../images/c92/img27.png)
+
+---
+
+**[⬅️ Atrás](/Capítulo9/lab9.1.md)** | **[Lista General](README.md)** | **[Siguiente ➡️](/Capítulo9/lab9.3.md)**
+
+---

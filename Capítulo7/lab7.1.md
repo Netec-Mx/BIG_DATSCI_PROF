@@ -10,6 +10,12 @@ Al finalizar la práctica, serás capaz de:
 ## Duración aproximada:
 - 50 minutos.
 
+---
+
+**[⬅️ Atrás](/Capítulo6/lab6.1.md)** | **[Lista General](README.md)** | **[Siguiente ➡️](/Capítulo7/lab7.1.md)**
+
+---
+
 ## Instrucciones 
 
 ### Tarea 1. Instalación de Docker y Kubernetes.
@@ -271,3 +277,9 @@ HAs completado la escalabilidad del cluster de Kubernetes
 El resultado final del laboratorio debe de ser el cluster de kubernetes y el contenedor de Hadoop desplegado correctamente.
 
 ![kube](../images/c7/img18.png)
+
+---
+
+**[⬅️ Atrás](/Capítulo6/lab6.1.md)** | **[Lista General](README.md)** | **[Siguiente ➡️](/Capítulo7/lab7.1.md)**
+
+---
