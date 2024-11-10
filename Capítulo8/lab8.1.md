@@ -1,6 +1,6 @@
-# Creación de un Proyecto de Natural Language Processing (NLP)
+### Creación de un Proyecto de Natural Language Processing (NLP)
 
-## Objetivo de la práctica:
+### Objetivo de la práctica:
 
 Al finalizar la práctica, serás capaz de:
 
@@ -8,7 +8,7 @@ Al finalizar la práctica, serás capaz de:
 - Realizar la limpieza y tokenización de un conjunto de datos de texto.
 - Analizar la frecuencia de palabras y guardar los resultados en un archivo CSV.
 
-## Duración aproximada:
+### Duración aproximada:
 - 50 minutos.
 
 ---
@@ -17,7 +17,7 @@ Al finalizar la práctica, serás capaz de:
 
 ---
 
-## Instrucciones 
+### Instrucciones 
 
 ### Tarea 1. Configuración del ambiente para NLP.
 

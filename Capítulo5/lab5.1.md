@@ -1,4 +1,4 @@
-## Demostración de Apache Giraph e implementación de grafos con Apache Spark GraphX
+### Demostración de Apache Giraph e implementación de grafos con Apache Spark GraphX
 
 ### Objetivo de la práctica:
 

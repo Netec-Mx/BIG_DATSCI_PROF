@@ -1,6 +1,6 @@
-# Configuración y Despliegue de un Proyecto de Big Data utilizando Azure HDInsight
+### Configuración y Despliegue de un Proyecto de Big Data utilizando Azure HDInsight
 
-## Objetivo de la práctica:
+### Objetivo de la práctica:
 
 Al finalizar la práctica, serás capaz de:
 
@@ -8,7 +8,7 @@ Al finalizar la práctica, serás capaz de:
 - Ejecutar una consulta en Hive utilizando el clúster HDInsight.
 - Realizar un análisis sobre datos almacenados en Hadoop.
 
-## Duración aproximada:
+### Duración aproximada:
 - 40 minutos.
 
 ---
@@ -17,7 +17,7 @@ Al finalizar la práctica, serás capaz de:
 
 ---
 
-## Instrucciones 
+### Instrucciones 
 
 ### Tarea 1. Creación del Clúster de HDInsight en Azure.
 

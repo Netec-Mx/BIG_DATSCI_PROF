@@ -1,6 +1,6 @@
-# Configuración y uso de un clúster Hadoop en un servidor local, realizando tareas de ETL y consultas con Hive
+### Configuración y uso de un clúster Hadoop en un servidor local, realizando tareas de ETL y consultas con Hive
 
-## Objetivo de la práctica:
+### Objetivo de la práctica:
 
 Al finalizar la práctica, serás capaz de:
 
@@ -8,7 +8,7 @@ Al finalizar la práctica, serás capaz de:
 - Realizar una tarea de ETL con un dataset en formato CSV.
 - Ejecutar consultas con Hive sobre los datos procesados.
 
-## Duración aproximada:
+### Duración aproximada:
 - 120 minutos.
 
 ---
@@ -17,7 +17,7 @@ Al finalizar la práctica, serás capaz de:
 
 ---
 
-## Instrucciones 
+### Instrucciones 
 
 ### Tarea 1. Instalación de Hadoop (Single Node Cluster)
 

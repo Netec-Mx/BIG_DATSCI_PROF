@@ -1,6 +1,6 @@
-# Implementación de tareas de procesamiento y análisis de datos con PySpark, incluyendo un proyecto de Machine Learning
+### Implementación de tareas de procesamiento y análisis de datos con PySpark, incluyendo un proyecto de Machine Learning
 
-## Objetivo de la práctica:
+### Objetivo de la práctica:
 
 Al finalizar la práctica, serás capaz de:
 
@@ -9,7 +9,7 @@ Al finalizar la práctica, serás capaz de:
 - Realizar un análisis exploratorio de datos (EDA) con PySpark.
 - Implementar un modelo de machine learning con PySpark MLlib.
 
-## Duración aproximada:
+### Duración aproximada:
 - 110 minutos.
 
 ---
@@ -18,7 +18,7 @@ Al finalizar la práctica, serás capaz de:
 
 ---
 
-## Instrucciones 
+### Instrucciones 
 
 ### Tarea 1. Instalación de PySpark
 

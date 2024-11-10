@@ -1,13 +1,13 @@
-# Configuración y uso de Kafka y Flink para el procesamiento de datos en tiempo real 
+### Configuración y uso de Kafka y Flink para el procesamiento de datos en tiempo real 
 
-## Objetivo de la práctica:
+### Objetivo de la práctica:
 
 Al finalizar la práctica, serás capaz de:
 
 - Configurar y conectar Apache Kafka y Apache Flink
 - Procesar datos en tiempo real
 
-## Duración aproximada:
+### Duración aproximada:
 - 90 minutos.
 
 ---
@@ -16,7 +16,7 @@ Al finalizar la práctica, serás capaz de:
 
 ---
 
-## Instrucciones 
+### Instrucciones 
 
 ### Tarea 1. Instalación de Apache Kafka.
 

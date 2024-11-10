@@ -1,6 +1,6 @@
-# Creación y gestión de un Data Lake en Databricks, incluyendo la ingestión y procesamiento de datos en diferentes capas.
+### Creación y gestión de un Data Lake en Databricks, incluyendo la ingestión y procesamiento de datos en diferentes capas.
 
-## Objetivo de la práctica:
+### Objetivo de la práctica:
 
 Al finalizar la práctica, serás capaz de:
 
@@ -8,7 +8,7 @@ Al finalizar la práctica, serás capaz de:
 - Ingerir y procesar datos a través de las capas Raw, Processed y Gold.
 - Optimizar los datos para un análisis eficiente.
 
-## Duración aproximada:
+### Duración aproximada:
 - 90 minutos.
 
 ---
@@ -17,7 +17,7 @@ Al finalizar la práctica, serás capaz de:
 
 ---
 
-## Instrucciones 
+### Instrucciones 
 
 ### Tarea 1. Configuración del entorno Databricks.
 

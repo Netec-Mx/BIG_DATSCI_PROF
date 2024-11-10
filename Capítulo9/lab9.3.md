@@ -1,13 +1,13 @@
-# Configuración y despliegue de un proyecto de Big Data en Google Cloud Dataproc
+### Configuración y despliegue de un proyecto de Big Data en Google Cloud Dataproc
 
-## Objetivo de la práctica:
+### Objetivo de la práctica:
 
 Al finalizar la práctica, serás capaz de:
 
 - Configurar un clúster de procesamiento de datos con Google Cloud Dataproc.
 - Ejecutar tareas de análisis de datos utilizando Hadoop y Hive en el clúster.
 
-## Duración aproximada:
+### Duración aproximada:
 - 40 minutos.
 
 ---
@@ -16,7 +16,7 @@ Al finalizar la práctica, serás capaz de:
 
 ---
 
-## Instrucciones 
+### Instrucciones 
 
 ### Tarea 1. Crear un proyecto en Google Cloud Platform.
 

@@ -1,13 +1,13 @@
-# Implementación de un ambiente de Big Data utilizando Docker y Kubernetes
+### Implementación de un ambiente de Big Data utilizando Docker y Kubernetes
 
-## Objetivo de la práctica:
+### Objetivo de la práctica:
 
 Al finalizar la práctica, serás capaz de:
 
 - Configurar Docker y Kubernetes en un entorno de desarrollo.
 - Implementar un contenedor de Hadoop dentro de un clúster de Kubernetes.
 
-## Duración aproximada:
+### Duración aproximada:
 - 50 minutos.
 
 ---
@@ -16,7 +16,7 @@ Al finalizar la práctica, serás capaz de:
 
 ---
 
-## Instrucciones 
+### Instrucciones 
 
 ### Tarea 1. Instalación de Docker y Kubernetes.
 

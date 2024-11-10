@@ -1,13 +1,13 @@
-# Configuración y despliegue de un proyecto de Big Data utilizando Amazon EMR
+## Configuración y despliegue de un proyecto de Big Data utilizando Amazon EMR
 
-## Objetivo de la práctica:
+### Objetivo de la práctica:
 
 Al finalizar la práctica, serás capaz de:
 
 - Configurar un clúster de Amazon EMR para el procesamiento de Big Data.
 - Ejecutar un análisis utilizando Hive en un clúster EMR.
 
-## Duración aproximada:
+### Duración aproximada:
 - 40 minutos.
 
 ---
@@ -16,7 +16,7 @@ Al finalizar la práctica, serás capaz de:
 
 ---
 
-## Instrucciones 
+### Instrucciones 
 
 ### Tarea 1. Crear un clúster EMR básico.
 
