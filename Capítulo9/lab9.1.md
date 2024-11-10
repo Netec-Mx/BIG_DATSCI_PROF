@@ -12,7 +12,7 @@ Al finalizar la práctica, serás capaz de:
 
 ---
 
-**[⬅️ Atrás](/Capítulo8/lab8.1.md)** | **[Lista General](README.md)** | **[Siguiente ➡️](/Capítulo9/lab9.2.md)**
+**[⬅️ Atrás](/Capítulo8/lab8.1.md)** | **[Lista General](/README.md)** | **[Siguiente ➡️](/Capítulo9/lab9.2.md)**
 
 ---
 
@@ -274,6 +274,6 @@ El resultado esperado es que se hayan creado correctamente todas las tareas y la
 
 ---
 
-**[⬅️ Atrás](/Capítulo8/lab8.1.md)** | **[Lista General](README.md)** | **[Siguiente ➡️](/Capítulo9/lab9.2.md)**
+**[⬅️ Atrás](/Capítulo8/lab8.1.md)** | **[Lista General](/README.md)** | **[Siguiente ➡️](/Capítulo9/lab9.2.md)**
 
 ---

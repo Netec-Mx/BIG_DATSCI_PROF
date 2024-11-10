@@ -12,7 +12,7 @@ Al finalizar la práctica, serás capaz de:
 
 ---
 
-**[⬅️ Atrás](/Capítulo9/lab9.2.md)** | **[Lista General](README.md)** | **[Siguiente ➡️](/Capítulo2/lab2.1.md)**
+**[⬅️ Atrás](/Capítulo9/lab9.2.md)** | **[Lista General](/README.md)** | **[Siguiente ➡️](/Capítulo2/lab2.1.md)**
 
 ---
 
@@ -380,3 +380,9 @@ Has completado la ejecución de consultas de Hive en el clúster de GCP Dataproc
 El resultado final del laboratorio es la ejecución correcta de todas las tareas y la verificación de la última consulta.
 
 ![gcp1](../images/c93/img54.png)
+
+---
+
+**[⬅️ Atrás](/Capítulo9/lab9.2.md)** | **[Lista General](/README.md)** | **[Siguiente ➡️](/Capítulo2/lab2.1.md)**
+
+---

@@ -14,7 +14,7 @@ Al finalizar la práctica, serás capaz de:
 
 ---
 
-**[⬅️ Atrás](/Capítulo4/lab4.1.md)** | **[Lista General](README.md)** | **[Siguiente ➡️](/Capítulo6/lab6.1.md)**
+**[⬅️ Atrás](/Capítulo4/lab4.1.md)** | **[Lista General](/README.md)** | **[Siguiente ➡️](/Capítulo6/lab6.1.md)**
 
 ---
 
@@ -586,6 +586,6 @@ El resultado esperado es la ejecución correcta de todas las tareas y la verific
 
 ---
 
-**[⬅️ Atrás](/Capítulo4/lab4.1.md)** | **[Lista General](README.md)** | **[Siguiente ➡️](/Capítulo6/lab6.1.md)**
+**[⬅️ Atrás](/Capítulo4/lab4.1.md)** | **[Lista General](/README.md)** | **[Siguiente ➡️](/Capítulo6/lab6.1.md)**
 
 ---
