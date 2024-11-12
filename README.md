@@ -1,194 +1,61 @@
-# Funciones que podría usar el instructor
-En este documento se muestran algunas muestras de formatos que se pueden usar en el archivo **README.me** que pueden ser de ayuda para el instructor
+# ![Logo](images/neteclogo.png) 
 
-- [Fragmentos de código](#fragmentos-de-codigo)
-- [Listas](#listas)
-- [Tablas](#tablas)
-- [Insertar imágenes](#imagenes)
-- [Alertas](#alertas)
+**Plataforma de Laboratorios**
 
-# Fragmentos de codigo
+Bienvenido a la **Plataforma de Laboratorios** del curso **Big Data Science Professional**. Aquí podrás explorar diferentes tecnologías a través de prácticas guiadas. ¡Desarrolla tus habilidades y lleva tus conocimientos al siguiente nivel!
 
+---
 
-## Bloques de código
-Para agregar algún fragmento de código debemos de usar la siguiente sintáxis:
+## 🌟 **Lista de Laboratorios**
 
+Cada uno de estos laboratorios está diseñado para ofrecerte una experiencia práctica. Haz clic en los enlaces para comenzar.
 
-### Python
+1. **[Configuración y uso de un clúster Hadoop en un servidor local, realizando tareas de ETL y consultas con Hive](/Capítulo2/lab2.1.md)**
+   - **Descripción**: Implementa y configura un clúster Hadoop local para ejecutar tareas ETL y consultas con Hive.
+   - ⏱️ **Duración estimada**: 120 minutos
 
-```python
-import datetime
+2. **[Implementación de tareas de procesamiento y análisis de datos con PySpark, incluyendo un proyecto de machine learning](/Capítulo3/lab3.1.md)**
+   - **Descripción**: Configura y ejecuta tareas de procesamiento y análisis de datos con PySpark, integrando un proyecto de machine learning.
+   - ⏱️ **Duración estimada**: 110 minutos
 
-def str2date(sf:str):#"2020-05-08"
-    datos=sf.split('-')#['2020', '05', '08']
-                #'2020':str->2020:int, '05':str->05:int, '08':str->05:int
-    fecha=datetime.date(int(datos[0]), int(datos[1]), int(datos[2]))
-    return fecha
+3. **[Creación y gestión de un Data Lake en Databricks, incluyendo la ingestión y procesamiento de datos en diferentes capas](/Capítulo4/lab4.1.md)**
+   - **Descripción**: Desarrolla y administra un Data Lake en Databricks, implementando la ingestión y procesamiento de datos en diversas capas.
+   - ⏱️ **Duración estimada**: 90 minutos
 
-sf=input("ingrese la fecha YYYY-MM-DD: ")
-fecha=str2date(sf)
-print(fecha)
-print(type(fecha))
-```
+4. **[Demostración de Apache Giraph e implementación de grafos con Apache Spark GraphX.](/Capítulo5/lab5.1.md)**
+   - **Descripción**: Muestra el uso de Apache Giraph e implementa grafos con Apache Spark GraphX para análisis avanzado de redes.
+   - ⏱️ **Duración estimada**: 50 minutos
 
-### Java
-```java
-public void cleanup() {
-        try {
-            if (connection != null)
-                connection.close();
-        } catch (Exception e) {
-            System.out.println("Excepción capturada: ");
-            e.printStackTrace();
-        }
-    }
-```
+5. **[Configuración y uso de Kafka y Flink para el procesamiento de datos en tiempo real.](/Capítulo6/lab6.1.md)**
+   - **Descripción**: Configura y utiliza Kafka y Flink para procesar datos en tiempo real de forma eficiente y escalable.
+   - ⏱️ **Duración estimada**: 90 minutos
 
+6. **[Implementación de un ambiente de Big Data utilizando Docker y Kubernetes.](/Capítulo7/lab7.1.md)**
+   - **Descripción**: Implementa un entorno de Big Data utilizando Docker y Kubernetes para la gestión y orquestación de aplicaciones a gran escala.
+   - ⏱️ **Duración estimada**: 50 minutos
 
-### shell
-```shell
-#!/bin/sh
+7. **[Creación de un proyecto de Natural Language Processing (NLP).](/Capítulo8/lab8.1.md)**
+   - **Descripción**: Desarrolla un proyecto de procesamiento de lenguaje natural (NLP) para análisis y transformación de datos textuales.
+   - ⏱️ **Duración estimada**: 50 minutos
 
-CONTADOR=0
-until [ $CONTADOR – ge 3]]; do
-    echo El contador es $CONTADOR
-    CONTADOR=$(($CONTADOR+1))
-done
-```
+8. **[Configuración y despliegue de un proyecto de Big Data utilizando Amazon EMR.](/Capítulo9/lab9.1.md)**
+   - **Descripción**: Configura y despliega un proyecto de Big Data en Amazon EMR para procesamiento y análisis de grandes volúmenes de datos.
+   - ⏱️ **Duración estimada**: 40 minutos
 
-### Ruby
-```ruby
-require 'redcarpet'
-markdown = Redcarpet.new("Hello World!")
-puts markdown.to_html
-```
+9. **[Configuración y despliegue de un proyecto de Big Data utilizando Azure HDInsight.](/Capítulo9/lab9.2.md)**
+   - **Descripción**: Configura y despliega un proyecto de Big Data en Azure HDInsight para análisis y procesamiento de datos a escala.
+   - ⏱️ **Duración estimada**: 40 minutos
 
-### HTML
+10. **[Configuración y despliegue de un proyecto de Big Data utilizando Google Cloud Dataproc.](/Capítulo9/lab9.3.md)**
+   - **Descripción**: Configura y despliega un proyecto de Big Data en Google Cloud Dataproc para procesamiento y análisis de datos en la nube.
+   - ⏱️ **Duración estimada**: 40 minutos
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
+---
 
-```
+## 📬 **Contacto y Más Información**
 
-### Javascript
+Si tienes alguna pregunta o necesitas más detalles, no dudes en [contactarnos](mailto:soporte@netec.com). También puedes encontrar más recursos en nuestra [página de recursos](https://netec.com).
 
-```javascript
-var database=db.getSiblingDB("database")
-var collection=database.getCollection("people")
+---
 
-var data=[
-    {name:"edgar"},
-    {name:"juan"},
-    {name:"alicia"}
-]
-
-data.forEach(t=>{
-    console.log(t)
-    var result=collection.insertOne(t)
-    console.log(result)
-})
-
-```
-# Listas
-
-## Lista simple
-- elemento 1
-- elemento 2
-- elemento 3
-
-## Lista números
-1. elemento 1
-2. elemento 2
-3. elemento 3
-
-## Lista anidada
-- Elemento principal
-    - Elemento interno 1
-    - Elemento interno 2
-        - elemento 
-        - elemento
-    - elemento interno 3
-
-## Lista de tareas
-- [ ] tarea 1
-- [x] tarea 2
-- [ ] tarea 3 
-- [ ] \(Optional) tarea opcional 
-
-# Tablas
-
-## Tabla simple
-
-| título columna 1  | título columna 2|
-| ------------- | ------------- |
-| contenido 1  | contenido 2  |
-| contenido 3  | contenido 4  |
-
-
-## Tabla con formato en las columnas
-
-| Command | Description |
-| --- | --- |
-| `git status` | List all *new or modified* files |
-| `git diff` | Show file differences that **haven't been** staged |
-
-
-## Alinear contenido en tabla
-| Left-aligned | Center-aligned | Right-aligned |
-| :---         |     :---:      |          ---: |
-| git status   | git status     | git status    |
-| git diff     | git diff       | git diff      |
-
-# Imagenes
-
-Para insertar una imágen se usa la siguiente sintáxis:
-
-```
-![descripción de la imagen](url imagen)
-```
-El url de la imágen puede ser de la siguiente forma:
-
-- Si la imágen esta dentro de la misma rama se usa la siguiente sintaxis:
-    ```
-     ![description](/assets/images/imagen1.png)
-    ```
-    - Donde:
-        - la ruta */assets/images* esta dentro de la rama donde se encuentra el archivo **README.md**
-
-- Si la imágen esta en otra rama se usa la siguiente sintaxis:
-    ```
-    ![description](/../name_branch/assets/images/imagen1.png)
-    ```
-    - Donde: 
-        - La ruta */../name_branch/assets/images/* esta dentro de el mismo repositorio pero es una rama diferente. 
-
-- Si la imagén esta en internet se usa la siguiente sintaxis: 
-    ``` 
-     ![description](https://url/imagen.png)
-    ```
-- Si se quiere controlar el tamaño de la imágen se debe usar html, de la siguiente forma:
-    ``` html
-    <img src="url image" width="200" height="200">
-     
-    ```
-    - Donde: 
-        - En el html se pueden editar los siguiente elementos: 
-            - **url image**:  La ruta de la imágen
-            - **width**: Ancho de la imágen en pixeles
-            - **height**: Alto de la imágen en pixeles
-
-
-# Alertas
-
-> **¡NOTA!**<br>
-> Texto a **añadir**.
+¡Gracias por visitar nuestra plataforma! No olvides revisar todos los laboratorios y comenzar tu viaje de aprendizaje hoy mismo.
