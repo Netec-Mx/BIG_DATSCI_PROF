@@ -12,6 +12,8 @@ Bienvenido a la **Plataforma de Laboratorios** del curso **Big Data Science Prof
 
 Cada uno de estos laboratorios está diseñado para ofrecerte una experiencia práctica. Haz clic en los enlaces para comenzar.
 
+---
+
 **[Práctica 1. Configuración y uso de un clúster Hadoop en un servidor local, realizando tareas de ETL y consultas con Hive](/Capítulo2/lab2.1.md)**
    - **Descripción**: Implementar y configurar un clúster Hadoop local para ejecutar tareas ETL y consultas con Hive.
    - ⏱️ **Duración estimada**: 120 minutos.
