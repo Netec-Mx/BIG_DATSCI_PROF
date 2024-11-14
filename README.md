@@ -48,11 +48,11 @@ Cada uno de estos laboratorios está diseñado para ofrecerte una experiencia pr
 
 **[Práctica 9. Configuración y despliegue de un proyecto de Big Data utilizando Azure HDInsight.](/Capítulo9/lab9.2.md)**
    - **Descripción**: Configurar y desplegar un proyecto de Big Data en Azure HDInsight para análisis y procesamiento de datos a escala.
-   - ⏱️ **Duración estimada**: 40 minutos
+   - ⏱️ **Duración estimada**: 40 minutos.
 
 **[Práctica 10. Configuración y despliegue de un proyecto de Big Data utilizando Google Cloud Dataproc.](/Capítulo9/lab9.3.md)**
    - **Descripción**: Configurar y desplegar un proyecto de Big Data en Google Cloud Dataproc para procesamiento y análisis de datos en la nube.
-   - ⏱️ **Duración estimada**: 40 minutos
+   - ⏱️ **Duración estimada**: 40 minutos.
 
 ---
 
