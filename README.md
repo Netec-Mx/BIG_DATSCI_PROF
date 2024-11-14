@@ -1,6 +1,6 @@
 # ![Logo](images/neteclogo.png) 
 
-*Big Data Science Professional*
+# Big Data Science Professional
 
 **Plataforma de Laboratorios**
 
