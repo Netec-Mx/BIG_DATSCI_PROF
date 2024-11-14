@@ -10,19 +10,19 @@ Bienvenido a la **Plataforma de Laboratorios** del curso **Big Data Science Prof
 
 Cada uno de estos laboratorios está diseñado para ofrecerte una experiencia práctica. Haz clic en los enlaces para comenzar.
 
-1. **[Configuración y uso de un clúster Hadoop en un servidor local, realizando tareas de ETL y consultas con Hive](/Capítulo2/lab2.1.md)**
+1. **[Práctica 1. Configuración y uso de un clúster Hadoop en un servidor local, realizando tareas de ETL y consultas con Hive](/Capítulo2/lab2.1.md)**
    - **Descripción**: Implementa y configura un clúster Hadoop local para ejecutar tareas ETL y consultas con Hive.
    - ⏱️ **Duración estimada**: 120 minutos
 
-2. **[Implementación de tareas de procesamiento y análisis de datos con PySpark, incluyendo un proyecto de machine learning](/Capítulo3/lab3.1.md)**
+2. **[Práctica 2. Implementación de tareas de procesamiento y análisis de datos con PySpark, incluyendo un proyecto de machine learning](/Capítulo3/lab3.1.md)**
    - **Descripción**: Configura y ejecuta tareas de procesamiento y análisis de datos con PySpark, integrando un proyecto de machine learning.
    - ⏱️ **Duración estimada**: 110 minutos
 
-3. **[Creación y gestión de un Data Lake en Databricks, incluyendo la ingestión y procesamiento de datos en diferentes capas](/Capítulo4/lab4.1.md)**
+3. **[Práctica 3. Creación y gestión de un Data Lake en Databricks, incluyendo la ingestión y procesamiento de datos en diferentes capas](/Capítulo4/lab4.1.md)**
    - **Descripción**: Desarrolla y administra un Data Lake en Databricks, implementando la ingestión y procesamiento de datos en diversas capas.
    - ⏱️ **Duración estimada**: 90 minutos
 
-4. **[Demostración de Apache Giraph e implementación de grafos con Apache Spark GraphX.](/Capítulo5/lab5.1.md)**
+4. **[Práctica 4. Demostración de Apache Giraph e implementación de grafos con Apache Spark GraphX.](/Capítulo5/lab5.1.md)**
    - **Descripción**: Muestra el uso de Apache Giraph e implementa grafos con Apache Spark GraphX para análisis avanzado de redes.
    - ⏱️ **Duración estimada**: 50 minutos
 
