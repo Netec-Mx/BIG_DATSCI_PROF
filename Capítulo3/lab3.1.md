@@ -1,6 +1,6 @@
-### Implementación de tareas de procesamiento y análisis de datos con PySpark, incluyendo un proyecto de Machine Learning
+# Práctica 2. Implementación de tareas de procesamiento y análisis de datos con PySpark, incluyendo un proyecto de Machine Learning
 
-### Objetivo de la práctica:
+## Objetivo de la práctica:
 
 Al finalizar la práctica, serás capaz de:
 
@@ -9,7 +9,7 @@ Al finalizar la práctica, serás capaz de:
 - Realizar un análisis exploratorio de datos (EDA) con PySpark.
 - Implementar un modelo de machine learning con PySpark MLlib.
 
-### Duración aproximada:
+## Duración aproximada:
 - 110 minutos.
 
 ---
@@ -26,9 +26,9 @@ Al finalizar la práctica, serás capaz de:
 
 **NOTA IMPORTANTE:** Usarás el entorno gráfico del sistema operativo UBUNTU, pero **todo lo realizarás por terminal**.
 
-**NOTA:** Abre una **terminal** dentro del sistema de UBUNTU.
+**NOTA:** Abrir una **terminal** dentro del sistema de UBUNTU.
 
-Paso 1. Descarga Apache Spark desde el sitio oficial.
+Paso 1. Descargar Apache Spark desde el sitio oficial.
 
 ```
 wget https://archive.apache.org/dist/spark/spark-3.4.0/spark-3.4.0-bin-hadoop3.tgz
@@ -36,7 +36,7 @@ wget https://archive.apache.org/dist/spark/spark-3.4.0/spark-3.4.0-bin-hadoop3.t
 
 ![spark1](../images/c3/img1.png)
 
-Paso 2. Extrae la información del archivo descargado, copia el siguiente comando. Adicionalmente, verifica con el comando **`ls`**.
+Paso 2. Extraer la información del archivo descargado, copiar el siguiente comando. Adicionalmente, verificar con el comando **`ls`**.
 
 ```
 tar -xvzf spark-3.4.0-bin-hadoop3.tgz
@@ -44,7 +44,7 @@ tar -xvzf spark-3.4.0-bin-hadoop3.tgz
 
 ![spark1](../images/c3/img2.png)
 
-Paso 3. Mueve la carpeta al directorio donde tengas permisos, en este caso la ruta **`/usr/local/`**.
+Paso 3. Mover la carpeta al directorio donde tengas permisos, en este caso, la ruta **`/usr/local/`**.
 
 ```
 sudo mv spark-3.4.0-bin-hadoop3 /usr/local/spark
@@ -52,13 +52,13 @@ sudo mv spark-3.4.0-bin-hadoop3 /usr/local/spark
 
 ![spark1](../images/c3/img3.png)
 
-Paso 4. Abre el archivo **.bashrc** del usuario **hadoopuser**.
+Paso 4. Abrir el archivo **.bashrc** del usuario **hadoopuser**.
 
 ```
 nano /home/hadoopuser/.bashrc
 ```
 
-Paso 5. Añade las siguientes líneas **al final** del archivo para configurar las rutas de Spark.
+Paso 5. Añadir las siguientes líneas **al final** del archivo para configurar las rutas de Spark.
 
 ```
 export SPARK_HOME=/usr/local/spark
@@ -68,13 +68,13 @@ export PYSPARK_PYTHON=python3
 
 ![spark1](../images/c3/img4.png)
 
-Paso 6. **Para guardar y cerrar** el archivo en nano, escribe la siguiente combinación de teclas. 
+Paso 6. **Para guardar y cerrar** el archivo en nano, escribir la siguiente combinación de teclas. 
 
 **```CTRL + O```** **`Enter`** `Para guardar el archivo`
 
 **```CTRL + X```** **`Enter`** `Para salir del archivo`
 
-Paso 7. **Actualiza el sistema** con las variables de entorno configuradas, escribe el siguiente comando:
+Paso 7. **Actualizar el sistema** con las variables de entorno configuradas, escribir el siguiente comando:
 
 ```
 source /home/hadoopuser/.bashrc
@@ -86,7 +86,7 @@ Paso 8. Asegúrate de que el usuario **hadoopuser** tenga acceso a la instalaci�
 sudo chown -R hadoopuser:hadoopuser /usr/local/spark
 ```
 
-Paso 9. Verifica que Spark está instalado y configurado correctamente ejecutando **PySpark**:
+Paso 9. Verificar que Spark está instalado y configurado correctamente ejecutando **PySpark**:
 
 ```
 pyspark
@@ -106,19 +106,19 @@ rdd.collect()
 
 ![spark1](../images/c3/img6.png)
 
-Paso 11. Una vez terminada la prueba, sal de Spark con el comando **`exit()`**.
+Paso 11. Una vez terminada la prueba, salir de Spark con el comando **`exit()`**.
 
 **¡TAREA FINALIZADA!**
 
-Has completado la descarga e instalación de Apache Spark con PySpark.
+Haz completado la descarga e instalación de Apache Spark con PySpark.
 
-### Tarea 2. Ingestión y procesamiento de datos.
+### Tarea 2. Ingestión y procesamiento de datos
 
 En esta tarea realizarás la carga y procesamiento de un conjunto de datos utilizando PySpark.
 
-**NOTA:** Solo en caso de que se haya cerrado la sesión, inicia sesión con el usuario **hadoopuser** y contraseña **ubunhadoop**.
+**NOTA:** Solo en caso de que se haya cerrado la sesión, iniciar sesión con el usuario **hadoopuser** y contraseña **ubunhadoop**.
 
-Paso 1. Crea una carpeta donde guardarás los scripts dentro del directorio del usuario hadoopuser, copia el siguiente comando.
+Paso 1. Crear una carpeta donde guardarás los scripts dentro del directorio del usuario hadoopuser, copiar el siguiente comando.
 
 ```
 mkdir -p /home/hadoopuser/spark_lab_3.1/scripts
@@ -128,13 +128,13 @@ mkdir -p /home/hadoopuser/spark_lab_3.1/scripts
 
 ![spark1](../images/c3/img7.png)
 
-Paso 2. Crea un archivo Python para la lectura de datos. Nombra este **lectura_csv.py** y guárdalo en la carpeta **spark_lab_3.1**.
+Paso 2. Crear un archivo Python para la lectura de datos. Nómbralo **lectura_csv.py** y guardarlo en la carpeta **spark_lab_3.1**.
 
 ```
 sudo nano /home/hadoopuser/spark_lab_3.1/lectura_csv.py
 ```
 
-Paso 3. Escribe el siguiente código dentro del archivo, que se encargará de cargar el archivo CSV, **puedes copiar y pegarlo para no tener errores.**
+Paso 3. Escribir el siguiente código dentro del archivo, que se encargará de cargar el archivo CSV, **puedes copiar y pegar para no tener errores.**
 
 ```
 # Importar librerías necesarias
@@ -162,7 +162,7 @@ spark.stop()
 
 ![spark1](../images/c3/img8.png)
 
-Paso 4. Ahora ejecuta el archivo que acabas de crear para verificar que se haya creado correctamente, copia el siguiente comando:
+Paso 4. Ejecutar el archivo que acabas de crear para verificar que se haya creado correctamente, copiar el siguiente comando:
 
 ```
 spark-submit /home/hadoopuser/spark_lab_3.1/lectura_csv.py
@@ -172,13 +172,13 @@ spark-submit /home/hadoopuser/spark_lab_3.1/lectura_csv.py
 
 **NOTA:** La imagen nos indica que Spark ha cargado correctamente los datos y leído la información.
 
-Paso 5. Crea un archivo Python para la limpieza de datos. Nombra este **limpieza_csv.py** y guárdalo en la carpeta **spark_lab_3.1**.
+Paso 5. Crear un archivo Python para la limpieza de datos. Nómbralo **limpieza_csv.py** y guárdalo en la carpeta **spark_lab_3.1**.
 
 ```
 sudo nano /home/hadoopuser/spark_lab_3.1/limpieza_csv.py
 ```
 
-Paso 6. Ahora copia el siguiente código en el archivo **limpieza_csv.py** que limpia los datos (eliminando duplicados y llenando valores nulos).
+Paso 6. Copiar el siguiente código en el archivo **limpieza_csv.py** que limpia los datos (eliminando duplicados y llenando valores nulos).
 
 ```
 # Importar librerías necesarias
@@ -215,7 +215,7 @@ spark.stop()
 
 ![spark10](../images/c3/img10.png)
 
-Paso 7. Ahora ejecuta el archivo que acabas de crear para verificar que se haya creado correctamente, copia el siguiente comando:
+Paso 7. Ejecutar el archivo que acabas de crear para verificar que se haya creado correctamente, copia el siguiente comando:
 
 ```
 spark-submit /home/hadoopuser/spark_lab_3.1/limpieza_csv.py
@@ -225,13 +225,13 @@ spark-submit /home/hadoopuser/spark_lab_3.1/limpieza_csv.py
 
 **NOTA:** El resultado cambio ya que hizo la limpieza en los datos.
 
-Paso 8. Crea un archivo Python para la transformación de datos. Nombra este **transformacion_csv.py** y guárdalo en la carpeta **spark_lab_3.1**.
+Paso 8. Crear un archivo Python para la transformación de datos. Nómbralo **transformacion_csv.py** y guárdalo en la carpeta **spark_lab_3.1**.
 
 ```
 sudo nano /home/hadoopuser/spark_lab_3.1/transformacion_csv.py
 ```
 
-Paso 9. Ahora copia el siguiente código en el archivo **transformacion_csv.py** que transforma los datos (seleccionando columnas, filtrando y realizando agregaciones).
+Paso 9. Copiar el siguiente código en el archivo **transformacion_csv.py** que transforma los datos (seleccionando columnas, filtrando y realizando agregaciones).
 
 ```
 # Importar librerías necesarias
@@ -274,7 +274,7 @@ spark.stop()
 
 ![spark10](../images/c3/img12.png)
 
-Paso 10. Ahora ejecuta el archivo que acabas de crear para verificar que se haya creado correctamente, copia el siguiente comando:
+Paso 10. Ejecutar el archivo que acabas de crear para verificar que se haya creado correctamente, copia el siguiente comando:
 
 ```
 spark-submit /home/hadoopuser/spark_lab_3.1/transformacion_csv.py
@@ -284,13 +284,13 @@ spark-submit /home/hadoopuser/spark_lab_3.1/transformacion_csv.py
 
 **NOTA:** El resultado cambió ya que hizo la transformación de los datos.
 
-Paso 11. Crea un archivo Python para la transformación de datos. Nombra este **guardado_csv.py** y guárdalo en la carpeta **spark_lab_3.1**.
+Paso 11. Crear un archivo Python para la transformación de datos. Nómbralo **guardado_csv.py** y guárdalo en la carpeta **spark_lab_3.1**.
 
 ```
 sudo nano /home/hadoopuser/spark_lab_3.1/guardado_csv.py
 ```
 
-Paso 12. Ahora copia el siguiente código en el archivo **guardado_csv.py** que guarda el resultado final de las transformaciones en un archivo CSV.
+Paso 12. Copiar el siguiente código en el archivo **guardado_csv.py** que guarda el resultado final de las transformaciones en un archivo CSV.
 
 ```
 # Importar librerías necesarias
@@ -351,7 +351,7 @@ spark.stop()
 ![spark10](../images/c3/img14.png)
 ![spark10](../images/c3/img15.png)
 
-Paso 13. Ahora ejecuta el archivo que acabas de crear para verificar que se haya creado correctamente, copia el siguiente comando:
+Paso 13. Ejecutar el archivo que acabas de crear para verificar que se haya creado correctamente, copia el siguiente comando:
 
 ```
 spark-submit /home/hadoopuser/spark_lab_3.1/guardado_csv.py
@@ -361,11 +361,11 @@ spark-submit /home/hadoopuser/spark_lab_3.1/guardado_csv.py
 
 **NOTA:** El resultado muestra el directorio donde se guardó el archivo temporalmente.
 
-Paso 14. Ahora verifica que el archivo se haya guardado, escribe el comando en la terminal **`ls`**.
+Paso 14. Verificar que el archivo se haya guardado, escribir el comando en la terminal **`ls`**.
 
 ![spark10](../images/c3/img17.png)
 
-Paso 15. Verifica el contenido, copia el comando siguiente.
+Paso 15. Verificar el contenido, copiar el comando siguiente.
 
 ```
 cat ventas_agrupadas.csv
@@ -377,21 +377,21 @@ cat ventas_agrupadas.csv
 
 **¡TAREA FINALIZADA!**
 
-Has completado la Ingestión y procesamiento de datos usando PySpark.
+Haz completado la Ingestión y procesamiento de datos usando PySpark.
 
 ### Tarea 3. Análisis exploratorio de datos (EDA) con PySpark
 
 En esta tarea realizarás un análisis exploratorio usando PySpark DataFrame API.
 
-Paso 1. Primero, calculamos estadísticas descriptivas como el conteo, media, desviación estándar, valores mínimos y máximos de las columnas numéricas del DataFrame.
+Paso 1. Primero, calcular estadísticas descriptivas como el conteo, media, desviación estándar, valores mínimos y máximos de las columnas numéricas del DataFrame.
 
-Paso 2. Crea el siguiente archivo llamado **`calculo_estadistico.py`** en la misma ruta que los archivos anteriores.
+Paso 2. Crear el siguiente archivo llamado **`calculo_estadistico.py`** en la misma ruta que los archivos anteriores.
 
 ```
 sudo nano /home/hadoopuser/spark_lab_3.1/calculo_estadistico.py
 ```
 
-Paso 3. Ahora agrega el siguiente código en el archivo **calculo_estadistico.py** que realiza las estadísticas mencionadas.
+Paso 3. Agregar el siguiente código en el archivo **calculo_estadistico.py** que realiza las estadísticas mencionadas.
 
 ```
 # calculo_estadisticas.py
@@ -422,7 +422,7 @@ spark.stop()
 
 **```CTRL + X```** **`Enter`** `Para salir del archivo`
 
-Paso 4. Ahora ejecuta el archivo que acabas de crear para verificar que se haya creado correctamente, copia el siguiente comando:
+Paso 4. Ejecutar el archivo que acabas de crear para verificar que se haya creado correctamente, copiar el siguiente comando:
 
 ```
 spark-submit /home/hadoopuser/spark_lab_3.1/calculo_estadistico.py
@@ -430,38 +430,38 @@ spark-submit /home/hadoopuser/spark_lab_3.1/calculo_estadistico.py
 
 ![spark10](../images/c3/img20.png)
 
-Paso 5. Para crear visualizaciones de las distribuciones, necesitas convertir el DataFrame de PySpark en un DataFrame de Pandas (ya que matplotlib no puede trabajar directamente con PySpark).
+Paso 5. Para crear visualizaciones de las distribuciones, es necesario convertir el DataFrame de PySpark en un DataFrame de Pandas (ya que matplotlib no puede trabajar directamente con PySpark).
 
-Paso 6. Primero instala **Python** que aunque hemos trabajado con procesamiento no lo tenemos instalado, escribe el siguiente comando.
+Paso 6. Instalar **Python**, que aunque hemos trabajado con procesamiento no lo tenemos instalado, escribir el siguiente comando.
 
 ```
 sudo apt install python3-pip -y
 ```
-**NOTA:** Espera un momento el proceso de instalación, una vez terminado continúa al siguiente paso.
+**NOTA:** Esperar un momento el proceso de instalación, una vez terminado continúa al siguiente paso.
 
-Paso 7. Ahora instala **matplotlib** ya que tampoco lo hemos usado por ende no está instalado, copia el siguiente código.
+Paso 7. Instalae **matplotlib**, ya que tampoco lo hemos usado por ende no está instalado, copiar el siguiente código.
 
 ```
 sudo apt install python3-matplotlib -y
 ```
 
-**NOTA:** Espera un momento el proceso de instalación, una vez terminado continúa al siguiente paso.
+**NOTA:** Esperar un momento el proceso de instalación, una vez terminado continúa al siguiente paso.
 
-Paso 8. Instala también **Pandas** para interactuar con los **DataFrames** del Script de Spark, copia el siguiente código.
+Paso 8. Instalar también **Pandas** para interactuar con los **DataFrames** del Script de Spark, copiar el siguiente código.
 
 ```
 sudo apt install python3-pandas -y
 ```
 
-**NOTA:** Espera un momento el proceso de instalación, una vez terminado continúa al siguiente paso.
+**NOTA:** Esperar un momento el proceso de instalación, una vez terminado continúa al siguiente paso.
 
-Paso 9. Crea el siguiente archivo llamado **`visualizacion.py`** en la misma ruta que los archivos anteriores.
+Paso 9. Crear el siguiente archivo llamado **`visualizacion.py`** en la misma ruta que los archivos anteriores.
 
 ```
 sudo nano /home/hadoopuser/spark_lab_3.1/visualizacion.py
 ```
 
-Paso 10. Ahora agrega el siguiente código en el archivo **visualizacion.py** que visualiza las estadísticas generadas anteriores.
+Paso 10. Agregar el siguiente código en el archivo **visualizacion.py** que visualiza las estadísticas generadas anteriores.
 
 ```
 # visualizacion.py
@@ -512,7 +512,7 @@ spark.stop()
 
 **```CTRL + X```** **`Enter`** `Para salir del archivo`
 
-Paso 11. Ahora ejecuta el archivo que acabas de crear para verificar que se haya creado correctamente, copia el siguiente comando:
+Paso 11. Ejecutar el archivo que acabas de crear para verificar que se haya creado correctamente, copiar el siguiente comando:
 
 ```
 spark-submit /home/hadoopuser/spark_lab_3.1/visualizacion.py
@@ -521,15 +521,15 @@ spark-submit /home/hadoopuser/spark_lab_3.1/visualizacion.py
 ![spark10](../images/c3/img23.png)
 ![spark10](../images/c3/img24.png)
 
-Paso 12. El análisis de correlación permite ver la relación entre dos variables numéricas, como precio_unitario y cantidad. Usaremos la función corr() de PySpark para calcular el coeficiente de correlación de Pearson.
+Paso 12. El análisis de correlación permite ver la relación entre dos variables numéricas, como precio_unitario y cantidad. Usar la función corr() de PySpark para calcular el coeficiente de correlación de Pearson.
 
-Paso 13. Crea el siguiente archivo llamado **`analisis.py`** en la misma ruta que los archivos anteriores.
+Paso 13. Crear el siguiente archivo llamado **`analisis.py`** en la misma ruta que los archivos anteriores.
 
 ```
 sudo nano /home/hadoopuser/spark_lab_3.1/analisis.py
 ```
 
-Paso 14. Ahora agrega el siguiente código en el archivo **analisis.py** que realiza la correlación entre las 2 variables.
+Paso 14. Agregar el siguiente código en el archivo **analisis.py** que realiza la correlación entre las 2 variables.
 
 ```
 # analisis.py
@@ -562,7 +562,7 @@ spark.stop()
 
 **```CTRL + X```** **`Enter`** `Para salir del archivo`
 
-Paso 15. Ahora ejecuta el archivo que acabas de crear para verificar que se haya creado correctamente, copia el siguiente comando:
+Paso 15. Ejecutar el archivo que acabas de crear para verificar que se haya creado correctamente, copiar el siguiente comando:
 
 ```
 spark-submit /home/hadoopuser/spark_lab_3.1/analisis.py
@@ -580,19 +580,19 @@ spark-submit /home/hadoopuser/spark_lab_3.1/analisis.py
 
 Haz completado el análisis exploratorio usando PySpark DataFrame API.
 
-### Tarea 4. Implementación de un modelo de machine learning con PySpark MLlib
+### Tarea 4. Implementación de un modelo de Machine Learning con PySpark MLlib
 
 Dentro de la tarea usaras un algoritmo de Regresión Logística para clasificación, dividiendo el conjunto de datos en entrenamiento y prueba, entrenando el modelo, y evaluando su rendimiento.
 
-Paso 1. Vas a dividir el dataset procesado en dos subconjuntos: uno para entrenar el modelo (80%) y otro para probar su rendimiento (20%).
+Paso 1. Dividir el dataset procesado en dos subconjuntos: uno para entrenar el modelo (80%) y otro para probar su rendimiento (20%).
 
-Paso 2. Primero crea el siguiente archivo llamado **`division_datos.py`** en la misma ruta que los archivos anteriores.
+Paso 2. Crear el siguiente archivo llamado **`division_datos.py`** en la misma ruta que los archivos anteriores.
 
 ```
 sudo nano /home/hadoopuser/spark_lab_3.1/division_datos.py
 ```
 
-Paso 3. Ahora agrega el siguiente código en el archivo **division_datos.py** que separará la información para el entrenamiento y pruebas.
+Paso 3. Agregar el siguiente código en el archivo **division_datos.py** que separará la información para el entrenamiento y pruebas.
 
 ```
 # division_datos.py
@@ -630,7 +630,7 @@ spark.stop()
 
 **```CTRL + X```** **`Enter`** `Para salir del archivo`
 
-Paso 4. Ahora ejecuta el archivo que acabas de crear para verificar que se haya creado correctamente, copia el siguiente comando:
+Paso 4. Ejecutar el archivo que acabas de crear para verificar que se haya creado correctamente, copia el siguiente comando:
 
 ```
 spark-submit /home/hadoopuser/spark_lab_3.1/division_datos.py
@@ -649,15 +649,15 @@ ls /home/hadoopuser/spark_lab_3.1/mldata
 
 ![spark10](../images/c3/img30.png)
 
-Paso 6. Ahora entrenaras un modelo de [**Regresión Logística**](https://datascientest.com/es/que-es-la-regresion-logistica) utilizando el conjunto de datos de entrenamiento.
+Paso 6. Entrenar un modelo de [**Regresión Logística**](https://datascientest.com/es/que-es-la-regresion-logistica) utilizando el conjunto de datos de entrenamiento.
 
-Paso 7. Crea el siguiente archivo llamado **`entrenamiento.py`** en la misma ruta que los archivos anteriores.
+Paso 7. Crear el siguiente archivo llamado **`entrenamiento.py`** en la misma ruta que los archivos anteriores.
 
 ```
 sudo nano /home/hadoopuser/spark_lab_3.1/entrenamiento.py
 ```
 
-Paso 8. Agrega el siguiente código en el archivo **entrenamiento.py** que realizará el entrenamiento del modelo con el 80% de datos separados previamente.
+Paso 8. Agregar el siguiente código en el archivo **entrenamiento.py** que realizará el entrenamiento del modelo con el 80% de datos separados previamente.
 
 ```
 from pyspark.sql import SparkSession
@@ -698,7 +698,7 @@ spark.stop()
 
 **```CTRL + X```** **`Enter`** `Para salir del archivo`
 
-Paso 9. Ahora ejecuta el archivo que acabas de crear para verificar que se haya creado correctamente, copia el siguiente comando:
+Paso 9. Ejecutar el archivo que acabas de crear para verificar que se haya creado correctamente, copia el siguiente comando:
 
 ```
 spark-submit /home/hadoopuser/spark_lab_3.1/entrenamiento.py
@@ -708,7 +708,7 @@ spark-submit /home/hadoopuser/spark_lab_3.1/entrenamiento.py
 
 ![spark10](../images/c3/img32.png)
 
-Paso 10. Puedes verificar que se hayan creado correctamente el archivo del modelo de entrenamiento en la siguiente ruta, copia y pega en la terminal.
+Paso 10. Verificar que se hayan creado correctamente el archivo del modelo de entrenamiento en la siguiente ruta, copiar y pegar en la terminal.
 
 ```
 ls /home/hadoopuser/spark_lab_3.1/mlmodel
@@ -718,13 +718,13 @@ ls /home/hadoopuser/spark_lab_3.1/mlmodel
 
 Paso 11. Evaluar el rendimiento del modelo utilizando la métrica [Área bajo la curva ROC](https://aprendeia.com/curvas-roc-y-area-bajo-la-curva-auc-machine-learning/). Un valor cercano a 1 indica un modelo muy preciso, mientras que un valor cercano a 0.5 indica un modelo con un rendimiento similar a una elección aleatoria.
 
-Paso 12. Crea el siguiente archivo llamado **`evaluacion.py`** en la misma ruta que los archivos anteriores.
+Paso 12. Crear el siguiente archivo llamado **`evaluacion.py`** en la misma ruta que los archivos anteriores.
 
 ```
 sudo nano /home/hadoopuser/spark_lab_3.1/evaluacion.py
 ```
 
-Paso 13. Agrega el siguiente código en el archivo **evaluacion.py** que realizará la prueba **AUC**.
+Paso 13. Agregar el siguiente código en el archivo **evaluacion.py** que realizará la prueba **AUC**.
 
 ```
 # evaluacion.py
@@ -770,7 +770,7 @@ spark.stop()
 
 **```CTRL + X```** **`Enter`** `Para salir del archivo`
 
-Paso 14. Ahora ejecuta el archivo que acabas de crear para verificar que se haya creado correctamente, copia el siguiente comando:
+Paso 14. Ejecutar el archivo que acabas de crear para verificar que se haya creado correctamente, copiar el siguiente comando:
 
 ```
 spark-submit /home/hadoopuser/spark_lab_3.1/evaluacion.py
