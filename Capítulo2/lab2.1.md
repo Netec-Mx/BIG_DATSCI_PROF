@@ -499,7 +499,7 @@ Paso 5. Ahora abrir el archivo **.bashrc** para agregar las variables de entorno
 nano ~/.bashrc
 ```
 
-Paso 6. Nuevamente, ir hasta el final del archivo y agregar las siguientes 4 variables de Hive, copiar y pegar.
+Paso 6. Ir hasta el final del archivo y agregar las siguientes 4 variables de Hive, copiar y pegar.
 
 ```
 export HIVE_HOME=/usr/local/hive
@@ -512,7 +512,7 @@ export PATH=$PATH:$HIVE_HOME/bin
 
 **```CTRL + X```** **`Enter`** `Para salir del archivo`
 
-Paso 7. Recarga el archivo **.bashrc**.
+Paso 7. Recargar el archivo **.bashrc**.
 
 ```
 source ~/.bashrc
@@ -575,7 +575,7 @@ Haz completado la instalación de Apache Hive y Derby.
 
 Hive requiere varios archivos de configuración. Crearemos y editaremos estos archivos.
 
-Paso 1. Crea un directorio donde Hive almacenará los datos de las tablas. Usa **sudo** si es necesario para crear el directorio:
+Paso 1. Crear un directorio donde Hive almacenará los datos de las tablas. Usa **sudo** si es necesario para crear el directorio:
 
 ```
 sudo mkdir -p /usr/local/hive/warehouse
@@ -584,13 +584,13 @@ sudo mkdir -p /usr/local/hive/warehouse
 sudo chown hadoopuser:hadoopuser /usr/local/hive/warehouse
 ```
 
-Paso 2. Crea y edita el archivo **hive-site.xml** para configurar Hive.
+Paso 2. Crear y editar el archivo **hive-site.xml** para configurar Hive.
 
 ```
 sudo nano $HIVE_HOME/conf/hive-site.xml
 ```
 
-Paso 3. Dentro del archivo, agrega la siguiente configuración.
+Paso 3. Dentro del archivo, agregar la siguiente configuración.
 
 ```
 <configuration>
@@ -620,7 +620,7 @@ Paso 3. Dentro del archivo, agrega la siguiente configuración.
 
 **```CTRL + X```** **`Enter`** `Para salir del archivo`
 
-Paso 4. Crea el directorio en HDFS donde Hive almacenará los datos.
+Paso 4. Crear el directorio en HDFS donde Hive almacenará los datos.
 
 ```
 hdfs dfs -mkdir /user
@@ -635,7 +635,7 @@ hdfs dfs -mkdir /user/hive/warehouse
 hdfs dfs -chmod 777 /user/hive/warehouse
 ```
 
-Paso 5. Inicializa el metastore de Hive, ejecuta el siguiente comando.
+Paso 5. Inicializar el metastore de Hive, ejecutar el siguiente comando.
 
 ```
 schematool -initSchema -dbType derby 
@@ -644,33 +644,33 @@ schematool -initSchema -dbType derby
 chmod 777 metastore_db/
 ```
 
-**NOTA:** Es normal que tarde un poco en iniciar, espera unos segundos.
+**NOTA:** Es normal que tarde un poco en iniciar, esperar unos segundos.
 
 Paso 6. Si la inicialización fue correcta, verás el siguiente resultado, como en la imagen.
 
 ![hive1](../images/c2/img28.png)
 
-Paso 7. Ahora inicializa el **metastore** de Hive, escribe el siguiente comando.
+Paso 7. Ahora inicializar el **metastore** de Hive, escribir el siguiente comando.
 
 ```
 hive --service metastore &
 ```
 
-**NOTA:** Si la terminal no responde ejecuta **Enter**.
+**NOTA:** Si la terminal no responde ejecutar **Enter**.
 
-Paso 8. Inicia el shell de Hive con el siguiente comando para verificar la configuración.
+Paso 8. Iniciar el shell de Hive con el siguiente comando para verificar la configuración.
 
 ```
 hive
 ```
 
-**NOTA:** Pueden salirte algunos **warnings**; puedes ignorarlos por el momento.
+**NOTA:** Pueden salir algunos **warnings**; puedes ignorarlos por el momento.
 
-Paso 9. Para salir de **Hive**, escribe el comando **`exit;`**.
+Paso 9. Para salir de **Hive**, escribir el comando **`exit;`**.
 
 **¡TAREA FINALIZADA!**
 
-Has completado la configuración y preparación de Apache Hive y Derby.
+Haz completado la configuración y preparación de Apache Hive y Derby.
 
 ### Tarea 6. ETL simple y consultas con Apache Hive
 
@@ -686,19 +686,19 @@ wget https://s3.us-west-2.amazonaws.com/labs.netec.com/courses/BigDataSciencePro
 
 ![hadoop25](../images/c2/img31.png)
 
-Paso 2. Ahora sube y carga el archivo en HDFS, copia el siguiente comando.
+Paso 2. Subir y cargar el archivo en HDFS, copiar el siguiente comando.
 
 ```
 hdfs dfs -put ventasejemplo.csv /user/hadoopuser/
 ```
 
-Paso 3. Conéctate a **Hive** para realizar las consultas de ejemplo, escribe el siguiente comando.
+Paso 3. Conéctate a **Hive** para realizar las consultas de ejemplo, escribir el siguiente comando.
 
 ```
 hive
 ```
 
-Paso 4. Luego, crea una tabla en Hive que coincida con la estructura del archivo CSV.
+Paso 4. Crear una tabla en Hive que coincida con la estructura del archivo CSV.
 
 ```
 CREATE TABLE ventas (
@@ -715,11 +715,11 @@ STORED AS TEXTFILE
 TBLPROPERTIES ("skip.header.line.count"="1");
 ```
 
-**IMPORTANTE:** En caso de que tengas un error escribe lo siguiente: sal de hive **`exit;`** luego **`rm metastore_db -r`** siguiente **`schematool -initSchema -dbType derby `** finalmente entra a **`hive`** y prueba la consulta.
+**IMPORTANTE:** En caso de que tengas un error, escribe lo siguiente: sal de hive **`exit;`** luego **`rm metastore_db -r`** siguiente **`schematool -initSchema -dbType derby `** finalmente entra a **`hive`** y prueba la consulta.
 
 ![hadoop26](../images/c2/img32.png)
 
-Paso 5. Carga el archivo desde el sistema de archivos de HDFS en la tabla que acabas de crear en Hive.
+Paso 5. Cargar el archivo desde el sistema de archivos de HDFS en la tabla que acabas de crear en Hive.
 
 ```
 LOAD DATA INPATH '/user/hadoopuser/ventasejemplo.csv' INTO TABLE ventas;
@@ -787,7 +787,7 @@ STORED AS TEXTFILE;
 
 ![hadoop27](../images/c2/img41.png)
 
-Paso 8. Verifica que la tabla se haya creado correctamente, escribe el siguiente comando en Hive.
+Paso 8. Verificar que la tabla se haya creado correctamente, escribir el siguiente comando en Hive.
 
 ```
 show tables;
@@ -795,7 +795,7 @@ show tables;
 
 ![hadoop27](../images/c2/img42.png)
 
-Paso 9. Inserta datos transformados en la nueva tabla.
+Paso 9. Insertar datos transformados en la nueva tabla.
 
 ```
 INSERT INTO TABLE ventas_alto_ingreso
@@ -824,7 +824,7 @@ SELECT * FROM ventas_alto_ingreso LIMIT 10;
 
 **¡TAREA FINALIZADA!**
 
-Has completado los procesos demostrativos del uso de Apache Hadoop y Apache Hive en un entorno ETL.
+Haz completado los procesos demostrativos del uso de Apache Hadoop y Apache Hive en un entorno ETL.
 
 **LABORATORIO FINALIZADO!**
 
