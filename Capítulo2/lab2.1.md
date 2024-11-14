@@ -1,6 +1,6 @@
-### Configuración y uso de un clúster Hadoop en un servidor local, realizando tareas de ETL y consultas con Hive
+# Práctica 1. Configuración y uso de un clúster Hadoop en un servidor local, realizando tareas de ETL y consultas con Hive
 
-### Objetivo de la práctica:
+## Objetivo de la práctica:
 
 Al finalizar la práctica, serás capaz de:
 
@@ -8,7 +8,7 @@ Al finalizar la práctica, serás capaz de:
 - Realizar una tarea de ETL con un dataset en formato CSV.
 - Ejecutar consultas con Hive sobre los datos procesados.
 
-### Duración aproximada:
+## Duración aproximada:
 - 120 minutos.
 
 ---
@@ -17,7 +17,7 @@ Al finalizar la práctica, serás capaz de:
 
 ---
 
-### Instrucciones 
+## Instrucciones 
 
 ### Tarea 1. Instalación de Hadoop (Single Node Cluster)
 
@@ -29,7 +29,7 @@ En esta tarea realizarás la instalación de Apache Hadoop.
 
 **NOTA:** Abre una **terminal** dentro del sistema de UBUNTU.
 
-Paso 1. Inicia sesión como **root**, recuerda la contraseña es: **Pa55w.rd**
+Paso 1. Iniciar sesión como **root**, recuerda la contraseña es: **Pa55w.rd**
 
 ```
 sudo su
@@ -37,13 +37,13 @@ sudo su
 
 ![update](../images/c2/img1.png)
 
-Paso 2. Ahora crea el usuario para trabajar con **Hadoop**, copia el siguiente comando.
+Paso 2. Crear el usuario para trabajar con **Hadoop**, copiar el siguiente comando.
 
 ```
 sudo adduser hadoopuser
 ```
 
-Paso 3. Cuando te pida la contraseña para el usuario, copia el siguiente valor.
+Paso 3. Cuando solicite la contraseña para el usuario, copiar el siguiente valor.
 
 **NOTA:** La contraseña no será visible, ten cuidado de no escribir otro carácter.
 
@@ -51,15 +51,15 @@ Paso 3. Cuando te pida la contraseña para el usuario, copia el siguiente valor.
 ubunhadoop
 ```
 
-Paso 4. Agrega el usuario **hadoopuser** al archivo de superusuarios para darle los privilegios necesarios, copia el siguiente comando.
+Paso 4. Agregar el usuario **hadoopuser** al archivo de superusuarios para darle los privilegios necesarios, copiar el siguiente comando.
 
 ```
 sudo usermod -aG sudo hadoopuser
 ```
 
-Paso 5. Escribe el siguiente comando para la **actualización** del sistema Ubuntu, como superusuario.
+Paso 5. Escribir el siguiente comando para la **actualización** del sistema Ubuntu, como superusuario.
 
-**NOTA:** Si te pide contraseña, escribe la que se te asignó en el curso.
+**NOTA:** Si solicita contraseña, escribir la que se te asignó en el curso.
 
 ```
 sudo apt update
@@ -67,7 +67,7 @@ sudo apt update
 
 ![update](../images/c2/img2.png)
 
-Paso 6. Ahora escribe el siguiente comando para la **instalación de JAVA**.
+Paso 6. Escribir el siguiente comando para la **instalación de JAVA**.
 
 **NOTA:** El proceso puede tardar de **1 a 5 minutos**.
 
@@ -77,7 +77,7 @@ sudo apt install openjdk-8-jdk -y
 
 ![javainst](../images/c2/img3.png)
 
-Paso 7. **Verifica** la instalación de Java, escribe el siguiente comando:
+Paso 7. **Verificar** la instalación de Java, escribir el siguiente comando:
 
 ```
 java -version
@@ -85,7 +85,7 @@ java -version
 
 ![javaverifi](../images/c2/img4.png)
 
-Paso 8. Descarga la **última versión** de Hadoop desde el sitio oficial de **Apache Hadoop**, escribe/copia el siguiente comando:
+Paso 8. Descargar la **última versión** de Hadoop desde el sitio oficial de **Apache Hadoop**, escribir/copiar el siguiente comando:
 
 ```
 wget https://downloads.apache.org/hadoop/common/hadoop-3.3.6/hadoop-3.3.6.tar.gz
@@ -95,7 +95,7 @@ wget https://downloads.apache.org/hadoop/common/hadoop-3.3.6/hadoop-3.3.6.tar.gz
 
 **NOTA:** El proceso puede tardar un par de minutos dependiendo de tu ancho de banda de conexión a internet.
 
-Paso 9. **Descomprime** el archivo de **Hadoop** descargado, escribe el siguiente comando:
+Paso 9. **Descomprimir** el archivo de **Hadoop** descargado, escribir el siguiente comando:
 
 ```
 tar -xzvf hadoop-3.3.6.tar.gz
@@ -105,13 +105,13 @@ Paso 10. Puedes escribir el comando **`ls`** en la terminal para **verificar** l
 
 ![hadoop1](../images/c2/img6.png)
 
-Paso 11. **Mueve** el directorio a la carpeta **/usr/local/**, escribe el siguiente comando:
+Paso 11. **Mueve** el directorio a la carpeta **/usr/local/**, escribir el siguiente comando:
 
 ```
 sudo mv hadoop-3.3.6 /usr/local/hadoop
 ```
 
-Paso 12. **Verifica con el siguiente comando** que la carpeta se haya movido correctamente:
+Paso 12. **Verificar con el siguiente comando** que la carpeta se haya movido correctamente:
 
 ```
 ls /usr/local/
@@ -119,7 +119,7 @@ ls /usr/local/
 
 ![hadoop3](../images/c2/img7.png)
 
-Paso 13. Ahora **otorga** permisos de acceso a **hadoopuser** para el directorio de Hadoop.
+Paso 13. Ahora **otorgar** permisos de acceso a **hadoopuser** para el directorio de Hadoop.
 
 ```
 sudo chown -R hadoopuser:hadoopuser /usr/local/hadoop
@@ -127,7 +127,7 @@ sudo chown -R hadoopuser:hadoopuser /usr/local/hadoop
 
 ![hadoop4](../images/c2/img8.png)
 
-Paso 14. Configura las variables de entorno para **hadoopuser**. Inicia sesión como **hadoopuser**, escribe el siguiente comando.
+Paso 14. Configurar las variables de entorno para **hadoopuser**. Iniciar sesión como **hadoopuser**, escribir el siguiente comando.
 
 ```
 su - hadoopuser
@@ -135,17 +135,17 @@ su - hadoopuser
 
 ![hadoop5](../images/c2/img9.png)
 
-Paso 15. Abre el archivo **~/.bashrc**, copia el siguiente comando:
+Paso 15. Abrir el archivo **~/.bashrc**, copiar el siguiente comando:
 
 ```
 nano ~/.bashrc
 ```
 
-Paso 16. Ahora ve hasta la **última línea** del archivo, como lo muestra la imagen.
+Paso 16. Ir hasta la **última línea** del archivo, como lo muestra la imagen.
 
 ![hadoop4](../images/c2/img10.png)
 
-Paso 17. En esa última línea, añade **(copia y pega)** las siguientes líneas al final del archivo **~/.bashrc**.
+Paso 17. En esa última línea, añadir **(copia y pega)** las siguientes líneas al final del archivo **~/.bashrc**.
 
 ```
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
@@ -161,19 +161,19 @@ export PATH=$PATH:$HADOOP_HOME/sbin:$HADOOP_HOME/bin
 
 ![hadoop5](../images/c2/img11.png)
 
-Paso 18. **Para guardar y cerrar** el archivo nano, escribe la siguiente combinación de teclas: 
+Paso 18. **Para guardar y cerrar** el archivo nano, escribir la siguiente combinación de teclas: 
 
 **```CTRL + O```** **`Enter`** `Para guardar el archivo`
 
 **```CTRL + X```** **`Enter`** `Para salir del archivo`
 
-Paso 19. **Actualiza el sistema** con las variables de entorno configuradas, escribe el siguiente comando:
+Paso 19. **Actualiza el sistema** con las variables de entorno configuradas, escribir el siguiente comando:
 
 ```
 source ~/.bashrc
 ```
 
-Paso 20. **Verifica** el guardado correcto de las variables. Escribe los siguientes comandos que imprimen cada una de las variables.
+Paso 20. **Verificar** el guardado correcto de las variables. Escribir los siguientes comandos que imprimen cada una de las variables.
 
 **NOTA:** Puedes escribir todos juntos o uno por uno.
 
@@ -193,17 +193,17 @@ echo $PATH
 
 **¡TAREA FINALIZADA!**
 
-Has completado la descarga e instalación de Apache Hadoop.
+Haz completado la descarga e instalación de Apache Hadoop.
 
 ### Tarea 2. Configuración de Hadoop (Single Node Cluster)
 
 En los siguientes pasos prepararás los archivos de Apache Hadoop adecuadamente.
 
-Paso 1. Ahora editarás los siguientes archivos de Hadoop para su configuración. Estos archivos se encuentran en la siguiente ruta: **/usr/local/hadoop/etc/hadoop/**
+Paso 1. Editar los siguientes archivos de Hadoop para su configuración. Estos archivos se encuentran en la siguiente ruta: **/usr/local/hadoop/etc/hadoop/**
 
 **NOTA:** En el siguiente paso comenzarás la edición.
 
-Paso 2. Edita el archivo llamado **hadoop-env.sh** y verifica que esté la variable **JAVA_HOME**.
+Paso 2. Editar el archivo llamado **hadoop-env.sh** y verificar que esté la variable **JAVA_HOME**.
 
 ```
 nano $HADOOP_HOME/etc/hadoop/hadoop-env.sh
@@ -221,13 +221,13 @@ nano $HADOOP_HOME/etc/hadoop/hadoop-env.sh
 
 **```CTRL + X```** **`Enter`** `Para salir del archivo`
 
-Paso 3. Edita el archivo llamado **core-site.xml** para definir el sistema de archivos y puerto de comunicación, escribe el siguiente comando:
+Paso 3. Editar el archivo llamado **core-site.xml** para definir el sistema de archivos y puerto de comunicación, escribir el siguiente comando:
 
 ```
 nano $HADOOP_HOME/etc/hadoop/core-site.xml
 ```
 
-Paso 4. Borra la sección **configuration** y pega el siguiente código en su lugar:
+Paso 4. Borrar la sección **configuration** y pegar el siguiente código en su lugar:
 
 ```
 <configuration>
@@ -244,13 +244,13 @@ Paso 4. Borra la sección **configuration** y pega el siguiente código en su lu
 
 **```CTRL + X```** **`Enter`** `Para salir del archivo`
 
-Paso 5. Ahora edita el archivo **hdfs-site.xml** para definir los directorios de almacenamiento de los datos, copia el siguiente código:
+Paso 5. Editar el archivo **hdfs-site.xml** para definir los directorios de almacenamiento de los datos, copia el siguiente código:
 
 ```
 nano $HADOOP_HOME/etc/hadoop/hdfs-site.xml
 ```
 
-Paso 6. Borra la sección **configuration** y pega el siguiente código en su lugar:
+Paso 6. Borrar la sección **configuration** y pegar el siguiente código en su lugar:
 
 ```
 <configuration>
@@ -275,13 +275,13 @@ Paso 6. Borra la sección **configuration** y pega el siguiente código en su lu
 
 **```CTRL + X```** **`Enter`** `Para salir del archivo`
 
-Paso 7. El siguiente archivo a editar es **mapred-site.xml**, donde se definen los trabajos para MapReduce, escribe el siguiente comando:
+Paso 7. El siguiente archivo a editar es **mapred-site.xml**, donde se definen los trabajos para MapReduce, escribir el siguiente comando:
 
 ```
 nano $HADOOP_HOME/etc/hadoop/mapred-site.xml
 ```
 
-Paso 8. Borra la sección **configuration** y pega el siguiente código en su lugar:
+Paso 8. Borrar la sección **configuration** y pegar el siguiente código en su lugar:
 
 ```
 <configuration>
@@ -317,13 +317,13 @@ Paso 8. Borra la sección **configuration** y pega el siguiente código en su lu
 
 ![hadoop12](../images/c2/img16.png)
 
-Paso 9. Adicionalmente, editarás el archivo **yarn-site.xml**, escribe el siguiente comando:
+Paso 9. Adicionalmente, editar el archivo **yarn-site.xml**, escribir el siguiente comando:
 
 ```
 nano $HADOOP_HOME/etc/hadoop/yarn-site.xml
 ```
 
-Paso 10. Borra la sección **configuration** y pega el siguiente código en su lugar:
+Paso 10. Borrar la sección **configuration** y pegar el siguiente código en su lugar:
 
 ```
 <configuration>
@@ -338,15 +338,15 @@ Paso 10. Borra la sección **configuration** y pega el siguiente código en su l
 
 **¡TAREA FINALIZADA!**
 
-Has completado adecuadamente la preparación de los archivos de Apache Hadoop.
+Haz completado adecuadamente la preparación de los archivos de Apache Hadoop.
 
 ### Tarea 3. Inicialización de Apache Hadoop.
 
 En esta tarea ejecutarás los comandos para probar el funcionamiento de Apache Hadoop.
 
-Paso 1. Realiza la **inicialización** del sistema de archivos y arranque de Hadoop, escribe el siguiente comando:
+Paso 1. Realizar la **inicialización** del sistema de archivos y arranque de Hadoop, escribir el siguiente comando:
 
-**NOTA:** El comando formatea el NameNode de Hadoop. Si te pregunta confirmación, escribe **y**.
+**NOTA:** El comando formatea el NameNode de Hadoop. Si pregunta confirmación, escribir **y**.
 
 ```
 hdfs namenode -format
@@ -356,7 +356,7 @@ hdfs namenode -format
 
 **NOTA:** El mensaje es normal, ya que indica que el NameNode ha sido apagado correctamente después de haber completado el proceso de formateo.
 
-Paso 2. Ahora **inicia** los servicios de **Hadoop**, escribe los siguientes comandos:
+Paso 2. **Iniciar** los servicios de **Hadoop**, escribir los siguientes comandos:
 
 ```
 start-dfs.sh
@@ -368,25 +368,25 @@ Paso 3. Si después de iniciar Hadoop te manda un mensaje parecido al de la imag
 
 **NOTA:** Se necesita crear la autenticación al **localhost**, ya que por ese se estará comunicando el nodo de Hadoop.
 
-Paso 4. Copia el siguiente comando para instalar **openssh**.
+Paso 4. Copiar el siguiente comando para instalar **openssh**.
 
 ```
 sudo apt-get install openssh-server openssh-client
 ```
 
-Paso 5. Copia el siguiente comando para crear la llave de autenticación y da **Enter** para guardar el archivo.
+Paso 5. Copiar el siguiente comando para crear la llave de autenticación y dar **Enter** para guardar el archivo.
 
 ```
 ssh-keygen -t rsa -P ""
 ```
 
-Paso 6. Actualiza el archivo de autorización de llaves, copia el siguiente comando.
+Paso 6. Actualizar el archivo de autorización de llaves, copiar el siguiente comando.
 
 ```
 cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 ```
 
-Paso 7. Copia y pega los siguientes comandos para dar los permisos a los archivos.
+Paso 7. Copiar y pegar los siguientes comandos para dar los permisos a los archivos.
 
 ```
 chmod 600 ~/.ssh/authorized_keys
@@ -395,7 +395,7 @@ chmod 600 ~/.ssh/authorized_keys
 chmod 700 ~/.ssh
 ```
 
-Paso 8. Intenta nuevamente el siguiente comando para verificar que Hadoop inicie correctamente.
+Paso 8. Intentar nuevamente el siguiente comando para verificar que Hadoop inicie correctamente.
 
 ```
 start-dfs.sh
@@ -407,7 +407,7 @@ Paso 9. Si te aparece el mensaje, es que se han encendido correctamente **Apache
 
 **NOTA:** El warning que aparece puedes ignorarlo, ya que es para librerías que no usaremos.
 
-Paso 10. Ahora inicia el servicio de **YARN**, copia y pega el siguiente comando.
+Paso 10. Ahora iniciar el servicio de **YARN**, copiar y pegar el siguiente comando.
 
 ```
 start-yarn.sh
@@ -417,7 +417,7 @@ Paso 11. Si todo sale bien, verás el resultado como en la siguiente imagen.
 
 ![hadoop22](../images/c2/img20.png)
 
-Paso 12. Verifica que los servicios de **Hadoop** estén corriendo accediendo a las siguientes URLs **en el navegador de la máquina virtual**:
+Paso 12. Verificar que los servicios de **Hadoop** estén corriendo accediendo a las siguientes URLs **en el navegador de la máquina virtual**:
 
 - **NameNode:** `http://localhost:9870/`
 
@@ -427,7 +427,7 @@ Paso 12. Verifica que los servicios de **Hadoop** estén corriendo accediendo a 
 
 ![hadoop32](../images/c2/img22.png)
 
-Paso 13. Ejecuta los siguientes comandos de prueba en HDFS. Crea un directorio en HDFS para **hadoopuser**.
+Paso 13. Ejecutar los siguientes comandos de prueba en HDFS. Crear un directorio en HDFS para **hadoopuser**.
 
 ```
 hdfs dfs -mkdir /user/
@@ -436,7 +436,7 @@ hdfs dfs -mkdir /user/
 hdfs dfs -mkdir /user/hadoopuser/
 ```
 
-Paso 15. Sube un archivo de prueba a HDFS, escribe los siguientes comandos.
+Paso 15. Subir un archivo de prueba a HDFS, escribir los siguientes comandos.
 
 ```
 echo "Hola Hadoop" > test.txt
@@ -445,7 +445,7 @@ echo "Hola Hadoop" > test.txt
 hdfs dfs -put test.txt /user/hadoopuser/
 ```
 
-Paso 15. Verifica que el archivo se haya subido correctamente, escribe el siguiente comando.
+Paso 15. Verificar que el archivo se haya subido correctamente, escribir el siguiente comando.
 
 ```
 hdfs dfs -ls /user/hadoopuser/
@@ -455,15 +455,15 @@ hdfs dfs -ls /user/hadoopuser/
 
 **¡TAREA FINALIZADA!**
 
-Has completado la inicialización de los servicios de Apache Hadoop.
+Haz completado la inicialización de los servicios de Apache Hadoop.
 
 ### Tarea 4. Instalación de Apache Hive
 
 En la siguiente tarea realizarás los pasos para la instalación de Apache Hive.
 
-**NOTA:** Recuerda que seguimos configurando con el usuario **hadoopuser**. Si te cerró la sesión, iníciala nuevamente.
+**NOTA:** Recuerda que seguimos configurando con el usuario **hadoopuser**. Si se cerró la sesión, iníciala nuevamente.
 
-Paso 1. Descarga la **última versión de Apache Hive** desde el sitio oficial, escribe el siguiente comando:
+Paso 1. Descargar la **última versión de Apache Hive** desde el sitio oficial, escribir el siguiente comando:
 
 ```
 wget https://archive.apache.org/dist/hive/hive-3.1.3/apache-hive-3.1.3-bin.tar.gz
@@ -473,33 +473,33 @@ wget https://archive.apache.org/dist/hive/hive-3.1.3/apache-hive-3.1.3-bin.tar.g
 
 **NOTA:** Esperamos el proceso de descarga durante un par de segundos.
 
-Paso 2. **Descomprime** el archivo de Hive descargado, escribe el siguiente comando:
+Paso 2. **Descomprimir** el archivo de Hive descargado, escribir el siguiente comando:
 
 ```
 tar -xzvf apache-hive-3.1.3-bin.tar.gz
 ```
 
-Paso 3. **Mueve** el directorio a la carpeta **/usr/local/**, escribe el siguiente comando:
+Paso 3. **Mover** el directorio a la carpeta **/usr/local/**, escribir el siguiente comando:
 
 ```
 sudo mv apache-hive-3.1.3-bin /usr/local/hive
 ```
 
-**NOTA:** Si te pide contraseña, escribe la que se configuró al usuario **hadoopuser**.
+**NOTA:** Si te pide contraseña, escribir la que se configuró al usuario **hadoopuser**.
 
-Paso 4. Otorga permisos de acceso a **hadoopuser** para la carpeta de **hive**.
+Paso 4. Otorgar permisos de acceso a **hadoopuser** para la carpeta de **hive**.
 
 ```
 sudo chown -R hadoopuser:hadoopuser /usr/local/hive
 ```
 
-Paso 5. Ahora abre el archivo **.bashrc** para agregar las variables de entorno de **Hive**, copia el siguiente comando.
+Paso 5. Ahora abrir el archivo **.bashrc** para agregar las variables de entorno de **Hive**, copiar el siguiente comando.
 
 ```
 nano ~/.bashrc
 ```
 
-Paso 6. Nuevamente, ve hasta el final del archivo y agrega las siguientes 4 variables de Hive, copia y pégalas.
+Paso 6. Nuevamente, ir hasta el final del archivo y agregar las siguientes 4 variables de Hive, copiar y pegar.
 
 ```
 export HIVE_HOME=/usr/local/hive
@@ -518,31 +518,31 @@ Paso 7. Recarga el archivo **.bashrc**.
 source ~/.bashrc
 ```
 
-Paso 8. Ahora descarga **Derby** para usarlo como metastore con Apache Hive, escribe el siguiente comando.
+Paso 8. Descargar **Derby** para usarlo como metastore con Apache Hive, escribir el siguiente comando.
 
 ```
 wget https://downloads.apache.org//db/derby/db-derby-10.14.2.0/db-derby-10.14.2.0-bin.tar.gz
 ```
 
-Paso 9. **Descomprime** el archivo de Derby descargado, escribe el siguiente comando:
+Paso 9. **Descomprimir** el archivo de Derby descargado, escribir el siguiente comando:
 
 ```
 tar -xzvf db-derby-10.14.2.0-bin.tar.gz
 ```
 
-Paso 10. **Mueve** el directorio a la carpeta **/usr/local/**, escribe el siguiente comando:
+Paso 10. **Mover** el directorio a la carpeta **/usr/local/**, escribir el siguiente comando:
 
 ```
 sudo mv db-derby-10.14.2.0-bin /usr/local/derby
 ```
 
-Paso 11. Configura las **variables de entorno** de Hive y Derby. Abre el archivo **~/.bashrc**, escribe el siguiente comando:
+Paso 11. Configurar las **variables de entorno** de Hive y Derby. Abrir el archivo **~/.bashrc**, escribir el siguiente comando:
 
 ```
 nano ~/.bashrc
 ```
 
-Paso 12. Ahora ve hasta la **última línea** del archivo, como lo muestra la imagen. Debajo de las variables anteriores, copia y pega las siguientes.
+Paso 12. Ahora ir hasta la **última línea** del archivo, como lo muestra la imagen. Debajo de las variables anteriores, copiar y pegar las siguientes.
 
 ```
 export DERBY_HOME=/usr/local/derby
@@ -555,13 +555,13 @@ export PATH=$PATH:$DERBY_HOME/bin
 
 **```CTRL + X```** **`Enter`** `Para salir del archivo`
 
-Paso 13. **Actualiza** el sistema con **las variables** de entorno configuradas, escribe el siguiente comando:
+Paso 13. **Actualizar** el sistema con **las variables** de entorno configuradas, escribir el siguiente comando:
 
 ```
 source ~/.bashrc
 ```
 
-Paso 14. Finalmente, copia la librería de **derbytools** en la carpeta de **hive**, copia el siguiente comando.
+Paso 14. Finalmente, copiar la librería de **derbytools** en la carpeta de **hive**, copiar el siguiente comando.
 
 ```
 sudo cp /usr/local/derby/lib/derbytools.jar /usr/local/hive/lib/
@@ -569,7 +569,7 @@ sudo cp /usr/local/derby/lib/derbytools.jar /usr/local/hive/lib/
 
 **¡TAREA FINALIZADA!**
 
-Has completado la instalación de Apache Hive y Derby.
+Haz completado la instalación de Apache Hive y Derby.
 
 ### Tarea 5. Configuración de Apache Hive con Derby
 
