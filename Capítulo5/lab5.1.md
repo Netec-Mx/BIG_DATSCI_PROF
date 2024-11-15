@@ -201,7 +201,7 @@ Paso 17. Crear el archivo de datos llamado **tiny_graph.txt** para realizar una 
 nano /app/hadoop/tmp/tiny_graph.txt
 ```
 
-Paso 18. Agregar los siguientes datos al archivo que está abierto y guardalo.
+Paso 18. Agregar los siguientes datos al archivo que está abierto y guardarlo.
 
 ```
 [0,0,[[1,1],[3,3]]]
@@ -245,7 +245,7 @@ Paso 22. Ejecutar el siguiente comando en la terminal.
 $HADOOP_HOME/bin/hadoop jar giraph-examples/target/giraph-examples-1.4.0-SNAPSHOT-for-hadoop-1.2.1-jar-with-dependencies.jar org.apache.giraph.GiraphRunner org.apache.giraph.examples.SimpleShortestPathsComputation -vif org.apache.giraph.io.formats.JsonLongDoubleFloatDoubleVertexInputFormat -vip /user/giraph/tiny_graph.txt -vof org.apache.giraph.io.formats.IdWithValueTextOutputFormat -op /user/giraph/output/shortestpaths -w 1
 ```
 
-**NOTA:** El error en la imagen es normal para este laboratorio es una tarea **demostrativa**, avanza a las siguientes tareas.
+**NOTA:** El error en la imagen es normal para este laboratorio es una tarea **demostrativa**, avanzar a las siguientes tareas.
 
 ![giraph](../images/c5/img12.png)
 
