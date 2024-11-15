@@ -1,6 +1,6 @@
-### Configuración y Despliegue de un Proyecto de Big Data utilizando Azure HDInsight
+# Práctica 9. Configuración y despliegue de un proyecto de Big Data utilizando Azure HDInsight
 
-### Objetivo de la práctica:
+## Objetivo de la práctica:
 
 Al finalizar la práctica, serás capaz de:
 
@@ -8,7 +8,7 @@ Al finalizar la práctica, serás capaz de:
 - Ejecutar una consulta en Hive utilizando el clúster HDInsight.
 - Realizar un análisis sobre datos almacenados en Hadoop.
 
-### Duración aproximada:
+## Duración aproximada:
 - 40 minutos.
 
 ---
@@ -19,17 +19,17 @@ Al finalizar la práctica, serás capaz de:
 
 ### Instrucciones 
 
-### Tarea 1. Creación del Clúster de HDInsight en Azure.
+### Tarea 1. Creación del clúster de HDInsight en Azure.
 
 En esta tarea, crearemos un clúster de Hadoop en HDInsight utilizando el portal de Azure, detallando cada paso para su configuración básica.
 
-Paso 1. Primero accederas a tu cuenta de Azure.
+Paso 1. Primero acceder a la cuenta de Azure.
 
-Paso 2. Accede al portal de Azure [**AQUÍ**](https://portal.azure.com/)
+Paso 2. Acceder al portal de Azure [**AQUÍ**](https://portal.azure.com/)
 
-Paso 3. Inicia sesión con el **usuario y contraseña** otorgados al inicio de este laboratorio.
+Paso 3. Iniciar sesión con el **usuario y contraseña** otorgados al inicio de este laboratorio.
 
-Paso 4. En la barra de búsqueda, escribe **HDInsight** y selecciona **HDInsight Clusters**.
+Paso 4. En la barra de búsqueda, escribir **HDInsight** y seleccionar **HDInsight Clusters**.
 
 ![azportal](../images/c92/img1.png)
 
@@ -37,30 +37,30 @@ Paso 5. Haz clic en **Create** para iniciar la configuración de un nuevo clúst
 
 ![azportal](../images/c92/img2.png)
 
-Paso 6. En la sección **Basics** de **Create HDInsight cluster**, configura las siguientes propiedades como se muestra en la tabla de abajo.
+Paso 6. En la sección **Basics** de **Create HDInsight cluster**, configurar las siguientes propiedades como se muestra en la tabla de abajo.
 
 | Parametro | Valor |
 | --------- | ----- |
-| Subscription | Selecciona la suscripción mencionada al inicio del curso |
-| Resource group | Clic en **Create new** escribe el nombre **hadoop-rg-`XXXX`** sustituye las **X** por las letras iniciales de tu nombre, Clic en **OK**. |
-| Cluster name | hadoop-**`XXXX`**-**`YYY`** - Cambia las **X** por las iniciales de tu nombre y las **Y** por 3 numeros **aleatorios**   |
-| Cluster type | Clic en **Cluster type** Selecciona **Hadoop** de la lista lateral derecha.|
+| Subscription | Seleccionar la suscripción mencionada al inicio del curso |
+| Resource group | Clic en **Create new** escribir el nombre **hadoop-rg-`XXXX`** sustituir las **X** por las letras iniciales de tu nombre, Clic en **OK**. |
+| Cluster name | hadoop-**`XXXX`**-**`YYY`** - Cambiar las **X** por las iniciales de tu nombre y las **Y** por 3 numeros **aleatorios**   |
+| Cluster type | Clic en **Cluster type** Seleccionar **Hadoop** de la lista lateral derecha.|
 | Cluster login username | hadoopuser |
 | Cluster login password | Pa55w.rd7482 |
 | Confirm cluster login password | Pa55w.rd7482 |
 
-**NOTA:** Para esta sección, el resto de los valores se quedarán por defecto. Continúa con el siguiente paso.
+**NOTA:** Para esta sección, el resto de los valores se quedarán por defecto. Continuar con el siguiente paso.
 
 ![azportal](../images/c92/img3.png)
 ![azportal](../images/c92/img4.png)
 
-Paso 7. En la parte inferior de la configuración, da clic en el botón **Review + create**.
+Paso 7. En la parte inferior de la configuración, dar clic en el botón **Review + create**.
 
-Paso 8. Verifica que la **Validación** haya pasado correctamente y da clic en el botón **Create**.
+Paso 8. Verificar que la **Validación** haya pasado correctamente y dar clic en el botón **Create**.
 
 ![azportal](../images/c92/img5.png)
 
-Paso 9. Espera a que termine el proceso de creación del clúster. 
+Paso 9. Esperar a que termine el proceso de creación del clúster. 
 
 ![azportal](../images/c92/img6.png)
 
@@ -70,83 +70,83 @@ Paso 9. Espera a que termine el proceso de creación del clúster.
 
 **¡TAREA FINALIZADA!**
 
-Has completado la creación del clúster de Azure HDInsight con Apache Hadoop y Apache Hive instalados.
+Haz completado la creación del clúster de Azure HDInsight con Apache Hadoop y Apache Hive instalados.
 
-### Tarea 2. Carga de Datos en el Almacenamiento de Hadoop.
+### Tarea 2. Carga de datos en el almacenamiento de Hadoop
 
 En esta tarea, subirás un conjunto de datos de ejemplo al almacenamiento predeterminado asociado con el clúster Hadoop en HDInsight.
 
-Paso 1. El archivo llamado **ventasejemplo.csv** ya está guardado en un bucket de S3 externo. Copia y pega la URL en tu navegador para descargar el archivo en tu equipo.
+Paso 1. El archivo llamado **ventasejemplo.csv** ya está guardado en un bucket de S3 externo. Copiar y pegar la URL en el navegador para descargar el archivo en el equipo.
 
 ```
 https://s3.us-west-2.amazonaws.com/labs.netec.com/courses/BigDataSciencePro/V0.0.1/ventasejemplo.csv
 ```
 
-Paso 2. Cuando ya haya terminado de crearse el clúster, da clic en el botón **Go to resource**.
+Paso 2. Cuando ya haya terminado de crearse el clúster, dar clic en el botón **Go to resource**.
 
 ![azportal](../images/c92/img7.png)
 
-Paso 3. Dentro de la interfaz del clúster creado, da clic en la opción **Settings** y luego selecciona **Storage accounts**.
+Paso 3. Dentro de la interfaz del clúster creado, dar clic en la opción **Settings** y luego seleccionar **Storage accounts**.
 
 ![azportal](../images/c92/img8.png)
 
-Paso 4. Selecciona el contenedor de almacenamiento creado para el clúster.
+Paso 4. Seleccionar el contenedor de almacenamiento creado para el clúster.
 
 ![azportal](../images/c92/img9.png)
 
-Paso 5. Ahora da clic en el botón **Upload**.
+Paso 5. Dar clic en el botón **Upload**.
 
 ![azportal](../images/c92/img10.png)
 
-Paso 6. **Busca y carga** el archivo **ventasejemplo.csv** que descargaste en el primer paso de esta tarea.
+Paso 6. **Buscar y cargar** el archivo **ventasejemplo.csv** que descargaste en el primer paso de esta tarea.
 
-Paso 7. Selecciona el **contenedor existente** y da clic en la opción **Advanced**.
+Paso 7. Seleccionar el **contenedor existente** y dar clic en la opción **Advanced**.
 
-Paso 8. En la opción **Upload to folder** escribe **`data`**.
+Paso 8. En la opción **Upload to folder** escribir **`data`**.
 
-Paso 9. Da clic en el botón **Upload**.
+Paso 9. Dar clic en el botón **Upload**.
 
 ![azportal](../images/c92/img11.png)
 
 **¡TAREA FINALIZADA!**
 
-Has completado la carga de datos al clúster de Azure HDInsight.
+Haz completado la carga de datos al clúster de Azure HDInsight.
 
-### Tarea 3. Creación de una Tabla Hive y Consultas.
+### Tarea 3. Creación de una tabla Hive y consultas.
 
 En esta tarea, crearás una tabla en Hive utilizando el dataset cargado y ejecutarás una consulta simple para verificar los datos.
 
-Paso 1. Regresa a la página inicial del clúster de Hadoop y da clic en el nombre de tu clúster **en la esquina superior izquierda**.
+Paso 1. Regresar a la página inicial del clúster de Hadoop y dar clic en el nombre del clúster **en la esquina superior izquierda**.
 
 ![azportal](../images/c92/img12.png)
 
-Paso 2. Da clic en la opción de **Overview**.
+Paso 2. Dar clic en la opción de **Overview**.
 
 ![azportal](../images/c92/img13.png)
 
-Paso 3. Da clic en la opción **Ambari home** para conectarte al clúster.
+Paso 3. Dar clic en la opción **Ambari home** para conectarte al clúster.
 
 ![azportal](../images/c92/img14.png)
 
-Paso 4. En la nueva pestaña del navegador que se abrió, coloca las credenciales del clúster **hadoopuser** y **Pa55w.rd7482** y da clic en **Iniciar sesión**.
+Paso 4. En la nueva pestaña del navegador que se abrió, colocar las credenciales del clúster **hadoopuser** y **Pa55w.rd7482** y dar clic en **Iniciar sesión**.
 
 ![azportal](../images/c92/img15.png)
 
-Paso 5. En el menú lateral izquierdo, da clic en la opción **Hive**.
+Paso 5. En el menú lateral izquierdo, dar clic en la opción **Hive**.
 
 ![azportal](../images/c92/img16.png)
 
-Paso 6. Verifica que los servicios de **Hive** estén todos activos.
+Paso 6. Verificar que los servicios de **Hive** estén todos activos.
 
 ![azportal](../images/c92/img17.png)
 
-Paso 7. Ahora da clic en las vistas y selecciona la vista de **Hive View 2.0**.
+Paso 7. Dar clic en las vistas y seleccionar la vista de **Hive View 2.0**.
 
 ![azportal](../images/c92/img18.png)
 
 Paso 8. Espera a que carguen los procesos.
 
-Paso 9. En la sección de **QUERY** copia y pega la consulta para crear la tabla externa en Hive.
+Paso 9. En la sección de **QUERY** copiar y pegar la consulta para crear la tabla externa en Hive.
 
 ```
 CREATE EXTERNAL TABLE ventas (
@@ -167,13 +167,13 @@ TBLPROPERTIES ("skip.header.line.count"="1");
 
 ![azportal](../images/c92/img19.png)
 
-Paso 10. Da clic en el botón **Execute**.
+Paso 10. Dar clic en el botón **Execute**.
 
-Paso 11. Verifica que la tabla se haya creado exitosamente en el panel lateral derecho.
+Paso 11. Verificar que la tabla se haya creado exitosamente en el panel lateral derecho.
 
 ![azportal](../images/c92/img20.png)
 
-Paso 12. Verifica que puedas obtener los datos de la tabla creada, escribiendo la consulta.
+Paso 12. Verificar que puedas obtener los datos de la tabla creada, escribiendo la consulta.
 
 **NOTA:** Puedes borrar el contenido de la primera consulta.
 
@@ -184,7 +184,7 @@ SELECT * FROM ventas LIMIT 10;
 ![azportal](../images/c92/img21.png)
 ![azportal](../images/c92/img22.png)
 
-Paso 13. Realiza una prueba más para interactuar con la información, copiando y pegando la siguiente consulta.
+Paso 13. Realizar una prueba más para interactuar con la información, copiando y pegando la siguiente consulta.
 
 ```
 SELECT producto, SUM(cantidad * precio_unitario) AS total_ventas
@@ -251,7 +251,7 @@ LIMIT 10;
 
 **¡TAREA FINALIZADA!**
 
-Has completado la creación de la tabla en Apache Hive y un conjunto de consultas para la interacción de los datos.
+Haz completado la creación de la tabla en Apache Hive y un conjunto de consultas para la interacción de los datos.
 
 **LABORATORIO FINALIZADO!**
 
