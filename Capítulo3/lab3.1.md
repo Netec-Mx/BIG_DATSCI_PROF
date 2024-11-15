@@ -80,7 +80,7 @@ Paso 7. **Actualizar el sistema** con las variables de entorno configuradas, esc
 source /home/hadoopuser/.bashrc
 ```
 
-Paso 8. Asegúrate de que el usuario **hadoopuser** tenga acceso a la instalación en **/usr/local/**, copia el siguiente comando.
+Paso 8. Asegúrate de que el usuario **hadoopuser** tenga acceso a la instalación en **/usr/local/**, copiar el siguiente comando.
 
 ```
 sudo chown -R hadoopuser:hadoopuser /usr/local/spark
@@ -128,7 +128,7 @@ mkdir -p /home/hadoopuser/spark_lab_3.1/scripts
 
 ![spark1](../images/c3/img7.png)
 
-Paso 2. Crear un archivo Python para la lectura de datos. Nómbralo **lectura_csv.py** y guardarlo en la carpeta **spark_lab_3.1**.
+Paso 2. Crear un archivo Python para la lectura de datos. Nómbralo **lectura_csv.py** y guárdalo en la carpeta **spark_lab_3.1**.
 
 ```
 sudo nano /home/hadoopuser/spark_lab_3.1/lectura_csv.py
@@ -137,22 +137,22 @@ sudo nano /home/hadoopuser/spark_lab_3.1/lectura_csv.py
 Paso 3. Escribir el siguiente código dentro del archivo, que se encargará de cargar el archivo CSV, **puedes copiar y pegar para no tener errores.**
 
 ```
-# Importar librerías necesarias
+# Importar librerías necesarias.
 from pyspark.sql import SparkSession
 
-# Crear una sesión de Spark
+# Crear una sesión de Spark.
 spark = SparkSession.builder \
     .appName("Lectura de archivo CSV") \
     .getOrCreate()
 
-# Cargar el archivo CSV desde la URL proporcionada
+# Cargar el archivo CSV desde la URL proporcionada.
 df = spark.read.csv("/home/hadoopuser/ventasejemplo.csv", 
                     header=True, inferSchema=True)
 
-# Mostrar las primeras filas del DataFrame
+# Mostrar las primeras filas del DataFrame.
 df.show(5)
 
-# Detener la sesión de Spark
+# Detener la sesión de Spark.
 spark.stop()
 ```
 
@@ -181,31 +181,31 @@ sudo nano /home/hadoopuser/spark_lab_3.1/limpieza_csv.py
 Paso 6. Copiar el siguiente código en el archivo **limpieza_csv.py** que limpia los datos (eliminando duplicados y llenando valores nulos).
 
 ```
-# Importar librerías necesarias
+# Importar librerías necesarias.
 from pyspark.sql import SparkSession
 
-# Crear una sesión de Spark
+# Crear una sesión de Spark.
 spark = SparkSession.builder \
     .appName("Limpieza de datos") \
     .getOrCreate()
 
-# Cargar el archivo CSV desde la ruta local
+# Cargar el archivo CSV desde la ruta local.
 df = spark.read.csv("/home/hadoopuser/ventasejemplo.csv", 
                     header=True, inferSchema=True)
 
-# Eliminar duplicados
+# Eliminar duplicados.
 df_cleaned = df.dropDuplicates()
 
-# Manejar valores nulos
+# Manejar valores nulos.
 df_cleaned = df_cleaned.na.fill({
     'precio_unitario': 0,
     'producto': 'Desconocido'
 })
 
-# Mostrar el DataFrame limpio
+# Mostrar el DataFrame limpio.
 df_cleaned.show(5)
 
-# Detener la sesión de Spark
+# Detener la sesión de Spark.
 spark.stop()
 ```
 
@@ -215,7 +215,7 @@ spark.stop()
 
 ![spark10](../images/c3/img10.png)
 
-Paso 7. Ejecutar el archivo que acabas de crear para verificar que se haya creado correctamente, copia el siguiente comando:
+Paso 7. Ejecutar el archivo que acabas de crear para verificar que se haya creado correctamente, copiar el siguiente comando:
 
 ```
 spark-submit /home/hadoopuser/spark_lab_3.1/limpieza_csv.py
@@ -234,37 +234,37 @@ sudo nano /home/hadoopuser/spark_lab_3.1/transformacion_csv.py
 Paso 9. Copiar el siguiente código en el archivo **transformacion_csv.py** que transforma los datos (seleccionando columnas, filtrando y realizando agregaciones).
 
 ```
-# Importar librerías necesarias
+# Importar librerías necesarias.
 from pyspark.sql import SparkSession
 
-# Crear una sesión de Spark
+# Crear una sesión de Spark.
 spark = SparkSession.builder \
     .appName("Transformaciones básicas") \
     .getOrCreate()
 
-# Cargar los datos limpios desde la ruta local
+# Cargar los datos limpios desde la ruta local.
 df_cleaned = spark.read.csv("/home/hadoopuser/ventasejemplo.csv", 
                             header=True, inferSchema=True).dropDuplicates().na.fill({
                                 'precio_unitario': 0,
                                 'producto': 'Desconocido'
                             })
 
-# Selección de columnas importantes
+# Selección de columnas importantes.
 df_selected = df_cleaned.select("producto", "precio_unitario", "cantidad", "fecha_venta")
 
-# Filtrado de filas (por ejemplo, precio_unitario mayor que 100)
+# Filtrado de filas (por ejemplo, precio_unitario mayor que 100).
 df_filtered = df_selected.filter(df_selected["precio_unitario"] > 100)
 
-# Agregación por producto (suma de precio_unitario y cantidad)
+# Agregación por producto (suma de precio_unitario y cantidad).
 df_aggregated = df_filtered.groupBy("producto") \
     .agg({"precio_unitario": "sum", "cantidad": "sum"}) \
     .withColumnRenamed("sum(precio_unitario)", "total_precio_unitario") \
     .withColumnRenamed("sum(cantidad)", "total_cantidad")
 
-# Mostrar el resultado de la agregación
+# Mostrar el resultado de la agregación.
 df_aggregated.show(5)
 
-# Detener la sesión de Spark
+# Detener la sesión de Spark.
 spark.stop()
 ```
 
@@ -274,7 +274,7 @@ spark.stop()
 
 ![spark10](../images/c3/img12.png)
 
-Paso 10. Ejecutar el archivo que acabas de crear para verificar que se haya creado correctamente, copia el siguiente comando:
+Paso 10. Ejecutar el archivo que acabas de crear para verificar que se haya creado correctamente, copiar el siguiente comando:
 
 ```
 spark-submit /home/hadoopuser/spark_lab_3.1/transformacion_csv.py
@@ -298,49 +298,49 @@ from pyspark.sql import SparkSession
 import shutil
 import os
 
-# Crear una sesión de Spark
+# Crear una sesión de Spark.
 spark = SparkSession.builder \
     .appName("Guardar resultados") \
     .getOrCreate()
 
-# Cargar los datos limpios desde la ruta local
+# Cargar los datos limpios desde la ruta local.
 df_cleaned = spark.read.csv("/home/hadoopuser/ventasejemplo.csv", 
                             header=True, inferSchema=True).dropDuplicates().na.fill({
                                 'precio_unitario': 0,
                                 'producto': 'Desconocido'
                             })
 
-# Seleccionar y filtrar los datos
+# Seleccionar y filtrar los datos.
 df_selected = df_cleaned.select("producto", "precio_unitario", "cantidad", "fecha_venta")
 
-# Filtrar los datos donde el precio_unitario es mayor que 100
+# Filtrar los datos donde el precio_unitario es mayor que 100.
 df_filtered = df_selected.filter(df_selected["precio_unitario"] > 100)
 
-# Agregación por producto (suma de precio_unitario y cantidad)
+# Agregación por producto (suma de precio_unitario y cantidad).
 df_aggregated = df_filtered.groupBy("producto") \
     .agg({"precio_unitario": "sum", "cantidad": "sum"}) \
     .withColumnRenamed("sum(precio_unitario)", "total_precio_unitario") \
     .withColumnRenamed("sum(cantidad)", "total_cantidad")
 
-# Definir la ruta de salida
+# Definir la ruta de salida.
 output_dir = "/home/hadoopuser/ventas_agrupadas_temp"
 output_file = "/home/hadoopuser/ventas_agrupadas.csv"
 
-# Eliminar el directorio de salida si ya existe
+# Eliminar el directorio de salida si ya existe.
 if os.path.exists(output_dir):
     shutil.rmtree(output_dir)
 
-# Guardar el resultado en un archivo CSV, configurando el modo de escritura como "overwrite"
+# Guardar el resultado en un archivo CSV, configurando el modo de escritura como "overwrite".
 df_aggregated.coalesce(1).write.mode("overwrite").csv(output_dir, header=True)
 
-# Renombrar el archivo generado por Spark a un nombre específico
+# Renombrar el archivo generado por Spark a un nombre específico.
 temp_file = [f for f in os.listdir(output_dir) if f.endswith(".csv")][0]
 shutil.move(f"{output_dir}/{temp_file}", output_file)
 
-# Eliminar la carpeta temporal creada por Spark
+# Eliminar la carpeta temporal creada por Spark.
 shutil.rmtree(output_dir)
 
-# Detener la sesión de Spark
+# Detener la sesión de Spark.
 spark.stop()
 ```
 
@@ -351,7 +351,7 @@ spark.stop()
 ![spark10](../images/c3/img14.png)
 ![spark10](../images/c3/img15.png)
 
-Paso 13. Ejecutar el archivo que acabas de crear para verificar que se haya creado correctamente, copia el siguiente comando:
+Paso 13. Ejecutar el archivo que acabas de crear para verificar que se haya creado correctamente, copiar el siguiente comando:
 
 ```
 spark-submit /home/hadoopuser/spark_lab_3.1/guardado_csv.py
@@ -377,7 +377,7 @@ cat ventas_agrupadas.csv
 
 **¡TAREA FINALIZADA!**
 
-Haz completado la Ingestión y procesamiento de datos usando PySpark.
+Haz completado la ingestión y procesamiento de datos usando PySpark.
 
 ### Tarea 3. Análisis exploratorio de datos (EDA) con PySpark
 
@@ -397,22 +397,22 @@ Paso 3. Agregar el siguiente código en el archivo **calculo_estadistico.py** qu
 # calculo_estadisticas.py
 from pyspark.sql import SparkSession
 
-# Crear una sesión de Spark
+# Crear una sesión de Spark.
 spark = SparkSession.builder \
     .appName("EDA - Cálculo de Estadísticas Descriptivas") \
     .getOrCreate()
 
-# Cargar los datos limpios desde la ruta local
+# Cargar los datos limpios desde la ruta local.
 df_cleaned = spark.read.csv("/home/hadoopuser/ventasejemplo.csv", 
                             header=True, inferSchema=True).dropDuplicates().na.fill({
                                 'precio_unitario': 0,
                                 'producto': 'Desconocido'
                             })
 
-# Cálculo de estadísticas descriptivas
+# Cálculo de estadísticas descriptivas.
 df_cleaned.describe(["precio_unitario", "cantidad"]).show()
 
-# Detener la sesión de Spark
+# Detener la sesión de Spark.
 spark.stop()
 ```
 
@@ -437,15 +437,15 @@ Paso 6. Instalar **Python**, que aunque hemos trabajado con procesamiento no lo 
 ```
 sudo apt install python3-pip -y
 ```
-**NOTA:** Esperar un momento el proceso de instalación, una vez terminado continúa al siguiente paso.
+**NOTA:** Esperar un momento el proceso de instalación, una vez terminado continuar con el siguiente paso.
 
-Paso 7. Instalae **matplotlib**, ya que tampoco lo hemos usado por ende no está instalado, copiar el siguiente código.
+Paso 7. Instalar **matplotlib**, ya que tampoco lo hemos usado por ende no está instalado, copiar el siguiente código.
 
 ```
 sudo apt install python3-matplotlib -y
 ```
 
-**NOTA:** Esperar un momento el proceso de instalación, una vez terminado continúa al siguiente paso.
+**NOTA:** Esperar un momento el proceso de instalación, una vez terminado continuar con el siguiente paso.
 
 Paso 8. Instalar también **Pandas** para interactuar con los **DataFrames** del Script de Spark, copiar el siguiente código.
 
@@ -453,7 +453,7 @@ Paso 8. Instalar también **Pandas** para interactuar con los **DataFrames** del
 sudo apt install python3-pandas -y
 ```
 
-**NOTA:** Esperar un momento el proceso de instalación, una vez terminado continúa al siguiente paso.
+**NOTA:** Esperar un momento el proceso de instalación, una vez terminado continuar con el siguiente paso.
 
 Paso 9. Crear el siguiente archivo llamado **`visualizacion.py`** en la misma ruta que los archivos anteriores.
 
@@ -468,22 +468,22 @@ Paso 10. Agregar el siguiente código en el archivo **visualizacion.py** que vis
 import matplotlib.pyplot as plt
 from pyspark.sql import SparkSession
 
-# Crear una sesión de Spark
+# Crear una sesión de Spark.
 spark = SparkSession.builder \
     .appName("EDA - Visualización de Distribuciones") \
     .getOrCreate()
 
-# Cargar los datos limpios desde la ruta local
+# Cargar los datos limpios desde la ruta local.
 df_cleaned = spark.read.csv("/home/hadoopuser/ventasejemplo.csv", 
                             header=True, inferSchema=True).dropDuplicates().na.fill({
                                 'precio_unitario': 0,
                                 'producto': 'Desconocido'
                             })
 
-# Convertir el DataFrame de PySpark a Pandas para visualización
+# Convertir el DataFrame de PySpark a Pandas para visualización.
 df_pandas = df_cleaned.select("precio_unitario", "cantidad").toPandas()
 
-# Crear un histograma de la columna precio_unitario
+# Crear un histograma de la columna precio_unitario.
 plt.figure(figsize=(10, 6))
 plt.hist(df_pandas["precio_unitario"], bins=20, color='blue', alpha=0.7)
 plt.title("Distribución del Precio Unitario")
@@ -492,7 +492,7 @@ plt.ylabel("Frecuencia")
 plt.grid(True)
 plt.show()
 
-# Crear un histograma de la columna cantidad
+# Crear un histograma de la columna cantidad.
 plt.figure(figsize=(10, 6))
 plt.hist(df_pandas["cantidad"], bins=20, color='green', alpha=0.7)
 plt.title("Distribución de la Cantidad")
@@ -501,7 +501,7 @@ plt.ylabel("Frecuencia")
 plt.grid(True)
 plt.show()
 
-# Detener la sesión de Spark
+# Detener la sesión de Spark.
 spark.stop()
 ```
 
@@ -535,23 +535,23 @@ Paso 14. Agregar el siguiente código en el archivo **analisis.py** que realiza 
 # analisis.py
 from pyspark.sql import SparkSession
 
-# Crear una sesión de Spark
+# Crear una sesión de Spark.
 spark = SparkSession.builder \
     .appName("EDA - Análisis de Correlaciones") \
     .getOrCreate()
 
-# Cargar los datos limpios desde la ruta local
+# Cargar los datos limpios desde la ruta local.
 df_cleaned = spark.read.csv("/home/hadoopuser/ventasejemplo.csv", 
                             header=True, inferSchema=True).dropDuplicates().na.fill({
                                 'precio_unitario': 0,
                                 'producto': 'Desconocido'
                             })
 
-# Calcular la correlación entre precio_unitario y cantidad
+# Calcular la correlación entre precio_unitario y cantidad.
 correlacion = df_cleaned.stat.corr("precio_unitario", "cantidad")
 print(f"Correlación entre Precio Unitario y Cantidad: {correlacion}")
 
-# Detener la sesión de Spark
+# Detener la sesión de Spark.
 spark.stop()
 ```
 
@@ -598,29 +598,29 @@ Paso 3. Agregar el siguiente código en el archivo **division_datos.py** que sep
 # division_datos.py
 from pyspark.sql import SparkSession
 
-# Crear una sesión de Spark
+# Crear una sesión de Spark.
 spark = SparkSession.builder \
     .appName("División del Dataset") \
     .getOrCreate()
 
-# Cargar los datos procesados desde la ruta local
+# Cargar los datos procesados desde la ruta local.
 df_cleaned = spark.read.csv("/home/hadoopuser/ventasejemplo.csv", 
                             header=True, inferSchema=True).dropDuplicates().na.fill({
                                 'precio_unitario': 0,
                                 'producto': 'Desconocido'
                             })
 
-# Seleccionar las columnas necesarias para el modelo
+# Seleccionar las columnas necesarias para el modelo.
 df_cleaned = df_cleaned.withColumnRenamed("cantidad", "label")  # Etiquetar "cantidad" como variable de salida
 
-# Dividir los datos en conjuntos de entrenamiento (80%) y prueba (20%)
+# Dividir los datos en conjuntos de entrenamiento (80%) y prueba (20%).
 train_df, test_df = df_cleaned.randomSplit([0.8, 0.2], seed=42)
 
-# Guardar los datasets en archivos CSV (opcional)
+# Guardar los datasets en archivos CSV (opcional).
 train_df.write.csv("/home/hadoopuser/spark_lab_3.1/mldata/train_data.csv", header=True)
 test_df.write.csv("/home/hadoopuser/spark_lab_3.1/mldata/test_data.csv", header=True)
 
-# Detener la sesión de Spark
+# Detener la sesión de Spark.
 spark.stop()
 ```
 
@@ -630,7 +630,7 @@ spark.stop()
 
 **```CTRL + X```** **`Enter`** `Para salir del archivo`
 
-Paso 4. Ejecutar el archivo que acabas de crear para verificar que se haya creado correctamente, copia el siguiente comando:
+Paso 4. Ejecutar el archivo que acabas de crear para verificar que se haya creado correctamente, copiar el siguiente comando:
 
 ```
 spark-submit /home/hadoopuser/spark_lab_3.1/division_datos.py
@@ -664,31 +664,31 @@ from pyspark.sql import SparkSession
 from pyspark.ml.feature import VectorAssembler
 from pyspark.ml.classification import LogisticRegression
 
-# Crear una sesión de Spark
+# Crear una sesión de Spark.
 spark = SparkSession.builder \
     .appName("Entrenamiento de Modelo de ML") \
     .getOrCreate()
 
-# Cargar el conjunto de entrenamiento
+# Cargar el conjunto de entrenamiento.
 train_df = spark.read.csv("/home/hadoopuser/spark_lab_3.1/mldata/train_data.csv", header=True, inferSchema=True)
 
-# Asegurarse de que la columna 'label' solo tenga dos clases (0 y 1)
+# Asegurarse de que la columna 'label' solo tenga dos clases (0 y 1).
 train_df = train_df.filter(train_df["label"].isin([0, 1]))
 
-# Crear el vector de características
+# Crear el vector de características.
 assembler = VectorAssembler(inputCols=["precio_unitario"], outputCol="features")
 train_data = assembler.transform(train_df)
 
-# Seleccionar el algoritmo de ML - Regresión Logística
+# Seleccionar el algoritmo de ML - Regresión Logística.
 lr = LogisticRegression(maxIter=10, regParam=0.3, elasticNetParam=0.8)
 
-# Entrenar el modelo
+# Entrenar el modelo.
 model = lr.fit(train_data)
 
-# Guardar el modelo entrenado
+# Guardar el modelo entrenado.
 model.save("/home/hadoopuser/spark_lab_3.1/mlmodel/modelo_entrenado")
 
-# Detener la sesión de Spark
+# Detener la sesión de Spark.
 spark.stop()
 ```
 
@@ -698,7 +698,7 @@ spark.stop()
 
 **```CTRL + X```** **`Enter`** `Para salir del archivo`
 
-Paso 9. Ejecutar el archivo que acabas de crear para verificar que se haya creado correctamente, copia el siguiente comando:
+Paso 9. Ejecutar el archivo que acabas de crear para verificar que se haya creado correctamente, copiar el siguiente comando:
 
 ```
 spark-submit /home/hadoopuser/spark_lab_3.1/entrenamiento.py
@@ -733,34 +733,34 @@ from pyspark.ml.evaluation import BinaryClassificationEvaluator
 from pyspark.ml.feature import VectorAssembler
 from pyspark.ml.classification import LogisticRegressionModel
 
-# Crear una sesión de Spark
+# Crear una sesión de Spark.
 spark = SparkSession.builder \
     .appName("Evaluación de Modelo de ML") \
     .getOrCreate()
 
-# Cargar el conjunto de prueba
+# Cargar el conjunto de prueba.
 test_df = spark.read.csv("/home/hadoopuser/spark_lab_3.1/mldata/test_data.csv", header=True, inferSchema=True)
 
-# Asegurarse de que la columna 'label' solo tenga dos clases (0 y 1)
+# Asegurarse de que la columna 'label' solo tenga dos clases (0 y 1).
 test_df = test_df.filter(test_df["label"].isin([0, 1]))
 
-# Crear el vector de características
+# Crear el vector de características.
 assembler = VectorAssembler(inputCols=["precio_unitario"], outputCol="features")
 test_data = assembler.transform(test_df)
 
-# Cargar el modelo entrenado
+# Cargar el modelo entrenado.
 model = LogisticRegressionModel.load("/home/hadoopuser/spark_lab_3.1/mlmodel/modelo_entrenado")
 
-# Realizar predicciones
+# Realizar predicciones.
 predictions = model.transform(test_data)
 
-# Evaluar el rendimiento del modelo usando el evaluador de clasificación binaria
+# Evaluar el rendimiento del modelo usando el evaluador de clasificación binaria.
 evaluator = BinaryClassificationEvaluator(rawPredictionCol="rawPrediction", labelCol="label", metricName="areaUnderROC")
 roc_auc = evaluator.evaluate(predictions)
 
 print(f"Área bajo la curva ROC: {roc_auc}")
 
-# Detener la sesión de Spark
+# Detener la sesión de Spark.
 spark.stop()
 ```
 
