@@ -1,6 +1,6 @@
-### Creación de un Proyecto de Natural Language Processing (NLP)
+# Práctica 7. Creación de un Proyecto de Natural Language Processing (NLP)
 
-### Objetivo de la práctica:
+## Objetivo de la práctica:
 
 Al finalizar la práctica, serás capaz de:
 
@@ -8,7 +8,7 @@ Al finalizar la práctica, serás capaz de:
 - Realizar la limpieza y tokenización de un conjunto de datos de texto.
 - Analizar la frecuencia de palabras y guardar los resultados en un archivo CSV.
 
-### Duración aproximada:
+## Duración aproximada:
 - 50 minutos.
 
 ---
@@ -19,7 +19,7 @@ Al finalizar la práctica, serás capaz de:
 
 ### Instrucciones 
 
-### Tarea 1. Configuración del ambiente para NLP.
+### Tarea 1. Configuración del ambiente para NLP
 
 En esta tarea se instalarán y configurarán las librerías necesarias para trabajar con NLP en Python. También se instalará un entorno virtual para aislar las dependencias del proyecto.
 
@@ -27,11 +27,11 @@ En esta tarea se instalarán y configurarán las librerías necesarias para trab
 
 **NOTA IMPORTANTE:** Usarás el entorno gráfico del sistema operativo Ubuntu, pero **todo lo realizarás por terminal**.
 
-**NOTA:** Abre una **terminal** dentro del sistema de Ubuntu. Recuerda el usuario **hadoopuser** y la contraseña **ubunhadoop**.
+**NOTA:** Abrir una **terminal** dentro del sistema de Ubuntu. Recuerda el usuario **hadoopuser** y la contraseña **ubunhadoop**.
 
-Paso 1. Abre una terminal dentro del sistema operativo de Ubuntu.
+Paso 1. Abrir una terminal dentro del sistema operativo de Ubuntu.
 
-Paso 2. Ahora instala las siguientes dependencias con el siguiente código, cópialo y pégalo en la terminal.
+Paso 2. Instalar las siguientes dependencias con el siguiente código, cópialo y pégalo en la terminal.
 
 **NOTA:** Si ya las tienes instaladas, avanza a la siguiente tarea.
 
@@ -47,7 +47,7 @@ fi
 
 ![NPL](../images/c8/img1.png)
 
-Paso 3. En la misma ruta de tu directorio, verifica si ya está instalado el ambiente virtual de Python; si no, instálalo. Copia el siguiente código en la terminal.
+Paso 3. En la misma ruta del directorio, verificar si ya está instalado el ambiente virtual de Python; si no, instálalo. Copiar el siguiente código en la terminal.
 
 ```
 if ! pip3 show virtualenv &> /dev/null
@@ -58,7 +58,7 @@ else
 fi
 ```
 
-**IMPORTANTE:** Solo en caso de que te aparezca este mensaje al validar el estado del ambiente virtual de Python, ejecuta el siguiente comando.
+**IMPORTANTE:** Solo en caso de que te aparezca este mensaje al validar el estado del ambiente virtual de Python, ejecutar el siguiente comando.
 
 ![NPL](../images/c8/img2.png)
 
@@ -73,7 +73,7 @@ sudo apt install python3-venv -y
 
 ![NPL](../images/c8/img4.png)
 
-Paso 4. Ahora crea un entorno virtual de python, el siguiente codigo bash verificara si ya lo tienes existente y sino lo creara, copialo y pegalo en la terminal.
+Paso 4. Crear un entorno virtual de Python, el siguiente codigo bash verificara si ya lo tienes existente y sino lo creara. Copiar y pegar en la terminal.
 
 ```
 if [ ! -d "nlp-project" ]; then
@@ -91,7 +91,7 @@ fi
 
 ![NPL](../images/c8/img5.png)
 
-Paso 5. Realiza la activación del entorno virtual. El comando simple es **`source venv/bin/activate`**, pero usa este método más elegante para activarlo.
+Paso 5. Realizar la activación del entorno virtual. El comando simple es **`source venv/bin/activate`**, pero, se puede usar este método más elegante para activarlo.
 
 ```
 source venv/bin/activate
@@ -104,7 +104,7 @@ fi
 
 ![NPL](../images/c8/img6.png)
 
-Paso 6. Finalmente, dentro del ambiente virtual, instala las librerías necesarias para trabajar con NLP. Copia y pega el siguiente código bash.
+Paso 6. Finalmente, dentro del ambiente virtual, instalar las librerías necesarias para trabajar con NLP. Copiar y pegar el siguiente código bash.
 
 **NOTA:** Para el ejemplo, usarás las librerías **nltk** y **pandas**.
 
@@ -121,13 +121,13 @@ fi
 
 **¡TAREA FINALIZADA!**
 
-Has completado la descarga e instalación de las librerías para el ejemplo de NLP.
+Haz completado la descarga e instalación de las librerías para el ejemplo de NLP.
 
-### Tarea 2. Preparación de Datos.
+### Tarea 2. Preparación de datos
 
 En esta tarea, descargarás un dataset de ejemplo, lo cargarás con pandas y limpiarás los datos de texto.
 
-Paso 1. Ahora, en la terminal, descarga el conjunto de datos; si no existe el archivo, se descargará.
+Paso 1. Ahora, en la terminal, descargar el conjunto de datos; si no existe el archivo, se descargará.
 
 **NOTA:** El conjunto de datos es sobre reseñas de películas. 
 
@@ -143,13 +143,13 @@ fi
 ![NPL](../images/c8/img8.png)
 
 
-Paso 2. Crea un archivo llamado **`carga.py`**, escribe el siguiente comando en la terminal.
+Paso 2. Crear un archivo llamado **`carga.py`**, escribir el siguiente comando en la terminal.
 
 ```
 nano carga.py
 ```
 
-Paso 3. Ahora copia el siguiente código en el archivo **carga.py**. El script visualiza el dataset y valida que el archivo se cargue correctamente en un DataFrame de pandas.
+Paso 3. Copiar el siguiente código en el archivo **carga.py**. El script visualiza el dataset y valida que el archivo se cargue correctamente en un DataFrame de pandas.
 
 ```
 # carga.py
@@ -180,7 +180,7 @@ if __name__ == "__main__":
 
 ![NPL](../images/c8/img9.png)
 
-Paso 4. Ejecuta el archivo Python con el siguiente comando en la terminal.
+Paso 4. Ejecutar el archivo Python con el siguiente comando en la terminal.
 
 ```
 python carga.py
@@ -188,13 +188,13 @@ python carga.py
 
 ![NPL](../images/c8/img10.png)
 
-Paso 5. Crea un archivo llamado **`limpieza.py`**, escribe el siguiente comando en la terminal.
+Paso 5. Crear un archivo llamado **`limpieza.py`**, escribir el siguiente comando en la terminal.
 
 ```
 nano limpieza.py
 ```
 
-Paso 6. Ahora copia el siguiente código en el archivo **limpieza.py**. El script verifica si la limpieza de texto (eliminación y estandarización de datos) se ha realizado adecuadamente.
+Paso 6. Copiar el siguiente código en el archivo **limpieza.py**. El script verifica si la limpieza de texto (eliminación y estandarización de datos) se ha realizado adecuadamente.
 
 ```
 # limpieza.py
@@ -202,10 +202,10 @@ Paso 6. Ahora copia el siguiente código en el archivo **limpieza.py**. El scrip
 import re
 from carga import load_reviews
 
-# Cargar el DataFrame
+# Cargar el DataFrame.
 df = load_reviews()
 
-# Función de limpieza
+# Función de limpieza.
 def clean_text(text):
     text = re.sub(r'[^\w\s]', '', text)  # Eliminar caracteres especiales
     text = text.lower()  # Convertir a minúsculas
@@ -222,7 +222,7 @@ print(df['clean_review'].head())
 
 ![NPL](../images/c8/img11.png)
 
-Paso 7. Ejecuta el archivo Python con el siguiente comando en la terminal.
+Paso 7. Ejecutar el archivo Python con el siguiente comando en la terminal.
 
 ```
 python limpieza.py
@@ -232,19 +232,19 @@ python limpieza.py
 
 **¡TAREA FINALIZADA!**
 
-Has completado la preparación de datos en el ambiente virtual de Python para el ejemplo de NLP.
+Haz completado la preparación de datos en el ambiente virtual de Python para el ejemplo de NLP.
 
-### Tarea 3. Tokenización y Análisis de Frecuencia.
+### Tarea 3. Tokenización y análisis de frecuencia
 
 En esta tarea, realizarás el proceso de tokenizar las reseñas de texto y llevarás a cabo un análisis de frecuencia de palabras.
 
-Paso 1. Primero, crea el archivo llamado **analisis_frecuencia.py**. Copia el siguiente comando.
+Paso 1. Crear el archivo llamado **analisis_frecuencia.py**. Copiar el siguiente comando.
 
 ```
 nano analisis_frecuencia.py
 ```
 
-Paso 2. Ahora copia y pega el siguiente código para realizar la tokenización y el análisis de frecuencia.
+Paso 2. Copiar y pegar el siguiente código para realizar la tokenización y el análisis de frecuencia.
 
 ```
 # analisis_frecuencia.py
@@ -255,16 +255,16 @@ from collections import Counter
 import os
 import nltk
 
-# Asegúrate de que NLTK tenga los recursos necesarios
+# Asegúrate de que NLTK tenga los recursos necesarios.
 nltk.download('punkt')
 
-# Función para limpiar el texto
+# Función para limpiar el texto.
 def clean_text(text):
     text = re.sub(r'[^\w\s]', '', text)  # Eliminar caracteres especiales
     text = text.lower()  # Convertir a minúsculas
     return text
 
-# Cargar las reseñas
+# Cargar las reseñas.
 reviews_dir = 'movie_reviews/movie_reviews/pos'  # Ruta corregida
 print("Buscando reseñas en el directorio:", reviews_dir)
 reviews = []
@@ -274,21 +274,21 @@ if os.path.exists(reviews_dir):
         with open(os.path.join(reviews_dir, filename), 'r') as file:
             reviews.append(file.read())
 
-# Verifica que las reseñas se hayan cargado
+# Verificar que las reseñas se hayan cargado.
 if not reviews:
     print("No se encontraron reseñas en el directorio especificado.")
 else:
     df = pd.DataFrame(reviews, columns=['review'])
 
-    # Limpiar y tokenizar las reseñas
+    # Limpiar y tokenizar las reseñas.
     df['clean_review'] = df['review'].apply(clean_text)
     df['tokens'] = df['clean_review'].apply(word_tokenize)
 
-    # Análisis de frecuencia de palabras
+    # Análisis de frecuencia de palabras.
     all_words = [word for tokens in df['tokens'] for word in tokens]
     word_freq = Counter(all_words)
 
-    # Mostrar las 10 palabras más comunes
+    # Mostrar las 10 palabras más comunes.
     if word_freq:
         print("Las 10 palabras más comunes son:", word_freq.most_common(10))
     else:
@@ -302,7 +302,7 @@ else:
 ![NPL](../images/c8/img13.png)
 ![NPL](../images/c8/img14.png)
 
-Paso 3. Antes de ejecutar el archivo, instala las siguientes dependencias de **NLTK-PUNKT_TAB**.
+Paso 3. Antes de ejecutar el archivo, instalar las siguientes dependencias de **NLTK-PUNKT_TAB**.
 
 ```
 python
@@ -319,9 +319,9 @@ nltk.download('punkt_tab')
 
 ![NPL](../images/c8/img15.png)
 
-**NOTA:** Para salir del modo interactivo de Python, ejecuta **`exit()`** o **`CTRL + d`**.
+**NOTA:** Para salir del modo interactivo de Python, ejecutar **`exit()`** o **`CTRL + d`**.
 
-Paso 4. Desde la terminal, navega a la carpeta del proyecto y asegúrate de que el entorno virtual esté activado. Luego, ejecuta el archivo con el siguiente comando.
+Paso 4. Desde la terminal, navegar a la carpeta del proyecto y asegúrate de que el entorno virtual esté activado. Luego, ejecutar el archivo con el siguiente comando.
 
 ```
 python analisis_frecuencia.py
@@ -331,19 +331,19 @@ python analisis_frecuencia.py
 
 **¡TAREA FINALIZADA!**
 
-Has completado el proceso de tokenización de palabras para el ejemplo de NLP.
+Haz completado el proceso de tokenización de palabras para el ejemplo de NLP.
 
-### Tarea 4. Guardar Resultados.
+### Tarea 4. Guardar resultados
 
 En esta tarea, guardarás los resultados del análisis de frecuencia en un archivo CSV.
 
-Paso 1. Primero, crea el archivo llamado **guardar_resultados.py**. Copia el siguiente comando.
+Paso 1. Crear el archivo llamado **guardar_resultados.py**. Copiar el siguiente comando.
 
 ```
 nano guardar_resultados.py
 ```
 
-Paso 2. Ahora copia y pega el siguiente contenido que guardará los resultados del análisis de frecuencia en un archivo CSV.
+Paso 2. Copiar y pegar el siguiente contenido que guardará los resultados del análisis de frecuencia en un archivo CSV.
 
 ```
 import pandas as pd
@@ -351,13 +351,13 @@ import os
 from collections import Counter
 import re
 
-# Función para limpiar el texto
+# Función para limpiar el texto.
 def clean_text(text):
     text = re.sub(r'[^\w\s]', '', text)  # Eliminar caracteres especiales
     text = text.lower()  # Convertir a minúsculas
     return text
 
-# Cargar las reseñas
+# Cargar las reseñas.
 reviews_dir = 'movie_reviews/movie_reviews/pos'
 reviews = []
 if os.path.exists(reviews_dir):
@@ -365,23 +365,23 @@ if os.path.exists(reviews_dir):
         with open(os.path.join(reviews_dir, filename), 'r') as file:
             reviews.append(file.read())
 
-# Crear DataFrame
+# Crear DataFrame.
 df = pd.DataFrame(reviews, columns=['review'])
 
-# Limpiar las reseñas
+# Limpiar las reseñas.
 df['clean_review'] = df['review'].apply(clean_text)
 
-# Contar la frecuencia de palabras
+# Contar la frecuencia de palabras.
 word_freq = Counter()
 for review in df['clean_review']:
     for word in review.split():
         word_freq[word] += 1
 
-# Guardar los resultados en un archivo CSV
+# Guardar los resultados en un archivo CSV.
 freq_df = pd.DataFrame(word_freq.most_common(), columns=['word', 'frequency'])
 freq_df.to_csv('pal_frequentes.csv', index=False)
 
-# Verificar si el archivo se guardó correctamente
+# Verificar si el archivo se guardó correctamente.
 if os.path.exists('pal_frequentes.csv'):
     print("Resultados guardados correctamente en pal_frequentes.csv.")
 else:
@@ -395,7 +395,7 @@ else:
 ![NPL](../images/c8/img17.png)
 ![NPL](../images/c8/img19.png)
 
-Paso 3. Desde la terminal, navega a la carpeta del proyecto y asegúrate de que el entorno virtual esté activado. Luego, ejecuta el archivo con el siguiente comando.
+Paso 3. Desde la terminal, navegar a la carpeta del proyecto y asegúrate de que el entorno virtual esté activado. Luego, ejecutar el archivo con el siguiente comando.
 
 ```
 python guardar_resultados.py
@@ -403,7 +403,7 @@ python guardar_resultados.py
 
 ![NPL](../images/c8/img18.png)
 
-Paso 4. Comprueba si el archivo `pal_frequentes.csv` se ha creado correctamente en el directorio del proyecto.
+Paso 4. Comprobar si el archivo `pal_frequentes.csv` se ha creado correctamente en el directorio del proyecto.
 
 ```
 cat pal_frequentes.csv
@@ -415,13 +415,13 @@ cat pal_frequentes.csv
 
 **NOTA:** Esto debería mostrar el contenido del archivo CSV en la terminal, con las palabras y su frecuencia.
 
-Paso 5. Una vez terminado, sal del ambiente virtual de Python, escribe el siguiente comando.
+Paso 5. Una vez terminado, salir del ambiente virtual de Python, escribir el siguiente comando.
 
 ```
 deactivate
 ```
 
-Paso 6. Si necesitas volver a activarlo, escribe el siguiente comando.
+Paso 6. Si necesitas volver a activarlo, escribir el siguiente comando.
 
 ```
 source venv/bin/activate
@@ -429,7 +429,7 @@ source venv/bin/activate
 
 **¡TAREA FINALIZADA!**
 
-Has completado el guardado de la tokenización de palabras.
+Haz completado el guardado de la tokenización de palabras.
 
 **LABORATORIO FINALIZADO!**
 
