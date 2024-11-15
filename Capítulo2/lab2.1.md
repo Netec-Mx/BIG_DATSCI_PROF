@@ -27,7 +27,7 @@ En esta tarea realizarás la instalación de Apache Hadoop.
 
 **NOTA IMPORTANTE:** Usarás el entorno gráfico del sistema operativo UBUNTU, pero **todo lo realizarás por terminal**.
 
-**NOTA:** Abre una **terminal** dentro del sistema de UBUNTU.
+**NOTA:** Abrir una **terminal** dentro del sistema de UBUNTU.
 
 Paso 1. Iniciar sesión como **root**, recuerda la contraseña es: **Pa55w.rd**
 
@@ -145,7 +145,7 @@ Paso 16. Ir hasta la **última línea** del archivo, como lo muestra la imagen.
 
 ![hadoop4](../images/c2/img10.png)
 
-Paso 17. En esa última línea, añadir **(copia y pega)** las siguientes líneas al final del archivo **~/.bashrc**.
+Paso 17. En esa última línea, añadir **(copiar y pegar)** las siguientes líneas al final del archivo **~/.bashrc**.
 
 ```
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
@@ -167,7 +167,7 @@ Paso 18. **Para guardar y cerrar** el archivo nano, escribir la siguiente combin
 
 **```CTRL + X```** **`Enter`** `Para salir del archivo`
 
-Paso 19. **Actualiza el sistema** con las variables de entorno configuradas, escribir el siguiente comando:
+Paso 19. **Actualizar el sistema** con las variables de entorno configuradas, escribir el siguiente comando:
 
 ```
 source ~/.bashrc
@@ -209,7 +209,7 @@ Paso 2. Editar el archivo llamado **hadoop-env.sh** y verificar que esté la var
 nano $HADOOP_HOME/etc/hadoop/hadoop-env.sh
 ```
 
-**NOTA:** Asegúrate de que esté configurada la variable **JAVA_HOME**, si no, copia y pega el siguiente comando.
+**NOTA:** Asegúrate de que esté configurada la variable **JAVA_HOME**, si no, copiar y pegar el siguiente comando.
 
 ```
 /usr/lib/jvm/java-8-openjdk-amd64
@@ -244,7 +244,7 @@ Paso 4. Borrar la sección **configuration** y pegar el siguiente código en su 
 
 **```CTRL + X```** **`Enter`** `Para salir del archivo`
 
-Paso 5. Editar el archivo **hdfs-site.xml** para definir los directorios de almacenamiento de los datos, copia el siguiente código:
+Paso 5. Editar el archivo **hdfs-site.xml** para definir los directorios de almacenamiento de los datos, copiar el siguiente código:
 
 ```
 nano $HADOOP_HOME/etc/hadoop/hdfs-site.xml
@@ -461,7 +461,7 @@ Haz completado la inicialización de los servicios de Apache Hadoop.
 
 En la siguiente tarea realizarás los pasos para la instalación de Apache Hive.
 
-**NOTA:** Recuerda que seguimos configurando con el usuario **hadoopuser**. Si se cerró la sesión, iníciala nuevamente.
+**NOTA:** Recuerda que seguimos configurando con el usuario **hadoopuser**. Si se cerró la sesión, iniciarla nuevamente.
 
 Paso 1. Descargar la **última versión de Apache Hive** desde el sitio oficial, escribir el siguiente comando:
 
@@ -493,7 +493,7 @@ Paso 4. Otorgar permisos de acceso a **hadoopuser** para la carpeta de **hive**.
 sudo chown -R hadoopuser:hadoopuser /usr/local/hive
 ```
 
-Paso 5. Ahora abrir el archivo **.bashrc** para agregar las variables de entorno de **Hive**, copiar el siguiente comando.
+Paso 5. Abrir el archivo **.bashrc** para agregar las variables de entorno de **Hive**, copiar el siguiente comando.
 
 ```
 nano ~/.bashrc
@@ -575,7 +575,7 @@ Haz completado la instalación de Apache Hive y Derby.
 
 Hive requiere varios archivos de configuración. Crearemos y editaremos estos archivos.
 
-Paso 1. Crear un directorio donde Hive almacenará los datos de las tablas. Usa **sudo** si es necesario para crear el directorio:
+Paso 1. Crear un directorio donde Hive almacenará los datos de las tablas. Usar **sudo** si es necesario para crear el directorio:
 
 ```
 sudo mkdir -p /usr/local/hive/warehouse
@@ -650,7 +650,7 @@ Paso 6. Si la inicialización fue correcta, verás el siguiente resultado, como 
 
 ![hive1](../images/c2/img28.png)
 
-Paso 7. Ahora inicializar el **metastore** de Hive, escribir el siguiente comando.
+Paso 7. Inicializar el **metastore** de Hive, escribir el siguiente comando.
 
 ```
 hive --service metastore &
@@ -676,7 +676,7 @@ Haz completado la configuración y preparación de Apache Hive y Derby.
 
 En esta tarea realizarás la carga de los datos a Apache Hadoop, después extraerás los datos desde Hive, aplicarás una transformación de datos y un conjunto de consultas, y finalmente realizarás una inserción de datos.
 
-Paso 1. Ahora **descarga la información demostrativa** a usar, escribe el siguiente comando:
+Paso 1.**Descargar la información demostrativa** a usar, escribir el siguiente comando:
 
 **NOTA:** El archivo es un ejemplo y está guardado en un sistema de almacenamiento de la nube de AWS.
 
@@ -715,7 +715,7 @@ STORED AS TEXTFILE
 TBLPROPERTIES ("skip.header.line.count"="1");
 ```
 
-**IMPORTANTE:** En caso de que tengas un error, escribe lo siguiente: sal de hive **`exit;`** luego **`rm metastore_db -r`** siguiente **`schematool -initSchema -dbType derby `** finalmente entra a **`hive`** y prueba la consulta.
+**IMPORTANTE:** En caso de que tengas un error, escribir lo siguiente: salir de hive **`exit;`** luego **`rm metastore_db -r`** siguiente **`schematool -initSchema -dbType derby `** finalmente entrar a **`hive`** y probar la consulta.
 
 ![hadoop26](../images/c2/img32.png)
 
@@ -726,7 +726,7 @@ LOAD DATA INPATH '/user/hadoopuser/ventasejemplo.csv' INTO TABLE ventas;
 ```
 ![hadoop26](../images/c2/img33.png)
 
-Paso 6. Con los datos cargados, ahora puedes realizar las siguientes consultas.
+Paso 6. Con los datos cargados, puedes realizar las siguientes consultas.
 
 ```
 SELECT * FROM ventas LIMIT 10;
