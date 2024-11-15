@@ -1,13 +1,13 @@
-### Configuración y uso de Kafka y Flink para el procesamiento de datos en tiempo real 
+# Práctica 5. Configuración y uso de Kafka y Flink para el procesamiento de datos en tiempo real 
 
-### Objetivo de la práctica:
+## Objetivo de la práctica:
 
 Al finalizar la práctica, serás capaz de:
 
 - Configurar y conectar Apache Kafka y Apache Flink
 - Procesar datos en tiempo real
 
-### Duración aproximada:
+## Duración aproximada:
 - 90 minutos.
 
 ---
@@ -16,9 +16,9 @@ Al finalizar la práctica, serás capaz de:
 
 ---
 
-### Instrucciones 
+## Instrucciones 
 
-### Tarea 1. Instalación de Apache Kafka.
+### Tarea 1. Instalación de Apache Kafka
 
 Apache Kafka es una plataforma distribuida de transmisión de datos que permite la publicación y suscripción de mensajes de manera eficiente. En este paso, descargaremos, instalaremos y configuraremos Apache Kafka en Ubuntu.
 
@@ -26,9 +26,9 @@ Apache Kafka es una plataforma distribuida de transmisión de datos que permite 
 
 **NOTA IMPORTANTE:** Usarás el entorno grafico de el sistema operativo UBUNTU, pero **todo lo realizaras por la terminal**.
 
-**NOTA:** Abre una **terminal** dentro del sistema de UBUNTU
+**NOTA:** Abrir una **terminal** dentro del sistema de UBUNTU
 
-Paso 1. Asegúrate de tener Java 8 instalado. Si ya lo tienes instalado puedes avanzar al siguiente paso.
+Paso 1. Asegúrate de tener Java 8 instalado. Si ya lo tienes instalado, puedes avanzar al siguiente paso.
 
 ```
 sudo apt update
@@ -37,13 +37,13 @@ sudo apt update
 sudo apt install openjdk-8-jdk
 ```
 
-Paso 2. Kafka depende de Zookeeper para la coordinación de los brokers, incluso si se está utilizando un solo servidor, instala la dependencia.
+Paso 2. Kafka depende de Zookeeper para la coordinación de los brokers, incluso si se está utilizando un solo servidor, instalar la dependencia.
 
 ```
 sudo apt install zookeeperd -y
 ```
 
-Paso 3. Descarga y descomprime Kafka.
+Paso 3. Descargar y descomprimir Kafka.
 
 ```
 wget https://archive.apache.org/dist/kafka/2.7.0/kafka_2.13-2.7.0.tgz
@@ -53,31 +53,31 @@ wget https://archive.apache.org/dist/kafka/2.7.0/kafka_2.13-2.7.0.tgz
 tar -xzf kafka_2.13-2.7.0.tgz
 ```
 
-Paso 4. Verifica que se haya descomprimido correctamente, puedes escribir el comando **`ls`**.
+Paso 4. Verificar que se haya descomprimido correctamente, puedes escribir el comando **`ls`**.
 
 ![kafka](../images/c6/img2.png)
 
-Paso 5. Ingresa a la carpeta de Kafka.
+Paso 5. Ingresar a la carpeta de Kafka.
 
 ```
 cd kafka_2.13-2.7.0
 ```
 
-Paso 6. Da los permisos de escritura a zookeeper.
+Paso 6. Dar los permisos de escritura a zookeeper.
 
 ```
 sudo chmod -R 777 /tmp/zookeeper
 ```
 
-Paso 7. Inicia Zookeeper como proceso en segundo plano.
+Paso 7. Iniciar Zookeeper como proceso en segundo plano.
 
 ```
 bin/zookeeper-server-start.sh config/zookeeper.properties &
 ```
 
-**NOTA:** Apareceran un conjunto de logs, ejecuta **Enter** para continar con la terminal
+**NOTA:** Apareceran un conjunto de logs, ejecutar **Enter** para continar con la terminal
 
-Paso 8. En caso de que los logs te indiquen que el puerto este ocupado puedes realizar el siguiente troubleshooting.
+Paso 8. En caso de que los logs te indiquen que el puerto este ocupado, puedes realizar el siguiente troubleshooting.
 
 **NOTA:** **Solo** realizar estos pasos si el puerto esta ocupado por otro proceso. Sino avanza al paso 9.
 
@@ -91,13 +91,13 @@ sudo kill <PID>
 bin/kafka-server-start.sh config/server.properties &
 ```
 
-Paso 9. Ahora inicia el broker de Kafka.
+Paso 9. Iniciar el broker de Kafka.
 
 ```
 bin/kafka-server-start.sh config/server.properties &
 ```
 
-**NOTA:** No habra alguna salida especifica, ejecuta **Enter** para continuar con la terminal.
+**NOTA:** No habra alguna salida especifica, ejecutar **Enter** para continuar con la terminal.
 
 **¡TAREA FINALIZADA!**
 
@@ -107,7 +107,7 @@ Kafka y Zookeeper estarán en ejecución en el servidor de desarrollo, listos pa
 
 En esta tarea crearas un topic en Kafka para almacenar los mensajes que serán procesados. Un topic es un canal donde se publican los mensajes y los consumidores los leen.
 
-Paso 1. Crear un topic llamado **"test-topic"**, escribe el siguiente comando.
+Paso 1. Crear un topic llamado **"test-topic"**, escribir el siguiente comando.
 
 ```
 bin/kafka-topics.sh --create --topic test-topic --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1
@@ -127,11 +127,11 @@ bin/kafka-topics.sh --describe --topic test-topic --bootstrap-server localhost:9
 
 Un topic llamado **test-topic** estará listo para enviar y recibir mensajes.
 
-### Tarea 3. Instalación de Apache Flink en el servidor de desarrollo.
+### Tarea 3. Instalación de Apache Flink en el servidor de desarrollo
 
 Apache Flink es un motor de procesamiento de datos en tiempo real. En esta tarea, descargaremos e instalaremos Flink en el servidor.
 
-Paso 1. Sal de la carpeta de Kafka para regresar al directorio **Home**, escribe el siguiente comando.
+Paso 1. Salir de la carpeta de Kafka para regresar al directorio **Home**, escribir el siguiente comando.
 
 ```
 cd ..
@@ -145,7 +145,7 @@ wget https://archive.apache.org/dist/flink/flink-1.13.2/flink-1.13.2-bin-scala_2
 
 ![kafka](../images/c6/img5.png)
 
-Paso 3. Ahora descomprime Flink.
+Paso 3. Ahora descomprimir Flink.
 
 ```
 tar -xzf flink-1.13.2-bin-scala_2.11.tgz
@@ -155,13 +155,13 @@ Paso 4. Puedes verificar el directorio escribiendo **`ls`**.
 
 ![kafka](../images/c6/img6.png)
 
-Paso 5. Entra al directorio de Apache Flink.
+Paso 5. Entrar al directorio de Apache Flink.
 
 ```
 cd flink-1.13.2
 ```
 
-Paso 6. Ahora inicia el servicio de Apache Flink.
+Paso 6. Iniciar el servicio de Apache Flink.
 
 ```
 ./bin/start-cluster.sh
@@ -171,40 +171,40 @@ Paso 6. Ahora inicia el servicio de Apache Flink.
 
 **¡TAREA FINALIZADA!**
 
-Has completado la instalación de Flink que esta listo para integrarse con Kafka.
+Haz completado la instalación de Flink que esta listo para integrarse con Kafka.
 
-### Tarea 4. Creación de un productor y consumidor en Kafka usando Java.
+### Tarea 4. Creación de un productor y consumidor en Kafka usando Java
 
 En esta tarea vas a escribir código en Java para crear un productor que envíe mensajes a Kafka y un consumidor que lea esos mensajes en tiempo real.
 
-Paso 1. Sal de la carpeta de Flink para regresar al directorio **Home**, escribe el siguiente comando.
+Paso 1. Salir de la carpeta de Flink para regresar al directorio **Home**, escribir el siguiente comando.
 
 ```
 cd ..
 ```
 
-Paso 2. Escribe el siguiente comando para inicar un proyecto en **Maven**.
+Paso 2. Escribir el siguiente comando para inicar un proyecto en **Maven**.
 
 ```
 mvn archetype:generate -DgroupId=com.example.kafka -DartifactId=kafka-example -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
 ```
-**NOTA:** Espera el proceso de la inicializacion de proyecto.
+**NOTA:** Esperar el proceso de la inicializacion de proyecto.
 
 ![kafka](../images/c6/img8.png)
 
-Paso 3. Entra a la carpeta **kafka-example**.
+Paso 3. Entrar a la carpeta **kafka-example**.
 
 ```
 cd kafka-example
 ```
 
-Paso 4. Ahora abre el archivo **pom.xml**.
+Paso 4. Abrir el archivo **pom.xml**.
 
 ```
 nano pom.xml
 ```
 
-Paso 5. Agrega las dependencias de Kafka y la version de java. Copia y pega el codigo. Tambien puedes apoyarte de la imagen.
+Paso 5. Agregar las dependencias de Kafka y la version de java. Copiar y pegar el codigo. Tambien puedes apoyarte de la imagen.
 
 ```
 <dependency>
@@ -226,7 +226,7 @@ Paso 5. Agrega las dependencias de Kafka y la version de java. Copia y pega el c
 
 ![kafka](../images/c6/img9.png)
 
-Paso 6. En el directorio `src/main/java/com/example/kafka`, crea un archivo llamado **SimpleProducer.java**
+Paso 6. En el directorio `src/main/java/com/example/kafka`, crear un archivo llamado **SimpleProducer.java**
 
 ```
 rm src/test/java/com/example/kafka/AppTest.java
@@ -235,7 +235,7 @@ rm src/test/java/com/example/kafka/AppTest.java
 nano src/main/java/com/example/kafka/SimpleProducer.java
 ```
 
-Paso 7. Copia y pega el siguiente codigo dentro del archivo recien creado.
+Paso 7. Copiar y pegar el siguiente codigo dentro del archivo recien creado.
 
 ```
 package com.example.kafka;
@@ -267,13 +267,13 @@ public class SimpleProducer {
 
 ![kafka](../images/c6/img10.png)
 
-Paso 8. En el mismo directorio `src/main/java/com/example/kafka`, crea otro archivo llamado **SimpleConsumer.java**
+Paso 8. En el mismo directorio `src/main/java/com/example/kafka`, crear otro archivo llamado **SimpleConsumer.java**
 
 ```
 nano src/main/java/com/example/kafka/SimpleConsumer.java
 ```
 
-Paso 9. Copia y pega el siguiente codigo dentro del archivo recien creado.
+Paso 9. Copiar y pegar el siguiente codigo dentro del archivo recien creado.
 
 ```
 package com.example.kafka;
@@ -310,7 +310,7 @@ public class SimpleConsumer {
 
 ![kafka](../images/c6/img11.png)
 
-Paso 10. Para compilar el proyecto, ejecuta el siguiente comando.
+Paso 10. Para compilar el proyecto, ejecutar el siguiente comando.
 
 ```
 mvn clean install
@@ -318,13 +318,13 @@ mvn clean install
 
 ![kafka](../images/c6/img12.png)
 
-Paso 11. Ahora ejecuta el servicio productor.
+Paso 11. Ejecutar el servicio productor.
 
 ```
 java -cp target/kafka-example-1.0-SNAPSHOT.jar com.example.kafka.SimpleProducer
 ```
 
-Paso 12. Si te sale el siguiente mensaje es porque requiere una actualización en el archivo **pom.xml** abre el archivo.
+Paso 12. Si te sale el siguiente mensaje es porque requiere una actualización en el archivo **pom.xml** abrir el archivo.
 
 ![kafka](../images/c6/img21.png)
 
@@ -332,7 +332,7 @@ Paso 12. Si te sale el siguiente mensaje es porque requiere una actualización e
 nano pom.xml
 ```
 
-Paso 13. Borra todas las lineas del archivo existente y pega el siguiente codigo.
+Paso 13. Borrar todas las lineas del archivo existente y pegar el siguiente codigo.
 
 ```
 <project xmlns="http://maven.apache.org/POM/4.0.0"
@@ -449,7 +449,7 @@ Paso 13. Borra todas las lineas del archivo existente y pega el siguiente codigo
 ![kafka](../images/c6/img22.png)
 ![kafka](../images/c6/img14.png)
 
-Paso 14. Compilar nuevamente el proyecto, ejecuta el siguiente comando.
+Paso 14. Compilar nuevamente el proyecto, ejecutar el siguiente comando.
 
 ```
 mvn clean install
@@ -458,7 +458,7 @@ mvn clean install
 mvn package
 ```
 
-Paso 15. Ahora ejecuta el productor.
+Paso 15. Ejecutar el productor.
 
 ```
 java -cp target/kafka-example-1.0-SNAPSHOT-jar-with-dependencies.jar com.example.kafka.SimpleProducer
@@ -467,7 +467,7 @@ java -cp target/kafka-example-1.0-SNAPSHOT-jar-with-dependencies.jar com.example
 
 **NOTA:** Si te aparecen los mensajes como la imagen quiere decir que el producto se ha activado correctamente. Aunque existan algunas clases no encontradas, es normal para el ejemplo.
 
-Paso 15. Ahora el consumidor, **Abre otra pestaña de la terminal para ejecutar el consumidor**.
+Paso 15. Ahora el consumidor, **Abrir otra pestaña de la terminal para ejecutar el consumidor**.
 
 ```
 cd kafka-example/
@@ -482,23 +482,23 @@ java -cp target/kafka-example-1.0-SNAPSHOT-jar-with-dependencies.jar com.example
 
 Has completado la configuracion del productor de mensajes y consumidor para Apache Kafka.   
 
-### Tarea 5. Configuración de Apache Flink para consumir mensajes de Kafka.
+### Tarea 5. Configuración de Apache Flink para consumir mensajes de Kafka
 
 En esta tarea configuraras Apache Flink para que consuma mensajes desde un topic de Kafka y los procese en tiempo real.
 
-Paso 1. Abre **otra terminal** dando clic en la esquina superior izquierda de la terminal e ingresa a **kafka-example**
+Paso 1. Abrir **otra terminal** dando clic en la esquina superior izquierda de la terminal e ingresar a **kafka-example**
 
 ```
 cd kafka-example/
 ```
 
-Paso 2. Ahora crea el archivo llamado FlinkKafkaJob.java que realizara la prueba de los mensajes.
+Paso 2. Crear el archivo llamado FlinkKafkaJob.java que realizara la prueba de los mensajes.
 
 ```
 nano src/main/java/com/example/kafka/FlinkKafkaJob.java
 ```
 
-Paso 3. Pega el siguiente codigo dentro del archivo.
+Paso 3. Pegar el siguiente código dentro del archivo.
 
 ```
 package com.example.kafka;
@@ -545,19 +545,19 @@ public class FlinkKafkaJob {
 
 ![kafka](../images/c6/img16.png)
 
-Paso 4. Dentro de la ruta **`src/main/`** crea el siguiente directorio llamado **resources**.
+Paso 4. Dentro de la ruta **`src/main/`** crear el siguiente directorio llamado **resources**.
 
 ```
 mkdir src/main/resources/
 ```
 
-Paso 5. Ahora crea el archivo llamado **reference.conf** dentro de ese directorio.
+Paso 5. Crea el archivo llamado **reference.conf** dentro de ese directorio.
 
 ```
 nano src/main/resources/reference.conf
 ```
 
-Paso 6. Dentro del archivo pega el siguiente bloque de codigo para la configuración de AKKA que necesitara Flink para el procesamiento en tiempo real.
+Paso 6. Dentro del archivo, pegar el siguiente bloque de código para la configuración de AKKA que necesitara Flink para el procesamiento en tiempo real.
 
 ```
 akka {
@@ -578,7 +578,7 @@ akka {
 
 ![kafka](../images/c6/img23.png)
 
-Paso 7. Ahora compila el proyecto con el nuevo codigo.
+Paso 7. Compilar el proyecto con el nuevo código.
 
 ```
 mvn clean install
@@ -586,7 +586,7 @@ mvn clean install
 
 ![kafka](../images/c6/img17.png)
 
-Paso 8. Ahora ejecuta el job con el archivo jar compilado para conectarse a Kafka y procesar los mensajes.
+Paso 8. Ejecutar el job con el archivo jar compilado para conectarse a Kafka y procesar los mensajes.
 
 ```
 java -cp target/kafka-example-1.0-SNAPSHOT-jar-with-dependencies.jar com.example.kafka.FlinkKafkaJob
@@ -600,15 +600,15 @@ java -cp target/kafka-example-1.0-SNAPSHOT-jar-with-dependencies.jar com.example
 - Ejecuta flink localmente `~/flink-1.13.2/./bin/start-cluster.sh`
 - Repite el paso 8
 
-Paso 9. Ya que inicializo el Job ahora probaras el consumo de mensajes. Puedes comparar la inicialización con la siguiente imagen.
+Paso 9. Ya que inicializo el Job, probar el consumo de mensajes. Puedes comparar la inicialización con la siguiente imagen.
 
 ![kafka](../images/c6/img24.png)
 
 **NOTA:** Son algunos de los logs del sistema de Kafka que ya recolecto Flink.
 
-Paso 10. Entra al directorio de kafka **`kafka_2.13-2.7.0`**, escribe el siguiente comando **(Abre otra terminal)**.
+Paso 10. Entra al directorio de Kafka **`kafka_2.13-2.7.0`**, escribir el siguiente comando **(Abre otra terminal)**.
 
-**NOTA:** Recuerda que si necesitas salirte de un directorio escribe **cd ..**
+**NOTA:** Recuerda, si necesitas salirte de un directorio escribe **cd ..**
 
 ```
 cd ~/kafka_2.13-2.7.0
@@ -626,23 +626,23 @@ Paso 11. Dentro de la carpeta escribe el siguiente comando.
 
 ![kafka](../images/c6/img18.png)
 
-Paso 12. Regresa a la primera terminal que dejaste abierta **(Apache Flink)** y veras el consumo de los mensajes de flink. Como lo muestra la siguiente imagen.
+Paso 12. Regresar a la primera terminal que dejaste abierta **(Apache Flink)** para poder ver el consumo de los mensajes de flink. Como lo muestra la siguiente imagen.
 
 ![kafka](../images/c6/img19.png)
 ![kafka](../images/c6/img20.png)
 
-Paso 13. Realiza un ejemplo mas, primero debes estar dentro de la carpeta **kafka-example**.
+Paso 13. Realizar un ejemplo más, primero debes estar dentro de la carpeta **kafka-example**.
 
 - `CTRL + C`
 - `cd ~/kafka-example/`
 
-Copia y pega el siguiente comando que creara un archivo llamado **WordCountKafkaJob**.
+Paso 13. Copiar y pegar el siguiente comando que creara un archivo llamado **WordCountKafkaJob**.
 
 ```
 nano src/main/java/com/example/kafka/WordCountKafkaJob.java
 ```
 
-Paso 14. Dentro del archivo agrega este codigo para realizar el conteo de palabras.
+Paso 14. Dentro del archivo agregar este código para realizar el conteo de palabras.
 
 ```
 package com.example.kafka;
@@ -734,7 +734,7 @@ public class WordCountKafkaJob {
 ![kafka](../images/c6/img27.png)
 ![kafka](../images/c6/img28.png)
 
-Paso 15. Compila tu job con mvn y ejecuta el job de conteo de palabras, copia y pega los siguientes comandos.
+Paso 15. Compilar job con mvn y ejecutar el job de conteo de palabras, copiar y pegar los siguientes comandos.
 
 ```
 mvn clean install
@@ -743,13 +743,13 @@ mvn clean install
 java -cp target/kafka-example-1.0-SNAPSHOT-jar-with-dependencies.jar com.example.kafka.WordCountKafkaJob
 ```
 
-**NOTA:** Nuevamente veras logs de conexion al topico de Kafka si todo sale bien.
+**NOTA:** Nuevamente veras logs de conexion al tópico de Kafka si todo sale bien.
 
 ![kafka](../images/c6/img29.png)
 
-Paso 16. Ahora ve a la ventana de la terminal que tiene tu **producer** de **Kafka**. Escribe el siguiente texto.
+Paso 16. Ahora, ir a la ventana de la terminal que tiene el **producer** de **Kafka**. Escribir el siguiente texto.
 
-**NOTA:** Si lo cerraste puedes volverlo a activar.
+**NOTA:** Si lo cerraste, puedes volverlo a activar.
 
 ```
 Nunca te olvides de sonreír, porque el día que no sonrías, será un día perdido (Chaplin, 1992)
@@ -760,13 +760,13 @@ Aprende como si fueras a vivir toda la vida, y vive como si fueras a morir maña
 ```
 ![kafka](../images/c6/img30.png)
 
-**NOTA:** Intenta agregar mas frases.
+**NOTA:** Intentar agregar mas frases.
 
 **NOTA:** Para salir puedes usar **`CTRL + C`** en cada una de las ventanas.
 
 **¡TAREA FINALIZADA!**
 
-Has completado la tarea donde Flink consumio los mensajes desde Kafka y los imprimio en la consola en tiempo real.
+Haz completado la tarea donde Flink consumio los mensajes desde Kafka y los imprimio en la consola en tiempo real.
 
 **LABORATORIO FINALIZADO!**
 
