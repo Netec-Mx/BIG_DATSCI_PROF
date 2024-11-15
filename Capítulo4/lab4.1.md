@@ -1,6 +1,6 @@
-### Creación y gestión de un Data Lake en Databricks, incluyendo la ingestión y procesamiento de datos en diferentes capas.
+# Práctica 3. Creación y gestión de un Data Lake en Databricks, incluyendo la ingestión y procesamiento de datos en diferentes capas.
 
-### Objetivo de la práctica:
+## Objetivo de la práctica:
 
 Al finalizar la práctica, serás capaz de:
 
@@ -8,7 +8,7 @@ Al finalizar la práctica, serás capaz de:
 - Ingerir y procesar datos a través de las capas Raw, Processed y Gold.
 - Optimizar los datos para un análisis eficiente.
 
-### Duración aproximada:
+## Duración aproximada:
 - 90 minutos.
 
 ---
@@ -17,37 +17,37 @@ Al finalizar la práctica, serás capaz de:
 
 ---
 
-### Instrucciones 
+## Instrucciones 
 
-### Tarea 1. Configuración del entorno Databricks.
+### Tarea 1. Configuración del entorno Databricks
 
 En esta tarea te registrarás para acceder a tu cuenta en Databricks. Se usará el periodo gratuito de la cuenta para completar tu laboratorio.
 
 **NOTA:** A lo largo de la práctica habrá imágenes para que puedas apoyarte y mejorar la experiencia de configuración.
 
-Paso 1. Abre el navegador **Firefox** dentro de tu ambiente de trabajo. Puedes buscarlo en la barra de herramientas lateral (si aparece) o puedes optar por el buscador del sistema.
+Paso 1. Abrir el navegador **Firefox** dentro de tu ambiente de trabajo. Puedes buscarlo en la barra de herramientas lateral (si aparece) o puedes optar por el buscador del sistema.
 
-Paso 2. Una vez abierto, copia la URL de Databricks para crear tu cuenta --> [Databricks Free Trial](https://www.databricks.com/try/databricks-free#account) y pégala en el navegador de **Firefox**.
+Paso 2. Una vez abierto, copiar la URL de Databricks para crear la cuenta --> [Databricks Free Trial](https://www.databricks.com/try/databricks-free#account) y pégala en el navegador de **Firefox**.
 
-Paso 3. Da clic en el botón **Start your free trial**.
+Paso 3. Dar clic en el botón **Start your free trial**.
 
 ![dbricks1](../images/c4/img1.png)
 
-Paso 4. Crea una cuenta proporcionando los detalles solicitados en el formulario (correo electrónico, nombre, etc.).
+Paso 4. Crear una cuenta proporcionando los detalles solicitados en el formulario (correo electrónico, nombre, etc.).
 
 ![dbricks2](../images/c4/img2.png)
 
-Paso 5. Da clic en el botón **Get Started**.
+Paso 5. Dar clic en el botón **Get Started**.
 
-Paso 6. Una vez llenados los datos, en la siguiente imagen selecciona el logo de **AWS** y da clic en **Get Started**.
+Paso 6. Una vez llenados los datos, en la siguiente imagen seleccionar el logo de **AWS** y dar clic en **Get Started**.
 
 ![dbricks3](../images/c4/img3.png)
 
 **NOTA:** Esta cuenta te dará acceso 14 días a Databricks con 400 USD de crédito para probar la infraestructura.
 
-Paso 7. Ya creada tu cuenta, el siguiente paso es autenticarte. Copia la URL --> [Databricks Sign in](https://accounts.cloud.databricks.com/login?tuuid=98a9b760-3b26-4df5-9041-98030f2c09e1) y pégala dentro de la máquina virtual de trabajo.
+Paso 7. Ya creada la cuenta, el siguiente paso es autenticarte. Copiar la URL --> [Databricks Sign in](https://accounts.cloud.databricks.com/login?tuuid=98a9b760-3b26-4df5-9041-98030f2c09e1) y pégala dentro de la máquina virtual de trabajo.
 
-Paso 8. Coloca tu correo con el cual te registraste e inicia sesión.
+Paso 8. Colocar el correo con el cual te registraste e iniciar sesión.
 
 ![dbricks3](../images/c4/img4.png)
 
@@ -58,11 +58,11 @@ Paso 9. En la siguiente ventana te pedirá enlazar la cuenta de **Databricks** c
 | Workspace name | databricks-lab4.1-workspace-xxxx | Sustituye las letras **x** por las letras iniciales de tu nombre. |
 | AWS Region | Oregon (us-west-2) | Región a usar para la nube de AWS. |
 
-Paso 10. Da clic en el botón **Start Quickstart**.
+Paso 10. Dar clic en el botón **Start Quickstart**.
 
 ![dbricks3](../images/c4/img5.png)
 
-Paso 11. En la siguiente ventana aparecerá la página de AWS para el inicio de sesión. Coloca los datos asignados dentro del curso.
+Paso 11. En la siguiente ventana aparecerá la página de AWS para el inicio de sesión. Colocar los datos asignados dentro del curso.
 
 | Propiedad | Valor | Descripción |
 |-----------| ----- | -----------  |
@@ -74,43 +74,43 @@ Paso 11. En la siguiente ventana aparecerá la página de AWS para el inicio de 
 
 **NOTA:** La imagen es demostrativa **no** copies esos valores.
 
-Paso 12. Da clic en el botón **Sign in**.
+Paso 12. Dar clic en el botón **Sign in**.
 
-Paso 13. En la sección **Quick create stack**, deja todos los valores por defecto y ve hasta el final de la pantalla.
+Paso 13. En la sección **Quick create stack**, dejar todos los valores por defecto e ir hasta el final de la pantalla.
 
-Paso 14. Marca la casilla que comienza con **I acknowledge that AWS...**.
+Paso 14. Marcar la casilla que comienza con **I acknowledge that AWS...**.
 
 ![dbricks3](../images/c4/img7.png)
 
-Paso 15. Da clic en el botón **Create Stack** en la parte inferior derecha.
+Paso 15. Dar clic en el botón **Create Stack** en la parte inferior derecha.
 
 **NOTA:** Comenzará el proceso de creación de la infraestructura de Databricks en AWS, esto puede tardar de **2 a 4 minutos**. Espera el despliegue de la infraestructura.
 
-Paso 16. Verifica que todo haya salido correcto y que el stack diga **CREATE_COMPLETE**.
+Paso 16. Verificar que todo haya salido correcto y que el stack diga **CREATE_COMPLETE**.
 
 ![dbricks3](../images/c4/img8.png)
 
-Paso 17. Muy bien! Ahora **regresa** a la pestaña de **Databricks** en tu mismo navegador. Da clic en **OK** en la ventana emergente.
+Paso 17. Muy bien! Ahora **regresar** a la pestaña de **Databricks** en el mismo navegador. Dar clic en **OK** en la ventana emergente.
 
 ![dbricks3](../images/c4/img9.png)
 
-Paso 18. Actualiza la página de **Databricks** si es necesario para ver los cambios.
+Paso 18. Actualizar la página de **Databricks** si es necesario para ver los cambios.
 
 ![dbricks3](../images/c4/img10.png)
 
-Paso 19. Recorre toda la página, a la derecha de la sección **Workspaces** y da clic en la palabra como hipervínculo **Open**.
+Paso 19. Recorrer toda la página, a la derecha de la sección **Workspaces** y dar clic en la palabra como hipervínculo **Open**.
 
 ![dbricks3](../images/c4/img11.png)
 
-Paso 20. Da clic en la propiedad **Compute** del menú lateral izquierdo.
+Paso 20. Dar clic en la propiedad **Compute** del menú lateral izquierdo.
 
 ![dbricks3](../images/c4/img12.png)
 
-Paso 21. Ahora en el centro de la página da clic en el botón **Create compute** para crear un clúster de Databricks.
+Paso 21. Ahora, en el centro de la página, dar clic en el botón **Create compute** para crear un clúster de Databricks.
 
 ![dbricks3](../images/c4/img13.png)
 
-Paso 22. Configura las siguientes propiedades para la creación del cluster. El cluster se creara hasta el paso **# 24**.
+Paso 22. Configurar las siguientes propiedades para la creación del cluster. El cluster se creara hasta el paso **# 24**.
 
 **NOTA:** El resto de las configuraciones no mencionadas en la tabla se quedan por defecto. En el siguiente paso hay más parámetros a configurar.
 
@@ -128,7 +128,7 @@ Paso 22. Configura las siguientes propiedades para la creación del cluster. El 
 
 ![dbricks3](../images/c4/img14.png)
 
-Paso 23. Ahora en la siguiente sección de **Advanced Options**, configura lo siguiente.
+Paso 23. En la siguiente sección de **Advanced Options**, configurar lo siguiente.
 
 | Propiedad | Valor | Descripción |
 |-----------| ----- | -----------  |
@@ -138,9 +138,9 @@ Paso 23. Ahora en la siguiente sección de **Advanced Options**, configura lo si
 
 ![dbricks3](../images/c4/img15.png)
 
-Paso 24. Teniendo toda la configuración, ahora sí da clic en el botón **Create compute**.
+Paso 24. Teniendo toda la configuración, ahora sí dar clic en el botón **Create compute**.
 
-**NOTA:** El clúster puede tardar unos **10 minutos** aproximadamente. Espera para continuar con la siguiente tarea.
+**NOTA:** El clúster puede tardar unos **10 minutos** aproximadamente. Esperar para continuar con la siguiente tarea.
 
 ![dbricks3](../images/c4/img16.png)
 
@@ -148,55 +148,55 @@ Paso 24. Teniendo toda la configuración, ahora sí da clic en el botón **Creat
 
 Haz completado la configuración del clúster de Databricks.
 
-### Tarea 2. Creación de un Data Lake.
+### Tarea 2. Creación de un Data Lake
 
 En esta tarea crearás la estructura básica de un Data Lake utilizando Databricks y Amazon S3, organizando las diferentes capas (Raw, Processed, Gold).
 
-Paso 1. Recolecta el nombre del bucket creado por el workspace, da clic en el nombre de tu workspace.
+Paso 1. Recolectar el nombre del bucket creado por el workspace, dar clic en el nombre del workspace.
 
 **NOTA:** Se encuentra en la página anterior.
 
 ![dbricks3](../images/c4/img17.png)
 
-Paso 2. Copia el nombre de la propiedad **Bucket name** de la sección **Storage**. Guárdalo en un bloc de notas temporalmente en tu máquina virtual.
+Paso 2. Copiar el nombre de la propiedad **Bucket name** de la sección **Storage**. Guárdalo en un bloc de notas temporalmente en la máquina virtual.
 
 ![dbricks3](../images/c4/img18.png)
 
-Paso 3. Ahora da clic en el hipervínculo de la sección **URL**.
+Paso 3. Ahora dar clic en el hipervínculo de la sección **URL**.
 
 ![dbricks3](../images/c4/img19.png)
 
-Paso 4. Da clic en la sección **workspace** del menú lateral izquierdo, y luego haz clic en **Create** ---> **Notebook**.
+Paso 4. Dar clic en la sección **workspace** del menú lateral izquierdo, y luego hacer clic en **Create** ---> **Notebook**.
 
 ![dbricks3](../images/c4/img20.png)
 ![dbricks3](../images/c4/img21.png)
 
-Paso 5. En la parte superior da clic en el nombre aleatorio y renómbralo **`DataLakeNotebook`** elige **Python** como lenguaje, da **Enter** o clic en otra parte de la pantalla para guardarlo.
+Paso 5. En la parte superior dar clic en el nombre aleatorio y renómbralo **`DataLakeNotebook`** elegir **Python** como lenguaje, dar **Enter** o clic en otra parte de la pantalla para guardarlo.
 
 ![dbricks3](../images/c4/img22.png)
 
-Paso 6. Copia el siguiente código en la celda del notebook que montará el bucket de S3 en Databricks.
+Paso 6. Copiar el siguiente código en la celda del notebook que montará el bucket de S3 en Databricks.
 
 ```
-# Define las credenciales y el bucket
+# Definir las credenciales y el bucket.
 ACCESS_KEY = "tu-access-key-id"
 SECRET_KEY = "tu-secret-access-key"
 BUCKET_NAME = "tu-nombre-del-bucket"
 MOUNT_NAME = "/mnt/datalake"
 
-# Convierte las credenciales en formato URL
+# Convertir las credenciales en formato URL.
 encoded_secret_key = SECRET_KEY.replace("/", "%2F")
 
-# URL para montar S3
+# URL para montar S3.
 aws_s3_url = f"s3a://{ACCESS_KEY}:{encoded_secret_key}@{BUCKET_NAME}"
 
-# Desmonta el bucket si ya está montado
+# Desmontar el bucket si ya está montado.
 try:
     dbutils.fs.unmount(MOUNT_NAME)
 except:
     pass
 
-# Monta el bucket en Databricks
+# Montar el bucket en Databricks.
 dbutils.fs.mount(
     source=aws_s3_url,
     mount_point=MOUNT_NAME
@@ -205,13 +205,13 @@ dbutils.fs.mount(
 
 ![dbricks3](../images/c4/img23.png)
 
-Paso 7. Ahora modifica la variable **ACCESS_KEY**, **SECRET_KEY** que te otorgaron al inicio del laboratorio y **bucket_name** con el nombre del bucket que guardaste en tu bloc de notas.
+Paso 7. Modificar la variable **ACCESS_KEY**, **SECRET_KEY** que te otorgaron al inicio del laboratorio y **bucket_name** con el nombre del bucket que guardaste en el bloc de notas.
 
 **NOTA:** No copies los valores de la imagen.
 
 ![dbricks3](../images/c4/img24.png)
 
-Paso 8. Ahora ejecuta la celda da clic en el botón de la esquina.
+Paso 8. Ejecutar la celda, dar clic en el botón de la esquina.
 
 ![dbricks3](../images/c4/img25.png)
 
@@ -219,14 +219,14 @@ Paso 9. En la parte inferior de la celda verás que se ejecutó correctamente.
 
 ![dbricks3](../images/c4/img26.png)
 
-Paso 10. Ahora agrega otra celda, pasa el puntero en el área resaltada con el marco rojo para ver la opción **Code** y da clic.
+Paso 10. Agregar otra celda, pasa el puntero en el área resaltada con el marco rojo para ver la opción **Code** y dar clic.
 
 ![dbricks3](../images/c4/img27.png)
 
-Paso 11. En la celda de abajo copia el siguiente código para crear la estructura básica de un Data Lake y ejecuta la celda.
+Paso 11. En la celda de abajo, copiar el siguiente código para crear la estructura básica de un Data Lake y ejecutar la celda.
 
 ```
-# Crear la estructura de carpetas
+# Crear la estructura de carpetas.
 dbutils.fs.mkdirs("/mnt/datalake/raw")
 dbutils.fs.mkdirs("/mnt/datalake/processed")
 dbutils.fs.mkdirs("/mnt/datalake/gold")
@@ -234,10 +234,10 @@ dbutils.fs.mkdirs("/mnt/datalake/gold")
 
 ![dbricks3](../images/c4/img28.png)
 
-Paso 12. Agrega una celda más y copia este código para verificar que las carpetas hayan sido creadas exitosamente.
+Paso 12. Agregar una celda más y copiar este código para verificar que las carpetas hayan sido creadas exitosamente.
 
 ```
-# Lista los directorios creados en el Data Lake
+# Listar los directorios creados en el Data Lake.
 dbutils.fs.ls("/mnt/datalake/")
 ```
 
@@ -247,78 +247,78 @@ dbutils.fs.ls("/mnt/datalake/")
 
 Haz completado la creación de la estructura básica de un Data Lake utilizando Databricks y Amazon S3, organizando las diferentes capas (Raw, Processed, Gold).
 
-### Tarea 3. Ingestión de datos.
+### Tarea 3. Ingestión de datos
 
 En esta tarea vas a cargar datos en la capa Raw del Data Lake.
 
-Paso 1. Vamos a simular el proceso de la capa **Raw**. Copia el siguiente enlace para descargar el archivo de datos crudos, usarás el ejemplo de datos **Wine Quality**.
+Paso 1. Vamos a simular el proceso de la capa **Raw**. Copiar el siguiente enlace para descargar el archivo de datos crudos, usar el ejemplo de datos **Wine Quality**.
 
 ```
 https://demoappj864.s3.amazonaws.com/winequality-red.csv
 ```
 
-Paso 2. Abre una pestaña de tu navegador en la máquina virtual, copia y pega la URL de la página de ---> [AWS](https://us-east-2.signin.aws.amazon.com/oauth?client_id=arn%3Aaws%3Asignin%3A%3A%3Aconsole%2Fcanvas&code_challenge=gfh1_SQ5n7dnq6ETh0C-PoCw4VuI-HLYRfC06evdqHw&code_challenge_method=SHA-256&response_type=code&redirect_uri=https%3A%2F%2Fconsole.aws.amazon.com%2Fconsole%2Fhome%3FhashArgs%3D%2523%26isauthcode%3Dtrue%26state%3DhashArgsFromTB_us-east-2_10ffbbe8d449d843).
+Paso 2. Abrir una pestaña de tu navegador en la máquina virtual, copiar y pegar la URL de la página de ---> [AWS](https://us-east-2.signin.aws.amazon.com/oauth?client_id=arn%3Aaws%3Asignin%3A%3A%3Aconsole%2Fcanvas&code_challenge=gfh1_SQ5n7dnq6ETh0C-PoCw4VuI-HLYRfC06evdqHw&code_challenge_method=SHA-256&response_type=code&redirect_uri=https%3A%2F%2Fconsole.aws.amazon.com%2Fconsole%2Fhome%3FhashArgs%3D%2523%26isauthcode%3Dtrue%26state%3DhashArgsFromTB_us-east-2_10ffbbe8d449d843).
 
-Paso 3. Usa los datos que te asignaron al inicio del laboratorio para iniciar sesión en la consola de AWS.
+Paso 3. Usar los datos que te asignaron al inicio del laboratorio para iniciar sesión en la consola de AWS.
 
 ![dbricks3](../images/c4/img30.png)
 
-Paso 4. Una vez autenticado, da clic en el buscador de la parte superior y escribe **S3** y da clic en el servicio.
+Paso 4. Una vez autenticado, dar clic en el buscador de la parte superior y escribir **S3**, dar clic en el servicio.
 
 ![dbricks3](../images/c4/img31.png)
 
-Paso 5. Dentro de la lista de los buckets creados por el clúster, da clic en el que lleve el nombre **bucket** al final.
+Paso 5. Dentro de la lista de los buckets creados por el clúster, dar clic en el que lleve el nombre **bucket** al final.
 
 ![dbricks3](../images/c4/img32.png)
 
-Paso 6. Dentro del bucket (Data Lake), da clic en la carpeta llamada **raw**.
+Paso 6. Dentro del bucket (Data Lake), dar clic en la carpeta llamada **raw**.
 
-Paso 7. Dentro de la carpeta **raw**, da clic en el botón **Upload** color naranja.
+Paso 7. Dentro de la carpeta **raw**, dar clic en el botón **Upload** color naranja.
 
-Paso 8. Da clic en la opción **Add files**, busca el dataset descargado y cárgalo al bucket.
+Paso 8. Dar clic en la opción **Add files**, buscar el dataset descargado y cárgalo al bucket.
 
 ![dbricks3](../images/c4/img33.png)
 
-Paso 9. Al final de la página, da clic en el botón **Upload**.
+Paso 9. Al final de la página, dar clic en el botón **Upload**.
 
-Paso 10. Finalmente, da clic en el botón **Close** de la esquina superior derecha.
+Paso 10. Finalmente, dar clic en el botón **Close** de la esquina superior derecha.
 
-Paso 11. **Regresa** a la pestaña donde está el notebook de Databricks y agrega otra celda, copia y pega el siguiente código para leer los datos de la capa **Raw**.
+Paso 11. **Regresar** a la pestaña donde está el notebook de Databricks y agregar otra celda, copiar y pegar el siguiente código para leer los datos de la capa **Raw**.
 
 ```
-# Ruta del archivo en S3
+# Ruta del archivo en S3.
 file_path = "/mnt/datalake/raw/winequality-red.csv"
 
 # Leer el archivo CSV en un DataFrame, especificando el delimitador como ';'
 df = spark.read.csv(file_path, header=True, inferSchema=True, sep=';')
 
-# Mostrar las primeras 10 filas del DataFrame
+# Mostrar las primeras 10 filas del DataFrame.
 df.show(10)
 ```
 
 ![dbricks3](../images/c4/img34.png)
 
-Paso 12. Ejecuta la celda para ver el resultado, da clic en el botón de play.
+Paso 12. Ejecutar la celda para ver el resultado, dar clic en el botón de play.
 
 ![dbricks3](../images/c4/img35.png)
 
 **¡TAREA FINALIZADA!**
 
-Has completado la carga de datos a la capa Raw y la lectura.
+Haz completado la carga de datos a la capa Raw y la lectura.
 
-### Tarea 4. Procesamiento de datos en la capa Raw.
+### Tarea 4. Procesamiento de datos en la capa Raw
 
 En esta tarea, limpiarás y transformarás los datos del archivo winequality-red.csv que has cargado previamente en la capa Raw del Data Lake y luego guardarás los datos procesados en la capa Processed.
 
-Paso 1. Agrega otra celda debajo de la última para utilizar el método **dropDuplicates()** y eliminar filas duplicadas del DataFrame.
+Paso 1. Agregar otra celda debajo de la última para utilizar el método **dropDuplicates()** y eliminar filas duplicadas del DataFrame.
 
-Paso 2. Copia y pega el siguiente código en la celda. Ejecuta la celda.
+Paso 2. Copiar y pegar el siguiente código en la celda. Ejecutar la celda.
 
 ```
-# Eliminar duplicados
+# Eliminar duplicados.
 df_cleaned = df.dropDuplicates()
 
-# Validación: Comprobar el número de filas antes y después de eliminar duplicados
+# Validación: Comprobar el número de filas antes y después de eliminar duplicados.
 original_count = df.count()
 cleaned_count = df_cleaned.count()
 
@@ -331,23 +331,23 @@ Paso 3. El resultado es como el de la imagen.
 
 ![dbricks3](../images/c4/img37.png)
 
-Paso 4. Ahora verifica si hay valores nulos en el DataFrame, agrega otra celda, copia y pega el siguiente código.
+Paso 4. Verificar si hay valores nulos en el DataFrame, agregar otra celda, copiar y pegar el siguiente código.
 
 ```
 from pyspark.sql import functions as F
 from pyspark.sql.functions import count, when, col  # Agregar 'col' aquí
 
-# Mostrar el conteo de valores nulos en cada columna
+# Mostrar el conteo de valores nulos en cada columna.
 null_counts = df_cleaned.select([count(when(col(c).isNull(), c)).alias(c) for c in df_cleaned.columns]).first().asDict()
 
 print("Conteo de valores nulos por columna:")
 for column, count in null_counts.items():
     print(f"{column}: {count}")
 
-# Por ejemplo, eliminar filas con valores nulos
+# Por ejemplo, eliminar filas con valores nulos.
 df_cleaned = df_cleaned.na.drop()
 
-# Validación: Comprobar cuántas filas se eliminaron debido a valores nulos
+# Validación: Comprobar cuántas filas se eliminaron debido a valores nulos.
 print(f"Número de filas después de eliminar valores nulos: {df_cleaned.count()}")
 ```
 
@@ -357,15 +357,15 @@ Paso 5. El resultado es como el de la imagen.
 
 ![dbricks3](../images/c4/img39.png)
 
-Paso 6. Ahora agreguemos los resultados para calcular la cantidad promedio de alcohol basada en la calidad del vino, agrega otra celda.
+Paso 6. Agregar los resultados para calcular la cantidad promedio de alcohol basada en la calidad del vino, agregar otra celda.
 
-Paso 7. Pega el siguiente código en la celda y ejecútalo.
+Paso 7. Pegar el siguiente código en la celda y ejecutar.
 
 ```
-# Ejemplo: calcular el promedio de 'alcohol' agrupado por 'quality'
+# Ejemplo: calcular el promedio de 'alcohol' agrupado por 'quality'.
 df_aggregated = df_cleaned.groupBy("quality").agg(F.avg("alcohol").alias("avg_alcohol"))
 
-# Validación: Comprobar si la agregación devuelve resultados
+# Validación: Comprobar si la agregación devuelve resultados.
 if df_aggregated.count() > 0:
     print("Agregación realizada con éxito.")
     df_aggregated.show()
@@ -379,18 +379,18 @@ Paso 8. El resultado es como el de la imagen.
 
 ![dbricks3](../images/c4/img41.png)
 
-Paso 9. Finalmente, una vez que los datos han sido limpiados y transformados, guárdalos en la capa Processed, agrega otra celda.
+Paso 9. Finalmente, una vez que los datos han sido limpiados y transformados, guárdalos en la capa Processed. Agregar otra celda.
 
-Paso 10. Copia y pega el siguiente código en la celda. Ejecuta la celda.
+Paso 10. Copiar y pegar el siguiente código en la celda. Ejecutar la celda.
 
 ```
-# Ruta para guardar los datos procesados en la capa Processed
+# Ruta para guardar los datos procesados en la capa Processed.
 file_path_processed = "/mnt/datalake/processed/winequality-processed.csv"
 
-# Guardar el DataFrame como CSV en la capa Processed
+# Guardar el DataFrame como CSV en la capa Processed.
 df_cleaned.write.csv(file_path_processed, header=True, mode='overwrite')
 
-# Validación: Verificar si el archivo fue guardado correctamente
+# Validación: Verificar si el archivo fue guardado correctamente.
 try:
     df_processed_check = spark.read.csv(file_path_processed, header=True, inferSchema=True)
     print("Datos procesados guardados correctamente en la capa Processed.")
@@ -407,23 +407,23 @@ Paso 11. El resultado se mostrará como la imagen.
 
 **¡TAREA FINALIZADA!**
 
-Has completado un flujo de trabajo que te permitió procesar los datos desde la capa Raw.
+Haz completado un flujo de trabajo que te permitió procesar los datos desde la capa Raw.
 
-### Tarea 5. Consulta de datos en la capa Processed.
+### Tarea 5. Consulta de datos en la capa Processed
 
 En esta tarea, realizarás consultas sobre los datos procesados almacenados en la capa Processed del Data Lake utilizando SQL en Databricks.
 
-**NOTA:** Asegúrate de que los datos procesados estén guardados en la capa Processed del Data Lake. Para ello, verifica que has completado la tarea anterior donde los datos se transformaron y se guardaron correctamente.
+**NOTA:** Asegúrate de que los datos procesados estén guardados en la capa Processed del Data Lake. Para ello, verificar que has completado la tarea anterior donde los datos se transformaron y se guardaron correctamente.
 
-Paso 1. Crea una tabla temporal para facilitar las consultas SQL. Esto permite consultar los datos directamente sin tener que escribir código PySpark cada vez.
+Paso 1. Crear una tabla temporal para facilitar las consultas SQL. Esto permite consultar los datos directamente sin tener que escribir código PySpark cada vez.
 
-Paso 2. Agrega una celda más, copia y pega el siguiente código en la celda.
+Paso 2. Agregar una celda más, copiar y pegar el siguiente código en la celda.
 
 ```
-# Crear una tabla temporal para los datos procesados
+# Crear una tabla temporal para los datos procesados.
 df_aggregated.createOrReplaceTempView("wine_quality_processed")
 
-# Comprobar que el DataFrame se creó correctamente
+# Comprobar que el DataFrame se creó correctamente.
 if df_aggregated is not None:
     print("El DataFrame procesado está listo para la consulta.")
 else:
@@ -432,7 +432,7 @@ else:
 
 ![dbricks3](../images/c4/img44.png)
 
-Paso 3. Realiza una consulta para obtener las primeras 10 filas del DataFrame. Copia y pega la siguiente consulta en una celda nueva.
+Paso 3. Realizar una consulta para obtener las primeras 10 filas del DataFrame. Copiar y pegar la siguiente consulta en una celda nueva.
 
 ```
 SELECT * FROM wine_quality_processed LIMIT 10;
@@ -444,7 +444,7 @@ Paso 4. El resultado muestra una tabla con la información de los datos procesad
 
 ![dbricks3](../images/c4/img46.png)
 
-Paso 5. En este siguiente ejemplo, contarás la cantidad de registros por calidad de los datos procesados. Agrega una nueva celda y copia el código siguiente.
+Paso 5. En este siguiente ejemplo, contarás la cantidad de registros por calidad de los datos procesados. Agregar una nueva celda y copiar el código siguiente.
 
 ```
 SELECT quality, COUNT(*) as count
@@ -459,7 +459,7 @@ Paso 6. El resultado será la siguiente tabla.
 
 ![dbricks3](../images/c4/img48.png)
 
-Paso 7. Ahora obtén estadísticas descriptivas de las columnas numéricas. Agrega una celda nueva, copia y pega el siguiente código.
+Paso 7. Ahora obtén estadísticas descriptivas de las columnas numéricas. Agregar una celda nueva, copiar y pegar el siguiente código.
 
 ```
 %sql
@@ -489,21 +489,21 @@ Paso 8. El resultado será la siguiente tabla.
 
 **¡TAREA FINALIZADA!**
 
-Has completado las consultas sobre los datos procesados almacenados en la capa Processed del Data Lake utilizando SQL en Databricks.
+Haz completado las consultas sobre los datos procesados almacenados en la capa Processed del Data Lake utilizando SQL en Databricks.
 
 ### Tarea 6. Optimización y preparación para análisis.
 
 En esta tarea se aplicará particionamiento y compresión, y se guardarán los datos en la capa Gold del Data Lake.
 
-Paso 1. El **Particionamiento** mejora la eficiencia de las consultas, la **Compresión** reduce el tamaño del archivo para un almacenamiento más eficiente. 
+Paso 1. El **Particionamiento** mejora la eficiencia de las consultas. La **Compresión** reduce el tamaño del archivo para un almacenamiento más eficiente. 
 
-Paso 2. Agrega una celda más, copia y pega el siguiente código en la celda. Importa las librerías e inicializa la Sesión de Spark.
+Paso 2. Agregar una celda más, copiar y pegar el siguiente código en la celda. Importar las librerías e inicializar la Sesión de Spark.
 
 ```
-# Importar las bibliotecas necesarias
+# Importar las bibliotecas necesarias.
 from pyspark.sql import SparkSession
 
-# Inicializar una sesión de Spark
+# Inicializar una sesión de Spark.
 spark = SparkSession.builder \
     .appName("Optimización y Preparación para Análisis") \
     .getOrCreate()
@@ -513,10 +513,10 @@ spark = SparkSession.builder \
 
 **NOTA:** La carga de librerías no genera un resultado.
 
-Paso 3. Agrega otra celda y pega el siguiente código que lee el archivo CSV.
+Paso 3. Agregar otra celda y pegar el siguiente código que lee el archivo CSV.
 
 ```
-# Leer el archivo CSV
+# Leer el archivo CSV.
 try:
     df = spark.read.csv("/mnt/datalake/raw/winequality-red.csv", header=True, inferSchema=True, sep=';')
     print("Archivo CSV cargado correctamente.")
@@ -524,7 +524,7 @@ except Exception as e:
     print(f"Error al cargar el archivo CSV: {e}")
     spark.stop()  # Detener la sesión si ocurre un error
 
-# Mostrar el esquema y algunas filas del DataFrame
+# Mostrar el esquema y algunas filas del DataFrame.
 print("Esquema del DataFrame original:")
 df.printSchema()
 print("Primeras 5 filas del DataFrame:")
@@ -537,10 +537,10 @@ Paso 4. El resultado será la lectura correcta y el top 5 de los registros de la
 
 ![dbricks3](../images/c4/img53.png)
 
-Paso 5. Ahora guarda el DataFrame en formato Parquet. Copia y pega el siguiente código.
+Paso 5. Guardar el DataFrame en formato Parquet. Copiar y pegar el siguiente código.
 
 ```
-# Guardar el DataFrame en formato Parquet
+# Guardar el DataFrame en formato Parquet.
 try:
     df.write.mode("overwrite").parquet("mnt/datalake/intermediate/wine_temporal.parquet")
     print("Datos guardados en formato Parquet en la capa intermedia.")
@@ -555,10 +555,10 @@ Paso 6. El resultado será haber creado exitosamente el formato Parquet.
 
 ![dbricks3](../images/c4/img55.png)
 
-Paso 7. Ahora lee el archivo Parquet y realiza el particionamiento de los datos. Agrega este código en una celda nueva.
+Paso 7. Leer el archivo Parquet y realizar el particionamiento de los datos. Agregar este código en una celda nueva.
 
 ```
-# Leer el archivo Parquet optimizado
+# Leer el archivo Parquet optimizado.
 try:
     df_optimized = spark.read.parquet("/mnt/datalake/intermediate/wine_temporal.parquet")
     print("Archivo Parquet cargado correctamente.")
@@ -566,13 +566,13 @@ except Exception as e:
     print(f"Error al cargar el archivo Parquet: {e}")
     spark.stop()  # Detener la sesión si ocurre un error
 
-# Mostrar el esquema y algunas filas del DataFrame optimizado
+# Mostrar el esquema y algunas filas del DataFrame optimizado.
 print("Esquema del DataFrame optimizado:")
 df_optimized.printSchema()
 print("Primeras 5 filas del DataFrame optimizado:")
 df_optimized.show(5)
 
-# Particionar y comprimir los datos por la columna 'quality'
+# Particionar y comprimir los datos por la columna 'quality'.
 try:
     df_optimized.write.partitionBy("quality").mode("overwrite") \
         .parquet("/mnt/datalake/gold/wine_optimizado", compression="snappy")
@@ -588,10 +588,10 @@ Paso 8. El resultado serán los datos particionados y comprimidos para la capa G
 
 ![dbricks3](../images/c4/img57.png)
 
-Paso 9. Ahora verifica la estructura final del Data Lake. Agrega el siguiente código a una celda nueva.
+Paso 9. Verificar la estructura final del Data Lake. Agregar el siguiente código a una celda nueva.
 
 ```
-# Verificar la estructura final del Data Lake
+# Verificar la estructura final del Data Lake.
 try:
     df_gold = spark.read.parquet("/mnt/datalake/gold/wine_optimizado")
     print("Archivo Parquet de la capa Gold cargado correctamente.")
@@ -599,19 +599,19 @@ except Exception as e:
     print(f"Error al cargar el archivo Parquet de la capa Gold: {e}")
     spark.stop()  # Detener la sesión si ocurre un error
 
-# Mostrar el esquema y algunas filas del DataFrame de la capa Gold
+# Mostrar el esquema y algunas filas del DataFrame de la capa Gold.
 print("Esquema del DataFrame de la capa Gold:")
 df_gold.printSchema()
 print("Primeras 5 filas del DataFrame de la capa Gold:")
 df_gold.show(5)
 df_gold = df_gold.repartition(1)
 
-# Comprobar el número de particiones
+# Comprobar el número de particiones.
 num_partitions = df_gold.rdd.getNumPartitions()
 print(f"Número de particiones en la capa Gold: {num_partitions}")
 
 df_gold.cache()
-# Detener la sesión de Spark
+# Detener la sesión de Spark.
 spark.stop()
 ```
 
@@ -621,54 +621,54 @@ Paso 10. El resultado mostrará la tabla del DataFrame y la cantidad de particio
 
 ![dbricks3](../images/c4/img59.png)
 
-Paso 11. Finalmente, realiza una comprobación de tiempo de la lectura del archivo antes de la optimización. Agrega una nueva celda.
+Paso 11. Realizar una comprobación de tiempo de la lectura del archivo antes de la optimización. Agregar una nueva celda.
 
 ```
-import time  # Para medir el tiempo de ejecución
+import time  # Para medir el tiempo de ejecución.
 
-# Medir el tiempo de lectura del archivo CSV
+# Medir el tiempo de lectura del archivo CSV.
 start_time_csv = time.time()
 
-# Leer el archivo CSV
+# Leer el archivo CSV.
 df_csv = spark.read.csv("/mnt/datalake/raw/winequality-red.csv", header=True, inferSchema=True)
 
-# Calcular el tiempo tomado para leer el archivo CSV
+# Calcular el tiempo tomado para leer el archivo CSV.
 end_time_csv = time.time()
 csv_read_time = end_time_csv - start_time_csv
 
-# Mostrar el tiempo de lectura
+# Mostrar el tiempo de lectura.
 print(f"Tiempo de lectura del archivo CSV: {csv_read_time:.2f} segundos")
 ```
 
 ![dbricks3](../images/c4/img60.png)
 
-**NOTA:** Si al ejecutar la celda de este paso de marca un error, es causa de la celda anterior, intenta ejecutar la celta de este paso o actualizar la página de la libreta.
+**NOTA:** Si al ejecutar la celda de este paso se marca un error, es causa de la celda anterior, intenta ejecutar la celda de este paso o actualizar la página de la libreta.
 
 Paso 12. El resultado será **8.17 segundos** aproximadamente, el resultado puede variar.
 
 ![dbricks3](../images/c4/img61.png)
 
-Paso 13. Ahora mide el tiempo de la lectura del archivo después de la optimización. Agrega una nueva celda.
+Paso 13. Medir el tiempo de la lectura del archivo después de la optimización. Agregar una nueva celda.
 
 ```
-# Medir el tiempo de lectura del archivo Parquet
+# Medir el tiempo de lectura del archivo Parquet.
 start_time_parquet = time.time()
 
-# Leer el archivo Parquet
+# Leer el archivo Parquet.
 df_parquet = spark.read.parquet("/mnt/datalake/gold/wine_optimizado")
 
-# Calcular el tiempo tomado para leer el archivo Parquet
+# Calcular el tiempo tomado para leer el archivo Parquet.
 end_time_parquet = time.time()
 parquet_read_time = end_time_parquet - start_time_parquet
 
-# Mostrar el tiempo de lectura
+# Mostrar el tiempo de lectura.
 print(f"Tiempo de lectura del archivo Parquet: {parquet_read_time:.2f} segundos")
 
-# Comparar los tiempos de lectura
+# Comparar los tiempos de lectura.
 print(f"Tiempo de lectura del archivo CSV: {csv_read_time:.2f} segundos")
 print(f"Tiempo de lectura del archivo Parquet: {parquet_read_time:.2f} segundos")
 
-# Calcular la mejora en el tiempo de lectura
+# Calcular la mejora en el tiempo de lectura.
 improvement = (csv_read_time - parquet_read_time) / csv_read_time * 100
 print(f"Mejora en el tiempo de lectura: {improvement:.2f}%")
 ```
@@ -681,7 +681,7 @@ Paso 14. El resultado será **2.36 segundos** aproximadamente, el resultado pued
 
 **¡TAREA FINALIZADA!**
 
-Has completado el particionamiento y compresión de los datos en la capa Gold del Data Lake.
+Haz completado el particionamiento y compresión de los datos en la capa Gold del Data Lake.
 
 **LABORATORIO FINALIZADO!**
 
