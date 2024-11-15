@@ -25,7 +25,7 @@ En esta tarea te registrarás para acceder a tu cuenta en Databricks. Se usará 
 
 **NOTA:** A lo largo de la práctica habrá imágenes para que puedas apoyarte y mejorar la experiencia de configuración.
 
-Paso 1. Abrir el navegador **Firefox** dentro de tu ambiente de trabajo. Puedes buscarlo en la barra de herramientas lateral (si aparece) o puedes optar por el buscador del sistema.
+Paso 1. Abrir el navegador **Firefox** dentro del ambiente de trabajo. Puedes buscarlo en la barra de herramientas lateral (si aparece) o puedes optar por el buscador del sistema.
 
 Paso 2. Una vez abierto, copiar la URL de Databricks para crear la cuenta --> [Databricks Free Trial](https://www.databricks.com/try/databricks-free#account) y pégala en el navegador de **Firefox**.
 
@@ -45,9 +45,9 @@ Paso 6. Una vez llenados los datos, en la siguiente imagen seleccionar el logo d
 
 **NOTA:** Esta cuenta te dará acceso 14 días a Databricks con 400 USD de crédito para probar la infraestructura.
 
-Paso 7. Ya creada la cuenta, el siguiente paso es autenticarte. Copiar la URL --> [Databricks Sign in](https://accounts.cloud.databricks.com/login?tuuid=98a9b760-3b26-4df5-9041-98030f2c09e1) y pégala dentro de la máquina virtual de trabajo.
+Paso 7. Ya creada la cuenta, el siguiente paso es autenticarte. Copiar la URL --> [Databricks Sign in](https://accounts.cloud.databricks.com/login?tuuid=98a9b760-3b26-4df5-9041-98030f2c09e1) y pegarla dentro de la máquina virtual de trabajo.
 
-Paso 8. Colocar el correo con el cual te registraste e iniciar sesión.
+Paso 8. Colocar el correo con el cual te registraste, e iniciar sesión.
 
 ![dbricks3](../images/c4/img4.png)
 
@@ -55,7 +55,7 @@ Paso 9. En la siguiente ventana te pedirá enlazar la cuenta de **Databricks** c
 
 | Propiedad | Valor | Descripción |
 |-----------| ----- | -----------  |
-| Workspace name | databricks-lab4.1-workspace-xxxx | Sustituye las letras **x** por las letras iniciales de tu nombre. |
+| Workspace name | databricks-lab4.1-workspace-xxxx | Sustituir las letras **x** por las letras iniciales de tu nombre. |
 | AWS Region | Oregon (us-west-2) | Región a usar para la nube de AWS. |
 
 Paso 10. Dar clic en el botón **Start Quickstart**.
@@ -84,7 +84,7 @@ Paso 14. Marcar la casilla que comienza con **I acknowledge that AWS...**.
 
 Paso 15. Dar clic en el botón **Create Stack** en la parte inferior derecha.
 
-**NOTA:** Comenzará el proceso de creación de la infraestructura de Databricks en AWS, esto puede tardar de **2 a 4 minutos**. Espera el despliegue de la infraestructura.
+**NOTA:** Comenzará el proceso de creación de la infraestructura de Databricks en AWS, esto puede tardar de **2 a 4 minutos**. Esperar el despliegue de la infraestructura.
 
 Paso 16. Verificar que todo haya salido correcto y que el stack diga **CREATE_COMPLETE**.
 
@@ -124,7 +124,7 @@ Paso 22. Configurar las siguientes propiedades para la creación del cluster. El
 | Node type | r5.large | Tipo de servidor con recursos para desarrollo. |
 | Enable autoscaling local storage | Desmarcar la casilla | Para el ambiente no requerimos almacenamiento elástico. |
 
-**NOTA IMPORTANTE:** Aún no des clic para crear el clúster, falta definir el disco duro que necesitará el servidor. Avanza al siguiente paso.
+**NOTA IMPORTANTE:** Aún no dar clic para crear el clúster, falta definir el disco duro que necesitará el servidor. Avanzar al siguiente paso.
 
 ![dbricks3](../images/c4/img14.png)
 
