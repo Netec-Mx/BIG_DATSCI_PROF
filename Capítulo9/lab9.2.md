@@ -13,7 +13,7 @@ Al finalizar la práctica, serás capaz de:
 
 ---
 
-**[⬅️ Atrás](/Capítulo9/lab9.1.md)** | **[Lista General](/README.md)** | **[Siguiente ➡️](/Capítulo9/lab9.3.md)**
+**[⬅️ Atrás](../Capítulo9/lab9.1.md)** | **[Lista General](../README.md)** | **[Siguiente ➡️](../Capítulo9/lab9.3.md)**
 
 ---
 
@@ -264,6 +264,6 @@ El resultado final esperado es la ejecución correcta de todos los pasos en las 
 
 ---
 
-**[⬅️ Atrás](/Capítulo9/lab9.1.md)** | **[Lista General](/README.md)** | **[Siguiente ➡️](/Capítulo9/lab9.3.md)**
+**[⬅️ Atrás](../Capítulo9/lab9.1.md)** | **[Lista General](../README.md)** | **[Siguiente ➡️](../Capítulo9/lab9.3.md)**
 
 ---
