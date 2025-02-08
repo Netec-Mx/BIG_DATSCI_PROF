@@ -12,7 +12,7 @@ Al finalizar la práctica, serás capaz de:
 
 ---
 
-**[⬅️ Atrás](/Capítulo5/lab5.1.md)** | **[Lista General](/README.md)** | **[Siguiente ➡️](/Capítulo7/lab7.1.md)**
+**[⬅️ Atrás](../Capítulo5/lab5.1.md)** | **[Lista General](../README.md)** | **[Siguiente ➡️](../Capítulo7/lab7.1.md)**
 
 ---
 
@@ -779,6 +779,6 @@ El resultado final de la práctica es la ejecución completa de todos los pasos 
 
 ---
 
-**[⬅️ Atrás](/Capítulo5/lab5.1.md)** | **[Lista General](/README.md)** | **[Siguiente ➡️](/Capítulo7/lab7.1.md)**
+**[⬅️ Atrás](../Capítulo5/lab5.1.md)** | **[Lista General](../README.md)** | **[Siguiente ➡️](../Capítulo7/lab7.1.md)**
 
 ---
