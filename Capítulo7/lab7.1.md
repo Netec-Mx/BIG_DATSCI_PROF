@@ -12,7 +12,7 @@ Al finalizar la práctica, serás capaz de:
 
 ---
 
-**[⬅️ Atrás](/Capítulo6/lab6.1.md)** | **[Lista General](/README.md)** | **[Siguiente ➡️](/Capítulo8/lab8.1.md)**
+**[⬅️ Atrás](../Capítulo6/lab6.1.md)** | **[Lista General](../README.md)** | **[Siguiente ➡️](../Capítulo8/lab8.1.md)**
 
 ---
 
@@ -280,6 +280,6 @@ El resultado final del laboratorio debe de ser el cluster de kubernetes y el con
 
 ---
 
-**[⬅️ Atrás](/Capítulo6/lab6.1.md)** | **[Lista General](/README.md)** | **[Siguiente ➡️](/Capítulo8/lab8.1.md)**
+**[⬅️ Atrás](../Capítulo6/lab6.1.md)** | **[Lista General](../README.md)** | **[Siguiente ➡️](../Capítulo8/lab8.1.md)**
 
 ---
