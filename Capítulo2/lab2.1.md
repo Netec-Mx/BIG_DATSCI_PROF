@@ -836,6 +836,6 @@ El resultado final esperado es visualizar las tablas creadas en Apache Hive. Ten
 
 ---
 
-**[⬅️ Atrás](/Capítulo9/lab9.3.md)** | **[Lista General](/README.md)** | **[Siguiente ➡️](/Capítulo3/lab3.1.md)**
+**[⬅️ Atrás](../Capítulo9/lab9.3.md)** | **[Lista General](../README.md)** | **[Siguiente ➡️](../Capítulo3/lab3.1.md)**
 
 ---
