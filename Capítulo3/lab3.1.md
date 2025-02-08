@@ -14,7 +14,7 @@ Al finalizar la práctica, serás capaz de:
 
 ---
 
-**[⬅️ Atrás](/Capítulo2/lab2.1.md)** | **[Lista General](/README.md)** | **[Siguiente ➡️](/Capítulo4/lab4.1.md)**
+**[⬅️ Atrás](../Capítulo2/lab2.1.md)** | **[Lista General](../README.md)** | **[Siguiente ➡️](../Capítulo4/lab4.1.md)**
 
 ---
 
