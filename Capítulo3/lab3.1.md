@@ -794,6 +794,6 @@ El resultado final esperado es la ejecución de todos los scripts de Spark corre
 
 ---
 
-**[⬅️ Atrás](/Capítulo2/lab2.1.md)** | **[Lista General](/README.md)** | **[Siguiente ➡️](/Capítulo4/lab4.1.md)**
+**[⬅️ Atrás](../Capítulo2/lab2.1.md)** | **[Lista General](../README.md)** | **[Siguiente ➡️](../Capítulo4/lab4.1.md)**
 
 ---
