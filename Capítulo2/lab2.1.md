@@ -13,7 +13,7 @@ Al finalizar la práctica, serás capaz de:
 
 ---
 
-**[⬅️ Atrás](/Capítulo9/lab9.3.md)** | **[Lista General](../README.md)** | **[Siguiente ➡️](/Capítulo3/lab3.1.md)**
+**[⬅️ Atrás](./Capítulo9/lab9.3.md)** | **[Lista General](../README.md)** | **[Siguiente ➡️](./Capítulo3/lab3.1.md)**
 
 ---
 
