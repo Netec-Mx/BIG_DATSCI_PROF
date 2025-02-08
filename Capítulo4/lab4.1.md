@@ -13,7 +13,7 @@ Al finalizar la práctica, serás capaz de:
 
 ---
 
-**[⬅️ Atrás](/Capítulo3/lab3.1.md)** | **[Lista General](/README.md)** | **[Siguiente ➡️](/Capítulo5/lab5.1.md)**
+**[⬅️ Atrás](../Capítulo3/lab3.1.md)** | **[Lista General](../README.md)** | **[Siguiente ➡️](../Capítulo5/lab5.1.md)**
 
 ---
 
@@ -693,6 +693,6 @@ El resultado final esperado es la ejecución de todas las celdas de la práctica
 
 ---
 
-**[⬅️ Atrás](/Capítulo3/lab3.1.md)** | **[Lista General](/README.md)** | **[Siguiente ➡️](/Capítulo5/lab5.1.md)**
+**[⬅️ Atrás](../Capítulo3/lab3.1.md)** | **[Lista General](../README.md)** | **[Siguiente ➡️](../Capítulo5/lab5.1.md)**
 
 ---
