@@ -490,7 +490,7 @@ df_cleaned = spark.read.csv("/home/hadoopuser/ventasejemplo.csv",
 df_pandas = df_cleaned.select("precio_unitario", "cantidad").toPandas()
 
 # Obtener la ruta del escritorio
-desktop_path = os.path.expanduser("~/Desktop")
+desktop_path = os.path.expanduser("/home/netec/Desktop")
 
 # Crear un histograma de la columna precio_unitario y guardarlo en el Escritorio
 plt.figure(figsize=(10, 6))
