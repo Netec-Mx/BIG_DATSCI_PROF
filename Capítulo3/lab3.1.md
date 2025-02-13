@@ -89,6 +89,9 @@ sudo chown -R hadoopuser:hadoopuser /usr/local/spark
 Paso 9. Verificar que Spark está instalado y configurado correctamente ejecutando **PySpark**:
 
 ```
+sudo apt install python3 python3-pip -y
+```
+```
 pyspark
 ```
 
