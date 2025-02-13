@@ -92,6 +92,9 @@ Paso 9. Verificar que Spark está instalado y configurado correctamente ejecutan
 sudo apt install python3 python3-pip -y
 ```
 ```
+sudo ln -s /usr/bin/python3 /usr/bin/python
+```
+```
 pyspark
 ```
 
