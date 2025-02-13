@@ -72,6 +72,9 @@ Paso 6. Escribir el siguiente comando para la **instalación de JAVA**.
 **NOTA:** El proceso puede tardar de **1 a 5 minutos**.
 
 ```
+sudo apt --fix-broken install
+```
+```
 sudo apt install openjdk-8-jdk -y
 ```
 
