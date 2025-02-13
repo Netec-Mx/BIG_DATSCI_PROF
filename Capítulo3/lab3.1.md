@@ -470,44 +470,52 @@ sudo nano /home/hadoopuser/spark_lab_3.1/visualizacion.py
 Paso 10. Agregar el siguiente código en el archivo **visualizacion.py** que visualiza las estadísticas generadas anteriores.
 
 ```
-# visualizacion.py
+import os
 import matplotlib.pyplot as plt
 from pyspark.sql import SparkSession
 
-# Crear una sesión de Spark.
+# Crear una sesión de Spark
 spark = SparkSession.builder \
     .appName("EDA - Visualización de Distribuciones") \
     .getOrCreate()
 
-# Cargar los datos limpios desde la ruta local.
+# Cargar los datos limpios desde la ruta local
 df_cleaned = spark.read.csv("/home/hadoopuser/ventasejemplo.csv", 
                             header=True, inferSchema=True).dropDuplicates().na.fill({
                                 'precio_unitario': 0,
                                 'producto': 'Desconocido'
                             })
 
-# Convertir el DataFrame de PySpark a Pandas para visualización.
+# Convertir el DataFrame de PySpark a Pandas para visualización
 df_pandas = df_cleaned.select("precio_unitario", "cantidad").toPandas()
 
-# Crear un histograma de la columna precio_unitario.
+# Obtener la ruta del escritorio
+desktop_path = os.path.expanduser("~/Desktop")
+
+# Crear un histograma de la columna precio_unitario y guardarlo en el Escritorio
 plt.figure(figsize=(10, 6))
 plt.hist(df_pandas["precio_unitario"], bins=20, color='blue', alpha=0.7)
 plt.title("Distribución del Precio Unitario")
 plt.xlabel("Precio Unitario")
 plt.ylabel("Frecuencia")
 plt.grid(True)
-plt.show()
+plt.savefig(f"{desktop_path}/histograma_precio_unitario.png")  # Guardar la imagen
+plt.close()  # Cerrar la figura para liberar memoria
 
-# Crear un histograma de la columna cantidad.
+# Crear un histograma de la columna cantidad y guardarlo en el Escritorio
 plt.figure(figsize=(10, 6))
 plt.hist(df_pandas["cantidad"], bins=20, color='green', alpha=0.7)
 plt.title("Distribución de la Cantidad")
 plt.xlabel("Cantidad")
 plt.ylabel("Frecuencia")
 plt.grid(True)
-plt.show()
+plt.savefig(f"{desktop_path}/histograma_cantidad.png")  # Guardar la imagen
+plt.close()  # Cerrar la figura para liberar memoria
 
-# Detener la sesión de Spark.
+# Imprimir mensaje indicando dónde se guardaron las imágenes
+print(f"Gráficos guardados en: {desktop_path}/histograma_precio_unitario.png y {desktop_path}/histograma_cantidad.png")
+
+# Detener la sesión de Spark
 spark.stop()
 ```
 
@@ -522,6 +530,9 @@ Paso 11. Ejecutar el archivo que acabas de crear para verificar que se haya crea
 
 ```
 spark-submit /home/hadoopuser/spark_lab_3.1/visualizacion.py
+```
+```
+
 ```
 
 ![spark10](../images/c3/img23.png)
