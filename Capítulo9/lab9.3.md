@@ -1,4 +1,4 @@
-# Práctica 10. Configuración y despliegue de un proyecto de Big Data en Google Cloud Dataproc
+# Práctica 10. Configuración y despliegue de un proyecto de Big Data en Google Cloud Dataproc rmf
 
 ## Objetivo de la práctica:
 
