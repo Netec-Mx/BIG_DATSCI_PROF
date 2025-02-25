@@ -254,7 +254,7 @@ En esta tarea vas a cargar datos en la capa Raw del Data Lake.
 Paso 1. Vamos a simular el proceso de la capa **Raw**. Copiar el siguiente enlace para descargar el archivo de datos crudos, usar el ejemplo de datos **Wine Quality**.
 
 ```
-https://demoappj864.s3.amazonaws.com/winequality-red.csv
+https://s3.us-west-2.amazonaws.com/labs.netec.com/courses/BigDataSciencePro/V0.0.1/winequality-red.csv
 ```
 
 Paso 2. Abrir una pestaña de tu navegador en la máquina virtual, copiar y pegar la URL de la página de ---> [AWS](https://us-east-2.signin.aws.amazon.com/oauth?client_id=arn%3Aaws%3Asignin%3A%3A%3Aconsole%2Fcanvas&code_challenge=gfh1_SQ5n7dnq6ETh0C-PoCw4VuI-HLYRfC06evdqHw&code_challenge_method=SHA-256&response_type=code&redirect_uri=https%3A%2F%2Fconsole.aws.amazon.com%2Fconsole%2Fhome%3FhashArgs%3D%2523%26isauthcode%3Dtrue%26state%3DhashArgsFromTB_us-east-2_10ffbbe8d449d843).
