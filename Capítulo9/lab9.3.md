@@ -1,4 +1,4 @@
-# Práctica 10. Configuración y despliegue de un proyecto de Big Data en Google Cloud Dataproc rmf
+# Práctica 10. Configuración y despliegue de un proyecto de Big Data en Google Cloud Dataproc
 
 ## Objetivo de la práctica:
 
@@ -18,43 +18,33 @@ Al finalizar la práctica, serás capaz de:
 
 ### Instrucciones 
 
-### Tarea 1. Crear un proyecto en Google Cloud Platform.
+### Tarea 1. Seleccionar un proyecto existente en Google Cloud Platform.
 
-En esta tarea, configurarás un proyecto en **Google Cloud** para gestionar recursos y permisos necesarios para **Dataproc**.
+En esta tarea, seleccionara un proyecto existente en **Google Cloud** para gestionar recursos y permisos necesarios para **Dataproc**.
 
-Paso 1. Si no tienes una cuenta de **Google Cloud Platform**, regístrate [**AQUÍ**](https://cloud.google.com/free/). El proceso incluye una prueba gratuita con crédito inicial, ideal para esta práctica.
+Paso 1. Si no tiene una cuenta de **Google Cloud Platform**, consulte con su instructor para obtenerla y realizar esta práctica.
 
-Paso 2. Una vez que inicies sesión, entrarás a la consola principal de Google Cloud.
+Paso 2. Una vez que inicie sesión, entrará a la consola principal de Google Cloud.
 
 ![gcp1](../images/c93/img1.png)
 
-Paso 3. Ahora, en la barra de herramientas superior, hacer clic en el menú desplegable **Select a project**.
+
+Paso 3. Ahora, en la barra de herramientas superior, hacer clic en el menú desplegable **PodX**.
 
 ![gcp1](../images/c93/img2.png)
 
-Paso 4. En la ventana emergente, dar clic en la opción de **NEW PROJECT**.
+Paso 4. En la ventana emergente, ubicarse en al pestaña **ALL** Y  dar clic a la flecha de la carpeta con nombre **PodX**.
 
 ![gcp1](../images/c93/img3.png)
 
-Paso 5. Escribir el siguiente nombre del proyecto **`dataprocessing-project`**, y hacer clic en el botón **CREATE**.
+Paso 5. Seleccione su proyecto dando clic en **`MyProjectPX`**.
 
 ![gcp1](../images/c93/img4.png)
 
-Paso 6. Volver a dar clic en la opción **Select a project**.
-
-![gcp1](../images/c93/img2.png)
-
-Paso 7. Dar clic en el nombre del proyecto.
-
-![gcp1](../images/c93/img5.png)
-
-**NOTA:** En el menú de la izquierda, seleccionar **Facturación**. Si es la primera vez que usas Google Cloud, seguir las instrucciones para activar la facturación en el proyecto. Esto permite el acceso a servicios como **Dataproc**, aunque podrás usar el crédito gratuito para esta práctica.
-
-**NOTA:** Si ya tienes configurada tu facturación, avanzar a la siguiente tarea.
 
 **¡TAREA FINALIZADA!**
 
-Haz completado la creación o inicio de sesión de la cuenta de GCP y la creación del proyecto.
+Ha completado el inicio de sesión en la cuenta de GCP y selecionado un proyecto existente.
 
 ### Tarea 2. Habilitar las APIs necesarias
 
@@ -126,51 +116,60 @@ Paso 1. En el buscador de GCP, escribir **IAM** y dar clic en la opción **IAM**
 
 ![gcp1](../images/c93/img31.png)
 
-Paso 2. En la lista de los usuarios, deberás tener un service principal, con el ícono de una llave; dar clic en el **lápiz** a la derecha para editar los permisos.
+Paso 2. Agregar un service principal a la lista de los usuarios, dar clic en el menu lateral derecho, a la opción  **Service Accounts**.
 
-**NOTA:** Si no te aparece el usuario service principal, puedes avanzar al paso 5 de esta tarea.
+**NOTA:** Si ya tiene en su listado al usuario service principal, con el ícono de una llave; puede dar clic en el **lápiz** a la derecha para editar los permisos y avanzar al paso 7 de esta tarea.
 
 ![gcp1](../images/c93/img32.png)
 
-Paso 3. En la ventana lateral derecha, seleccionar de la lista **Role** y cambiar a **Owner**.
+
+Paso 3. Ubicarse  en la columna de Email y copie el nombre del servicio principal es similar a  **0123456789-compute@developer.gserviceaccount.com**.
+
+Paso 4. Del menu lateral derecho dar clic a la opción **IAM**.
+
+Paso 5. En la seccion **Permissions for project "MyProjectPX"**, Dar clic en **GRANT ACCESS**.
 
 ![gcp1](../images/c93/img33.png)
 
-Paso 4. Dar clic en la opción **ADD ANOTHER ROLE**.
+Paso 6. En la seccion **Add principals** pegue el nombre del servicio principal que copio del paso **número 3** de esta tarea.
 
-Paso 5. De la lista, seleccionar **Storage Admin**.
+Paso 7. En la seccion **Assign roles** De la lista, seleccionar el rol **Storage Admin**.
+
+Paso 8. De clic en **+ ADD ANOTHER ROLE** De la lista, seleccionar el rol **Dataproc Worker**.
+
+Paso 9. Verifique su configuración final, debe de ser similar a la imagen que se muestra a continuación.
 
 ![gcp1](../images/c93/img55.png)
 
-Paso 6. Dar clic en el botón **Save**.
+Paso 10. Dar clic en el botón **Save**.
 
-Paso 7. En el buscador de GCP, escribir **VPC** y dar clic en la opción **VPC networks**.
+Paso 11. En el buscador de GCP, escribir **VPC** y dar clic en la opción **VPC networks**.
 
 ![gcp1](../images/c93/img34.png)
 
-Paso 8. Dar clic en la opción **SUBNETS IN CURRENT PROJECT**.
+Paso 12. Dar clic en la opción **SUBNETS IN CURRENT PROJECT**.
 
 ![gcp1](../images/c93/img35.png)
 
-Paso 9. Filtrar por la **Region: us-central1** y dar clic en el nombre de la subred filtrada llamada **default**.
+Paso 13. Filtrar por la **Region: us-central1** y dar clic en el nombre de la subred filtrada llamada **default**.
 
 ![gcp1](../images/c93/img36.png)
 
-Paso 10. En los detalles de la subred, dar clic en el botón **EDIT**.
+Paso 14. En los detalles de la subred, dar clic en el botón **EDIT**.
 
 ![gcp1](../images/c93/img37.png)
 
-Paso 11. Cambiar la propiedad **Private Google Access** a **On** y dar clic en el botón **Save**.
+Paso 15. Cambiar la propiedad **Private Google Access** a **On** y dar clic en el botón **Save**.
 
 ![gcp1](../images/c93/img38.png)
 
-Paso 12. Regresar a la lista de los VPCs y hacer clic en el menú lateral izquierdo **VPC networks**.
+Paso 16. Regresar a la lista de los VPCs y hacer clic en el menú lateral izquierdo **VPC networks**.
 
-Paso 13. Seleccionar la única VPC que se muestra en la lista y dar clic en el nombre.
+Paso 17. Seleccionar la única VPC que se muestra en la lista y dar clic en el nombre.
 
-Paso 14. Dentro de los detalles de la VPC, dar clic en la opción **DNS CONFIGURATION**.
+Paso 18. Dentro de los detalles de la VPC, dar clic en la opción **DNS CONFIGURATION**.
 
-Paso 15. Dar clic en el botón **ENABLE API**.
+Paso 19. Dar clic en el botón **ENABLE API**.
 
 ![gcp1](../images/c93/img46.png)
 
@@ -184,9 +183,10 @@ En esta tarea, configurarás un clúster Dataproc con las herramientas Hadoop y 
 
 Paso 1. En el menú de búsqueda, escribir **Dataproc** y dar clic.
 
+
 ![gcp1](../images/c93/img12.png)
 
-Paso 2. Ahora dar clic en la opción **+ Create Cluster**.
+Paso 2. Del menu lateral derecho dar clic a la opción **Clusters** y despues dar clic en la opción **+ Create Cluster**.
 
 ![gcp1](../images/c93/img13.png)
 
@@ -206,39 +206,46 @@ Paso 4. Configurar los siguientes datos de la tabla para la creación del clúst
 ![gcp1](../images/c93/img39.png)
 ![gcp1](../images/c93/img19.png)
 
-**NOTA:** El resto de los valores se quedarán por defecto.
-
-Paso 5. Dar clic en el botón **CREATE**.
+Paso 5. Del submenu lateral izquierdo de la configuracion del cluster dar clic a la opción  **Configure nodes (opcional)**.
 
 ![gcp1](../images/c93/img20.png)
 
-**NOTA:** Si al momento de crear el clúster te aparece un mensaje de capacidad de disco duro SSD, debes reducir el tamaño de los discos de los nodos.
+Paso 6. Debe reducir el tamaño de los disco SSD de los nodos como se muestra en la siguente imagen.
 
 ![gcp1](../images/c93/img27.png)
 
-**NOTA:** Si te sale un mensaje sobre las API, verificar los pasos de la tarea uno que se hayan habilitado cada una de las APIs.
+**NOTA:** El resto de los valores se quedarán por defecto.
+
+Paso 7. Dar clic en el botón **CREATE**.
+
+**NOTA:** Si le sale un mensaje sobre las API, verificar los pasos de la tarea uno que se hayan habilitado cada una de las APIs.
+
+**NOTA:** Si le  sale un mensaje como se muestra en la siguente imagen favor de omitirla y continue con los pasos restantes esta alerta
+no afecta al desarrollo de su practica.
+
+![gcp1](../images/c93/imgr.png)
 
 **NOTA:** El clúster tardará de **2 a 3 minutos** aproximadamente.
 
-Paso 6. Cuando el clúster ya tenga el estatus **Running**, dar clic en el nombre del clúster.
+Paso 8. Cuando el clúster ya tenga el estatus **Running**, dar clic en el nombre del clúster.
 
 ![gcp1](../images/c93/img40.png)
 
-Paso 7. Dar clic en la opción **VM INSTANCES**.
+Paso 9. Dar clic en la opción **VM INSTANCES**.
 
 ![gcp1](../images/c93/img41.png)
 
-Paso 8. En el nodo con el nombre **Master**, dar clic en la propiedad **SSH** para abrir la conexión al clúster.
+Paso 10. En el nodo con el nombre **Master**, dar clic en la propiedad **SSH** para abrir la conexión al clúster.
 
 ![gcp1](../images/c93/img42.png)
 
-Paso 9. Se abrirá una ventana nueva para la **Autorización**; dar clic en **Authorize**.
+Paso 11. Se abrirá una ventana nueva para la **Autorización**; dar clic en **Authorize**.
 
 ![gcp1](../images/c93/img43.png)
 
 **NOTA:** Debes permitir las ventanas emergentes para que se realice la conexión exitosamente.
 
-Paso 10. Una vez realizada la conexión, verás la terminal del servidor maestro.
+Paso 12. Una vez realizada la conexión, verás la terminal del servidor maestro.
 
 ![gcp1](../images/c93/img44.png)
 
