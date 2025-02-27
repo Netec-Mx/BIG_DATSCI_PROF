@@ -64,7 +64,7 @@ ip add
 ```
 nano /etc/hostname
 ```
-name localhostxx" donde xx será la IP de tu equipo, una vez que se haya editado procede a reiniciar tu equipo.
+ * name localhostxx" donde xx será la IP de tu equipo, una vez que se haya editado procede a reiniciar tu equipo.
 ```
 reboot
 ```
