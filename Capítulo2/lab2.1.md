@@ -42,6 +42,15 @@ Paso 2. Crear el usuario para trabajar con **Hadoop**, copiar el siguiente coman
 ```
 sudo adduser hadoopuser
 ```
+ * Editar el nombre del de tu equipo, validando en la terminal:
+```
+ip add
+```
+ * al validar el resultado de tu ip colocala dentro del hostname y reinicia
+```
+nano /etc/hostname
+```
+"name localhostxx" donde xx será la IP de tu equipo"
 
 Paso 3. Cuando solicite la contraseña para el usuario, copiar el siguiente valor.
 
