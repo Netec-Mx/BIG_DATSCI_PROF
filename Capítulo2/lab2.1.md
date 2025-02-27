@@ -226,6 +226,8 @@ nano $HADOOP_HOME/etc/hadoop/hadoop-env.sh
 
 Paso 3. Editar el archivo llamado **core-site.xml** para definir el sistema de archivos y puerto de comunicación, escribir el siguiente comando:
 
+**NOTA:** Escribe el comando **ip add** antes de editar el archivo, copia el digito del ultimo octeto de la ip 10.0.0.**X**, Sustituyelo en el paso 4 antes de guardar el archivo.
+
 ```
 nano $HADOOP_HOME/etc/hadoop/core-site.xml
 ```
@@ -236,7 +238,7 @@ Paso 4. Borrar la sección **configuration** y pegar el siguiente código en su 
 <configuration>
   <property>
     <name>fs.defaultFS</name>
-    <value>hdfs://localhost:9000</value>
+    <value>hdfs://10.0.0.X:9000</value>
   </property>
 </configuration>
 ```
