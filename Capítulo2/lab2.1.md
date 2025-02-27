@@ -56,15 +56,15 @@ Paso 4. Agregar el usuario **hadoopuser** al archivo de superusuarios para darle
 ```
 sudo usermod -aG sudo hadoopuser
 ```
- * Editar el nombre del de tu equipo, validando en la terminal:
+ * Editar el nombre de de tu equipo, primero valida dentro de la terminal el ultimo octeto de tu dirección IP 10.0.0.x:
 ```
 ip add
 ```
- * al validar el resultado de tu ip colocala dentro del hostname y reinicia
+ * al validar el resultado de tu ip colocala dentro del hostname
 ```
 nano /etc/hostname
 ```
-name localhostxx" donde xx será la IP de tu equipo, una vez que se haya editado procede a reiniciar
+name localhostxx" donde xx será la IP de tu equipo, una vez que se haya editado procede a reiniciar tu equipo.
 ```
 reboot
 ```
