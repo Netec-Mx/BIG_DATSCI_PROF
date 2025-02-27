@@ -243,8 +243,6 @@ Paso 4. Borrar la sección **configuration** y pegar el siguiente código en su 
 </configuration>
 ```
 
-![hadoop9](../images/c2/img14.png)
-
 **```CTRL + O```** **`Enter`** `Para guardar el archivo`
 
 **```CTRL + X```** **`Enter`** `Para salir del archivo`
